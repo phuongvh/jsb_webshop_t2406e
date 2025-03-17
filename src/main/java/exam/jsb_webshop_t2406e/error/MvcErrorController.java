@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.http.HttpServletRequest;
 
+// Xử lý lỗi chung chung, không phân loại
+
 @Controller
 public class MvcErrorController implements ErrorController 
 {
