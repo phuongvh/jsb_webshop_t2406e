@@ -10,6 +10,10 @@ import jakarta.servlet.http.HttpServletRequest;
 
 // Xử lý lỗi chung chung, không phân loại
 
+/**
+ * @author Le Quang Huy
+ */
+
 @Controller
 public class MvcErrorController implements ErrorController 
 {

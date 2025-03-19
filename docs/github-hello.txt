@@ -1,0 +1,45 @@
+PS C:\Users\Public\Java\JavaSpringWeb\jsb_webshop_t2406e> git --version
+git version 2.48.1.windows.1
+
+# Tạo file quản lý code trong dự án
+PS C:\Users\Public\Java\JavaSpringWeb\jsb_webshop_t2406e> git init
+Initialized empty Git repository in C:/Users/Public/Java/JavaSpringWeb/jsb_webshop_t2406e/.git/
+
+# Chuẩn bị dữ liệu đẩy lên github
+PS C:\Users\Public\Java\JavaSpringWeb\jsb_webshop_t2406e> git add .
+
+# Chuẩn bị dữ liệu đẩy lên
+PS C:\Users\Public\Java\JavaSpringWeb\jsb_webshop_t2406e> git commit -m "Lần đầu tạo đồ án kì 2 lớp T2406E"
+PS C:\Users\Public\Java\JavaSpringWeb\jsb_webshop_t2406e> git config --global user.email "anhgiaotiep@gmail.com"
+PS C:\Users\Public\Java\JavaSpringWeb\jsb_webshop_t2406e> git config --global user.name "phuongvh"
+PS C:\Users\Public\Java\JavaSpringWeb\jsb_webshop_t2406e> 
+PS C:\Users\Public\Java\JavaSpringWeb\jsb_webshop_t2406e>
+
+PS C:\Users\Public\Java\JavaSpringWeb\jsb_webshop_t2406e> git commit -m "Lần đầu tạo đồ án kì 2 lớp T2406E"     
+PS C:\Users\Public\Java\JavaSpringWeb\jsb_webshop_t2406e>
+
+# Liên kết dự án Local với Remote Repository trên GitHub
+# Chạy 1 lần duy nhất
+PS C:\Users\Public\Java\JavaSpringWeb\jsb_webshop_t2406e> git remote add origin https://github.com/phuongvh/jsb_webshop_t2406e.git
+PS C:\Users\Public\Java\JavaSpringWeb\jsb_webshop_t2406e> 
+
+# Ngày xưa hay quản lý nhánh Master, xu hướng bây giờ nhánh chính là main
+PS C:\Users\Public\Java\JavaSpringWeb\jsb_webshop_t2406e> git branch -M main
+
+# Lần đầu tiên đẩy lên thì phải có chữ -u, lần sau ko cần.
+PS C:\Users\Public\Java\JavaSpringWeb\jsb_webshop_t2406e> git push -u origin main
+error: src refspec main does not match any
+error: failed to push some refs to 'https://github.com/phuongvh/jsb_webshop_t2406e.git'
+
+# Lần thứ 2 đẩy lên: chỉ có 3 bước mà thôi: add, commit, push
+
+PS C:\Users\Public\Java\JavaSpringWeb\jsb_webshop_t2406e> git add .
+PS C:\Users\Public\Java\JavaSpringWeb\jsb_webshop_t2406e> git commit -m "Bổ sung lớp kiểm soát lỗi cho web app mvc html"
+PS C:\Users\Public\Java\JavaSpringWeb\jsb_webshop_t2406e> git push origin main
+
+Các thao tác cho học viên: Muốn lấy dự án của Giảng Viên về:
+Lần đầu sao chép dự án:
+git clone "http://path to project"
+
+Lần sau, có thay đổi code thì chỉ cần chạy lệnh này:
+git pull origin main

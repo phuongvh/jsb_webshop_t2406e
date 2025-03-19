@@ -1,0 +1,115 @@
+PS C:\Users\Public\Java\JavaSpringWeb\jsb_webshop_t2406e> git --version
+git version 2.48.1.windows.1
+PS C:\Users\Public\Java\JavaSpringWeb\jsb_webshop_t2406e> git init
+Initialized empty Git repository in C:/Users/Public/Java/JavaSpringWeb/jsb_webshop_t2406e/.git/
+PS C:\Users\Public\Java\JavaSpringWeb\jsb_webshop_t2406e> 
+PS C:\Users\Public\Java\JavaSpringWeb\jsb_webshop_t2406e> 
+PS C:\Users\Public\Java\JavaSpringWeb\jsb_webshop_t2406e> git add .
+warning: in the working copy of '.gitattributes', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '.gitignore', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '.mvn/wrapper/maven-wrapper.properties', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'mvnw.cmd', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'pom.xml', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/main/java/exam/jsb_webshop_t2406e/JsbWebshopT2406eApplication.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/main/java/exam/jsb_webshop_t2406e/ServletInitializer.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/main/resources/application.properties', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/test/java/exam/jsb_webshop_t2406e/JsbWebshopT2406eApplicationTests.java', LF will be replaced by CRLF the next time Git touches it
+PS C:\Users\Public\Java\JavaSpringWeb\jsb_webshop_t2406e> git commit -m
+error: switch `m' requires a value
+PS C:\Users\Public\Java\JavaSpringWeb\jsb_webshop_t2406e> git commit -m "Lần đầu tạo đồ án kì 2 lớp T2406E"
+Author identity unknown
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: unable to auto-detect email address (got 'vst88@HP.(none)')
+PS C:\Users\Public\Java\JavaSpringWeb\jsb_webshop_t2406e> git config --global user.email "anhgiaotiep@gmail.com"
+PS C:\Users\Public\Java\JavaSpringWeb\jsb_webshop_t2406e> git config --global user.name "phuongvh"
+PS C:\Users\Public\Java\JavaSpringWeb\jsb_webshop_t2406e> 
+PS C:\Users\Public\Java\JavaSpringWeb\jsb_webshop_t2406e>
+PS C:\Users\Public\Java\JavaSpringWeb\jsb_webshop_t2406e> git commit -m "Lần đầu tạo đồ án kì 2 lớp T2406E"     
+[master (root-commit) c87c0d6] Lần đầu tạo đồ án kì 2 lớp T2406E
+ 18 files changed, 895 insertions(+)
+ create mode 100644 .gitattributes
+ create mode 100644 .gitignore
+ create mode 100644 .mvn/wrapper/maven-wrapper.properties
+ create mode 100644 mvnw
+ create mode 100644 mvnw.cmd
+ create mode 100644 pom.xml
+ create mode 100644 src/main/java/exam/jsb_webshop_t2406e/JsbWebshopT2406eApplication.java
+ create mode 100644 src/main/java/exam/jsb_webshop_t2406e/ServletInitializer.java
+ create mode 100644 src/main/java/exam/jsb_webshop_t2406e/SessionHelper.java
+ create mode 100644 src/main/java/exam/jsb_webshop_t2406e/exception/ErrorMessage.java
+ create mode 100644 src/main/java/exam/jsb_webshop_t2406e/exception/ResourceNotFoundException.java
+ create mode 100644 src/main/java/exam/jsb_webshop_t2406e/exception/RestControllerExceptionHandler.java
+ create mode 100644 src/main/resources/application.properties
+ create mode 100644 src/main/resources/templates/error-400.html
+ create mode 100644 src/main/resources/templates/error-404.html
+ create mode 100644 src/main/resources/templates/error-500.html
+ create mode 100644 src/main/resources/templates/error.html
+ create mode 100644 src/test/java/exam/jsb_webshop_t2406e/JsbWebshopT2406eApplicationTests.java
+PS C:\Users\Public\Java\JavaSpringWeb\jsb_webshop_t2406e> 
+PS C:\Users\Public\Java\JavaSpringWeb\jsb_webshop_t2406e>
+PS C:\Users\Public\Java\JavaSpringWeb\jsb_webshop_t2406e> git remote add origin https://github.com/phuongvh/jsb_webshop_t2406e.git
+PS C:\Users\Public\Java\JavaSpringWeb\jsb_webshop_t2406e> 
+PS C:\Users\Public\Java\JavaSpringWeb\jsb_webshop_t2406e> git push -u origin main
+error: src refspec main does not match any
+error: failed to push some refs to 'https://github.com/phuongvh/jsb_webshop_t2406e.git'
+PS C:\Users\Public\Java\JavaSpringWeb\jsb_webshop_t2406e>
+ create mode 100644 src/test/java/exam/jsb_webshop_t2406e/JsbWebshopT2406eApplicationTests.java
+PS C:\Users\Public\Java\JavaSpringWeb\jsb_webshop_t2406e>
+PS C:\Users\Public\Java\JavaSpringWeb\jsb_webshop_t2406e>
+PS C:\Users\Public\Java\JavaSpringWeb\jsb_webshop_t2406e> git remote add origin https://github.com/phuongvh/jsb_webshop_t2406e.git
+PS C:\Users\Public\Java\JavaSpringWeb\jsb_webshop_t2406e>
+PS C:\Users\Public\Java\JavaSpringWeb\jsb_webshop_t2406e> git push -u origin main
+error: src refspec main does not match any
+error: failed to push some refs to 'https://github.com/phuongvh/jsb_webshop_t2406e.git'
+PS C:\Users\Public\Java\JavaSpringWeb\jsb_webshop_t2406e>
+PS C:\Users\Public\Java\JavaSpringWeb\jsb_webshop_t2406e> git push -u origin main
+error: src refspec main does not match any
+error: failed to push some refs to 'https://github.com/phuongvh/jsb_webshop_t2406e.git'
+PS C:\Users\Public\Java\JavaSpringWeb\jsb_webshop_t2406e>
+PS C:\Users\Public\Java\JavaSpringWeb\jsb_webshop_t2406e>
+PS C:\Users\Public\Java\JavaSpringWeb\jsb_webshop_t2406e>
+PS C:\Users\Public\Java\JavaSpringWeb\jsb_webshop_t2406e> git branch -M main
+PS C:\Users\Public\Java\JavaSpringWeb\jsb_webshop_t2406e> git push -u origin main
+Enumerating objects: 34, done.
+Counting objects: 100% (34/34), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (27/27), done.
+Writing objects: 100% (34/34), 13.74 KiB | 879.00 KiB/s, done.
+Total 34 (delta 2), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (2/2), done.
+To https://github.com/phuongvh/jsb_webshop_t2406e.git
+ * [new branch]      main -> main
+branch 'main' set up to track 'origin/main'.
+PS C:\Users\Public\Java\JavaSpringWeb\jsb_webshop_t2406e> git add .
+PS C:\Users\Public\Java\JavaSpringWeb\jsb_webshop_t2406e> git commit -m "Bổ sung lớp kiểm soát lỗi cho web app mvc html"
+[main deb5240] Bổ sung lớp kiểm soát lỗi cho web app mvc html
+ 1 file changed, 58 insertions(+)
+ create mode 100644 src/main/java/exam/jsb_webshop_t2406e/error/MvcErrorController.java
+PS C:\Users\Public\Java\JavaSpringWeb\jsb_webshop_t2406e>
+PS C:\Users\Public\Java\JavaSpringWeb\jsb_webshop_t2406e> git push origin main
+Enumerating objects: 15, done.
+Counting objects: 100% (15/15), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (7/7), done.
+Writing objects: 100% (9/9), 1.44 KiB | 493.00 KiB/s, done.
+Total 9 (delta 2), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To https://github.com/phuongvh/jsb_webshop_t2406e.git
+   c87c0d6..deb5240  main -> main
+PS C:\Users\Public\Java\JavaSpringWeb\jsb_webshop_t2406e>
+
+Lần đầu sao chép dự án:
+git clone "http://path to project"
+
+Lần sau, có thay đổi code thì chỉ cần chạy lệnh này:
+git pull origin main

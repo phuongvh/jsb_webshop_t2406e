@@ -1,0 +1,1 @@
+Liệu Có Nên CustomerTestController, cho customer và employee vào chung một bảng là user.
