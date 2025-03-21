@@ -160,6 +160,29 @@ public class WebSecurityConfig
     // http://localhost:8080/customer/register
     // http://localhost:8080/customer/account
 
+  @Bean
+  @Order(2)
+  SecurityFilterChain customerFilterChain(HttpSecurity http) throws Exception 
+  {
+      http.securityMatcher("/customer/**")
+          .authorizeHttpRequests( auth -> auth
+                .requestMatchers("/customer/test").permitAll()
+                .requestMatchers("/customer/login").permitAll()
+                .requestMatchers("/customer/loginpost").permitAll()
+                .requestMatchers(HttpMethod.POST, "/customer/loginpost").permitAll() // vẫn failed
+                .requestMatchers("/customer/**").authenticated()
+            
+          )
+          .formLogin(form->form
+              .loginPage("/customer/login") // Hiển thị thành công form
+              .defaultSuccessUrl("/customer/test") 
+              .permitAll()
+          )
+          
+      ;
+      return http.build();
+  } 
+
   
 }// end class
 

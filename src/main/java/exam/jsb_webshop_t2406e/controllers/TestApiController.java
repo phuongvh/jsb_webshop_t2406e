@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
 @RequestMapping("/api/test")
-public class TestController {
+public class TestApiController {
 
   @GetMapping
   public String testContent(){

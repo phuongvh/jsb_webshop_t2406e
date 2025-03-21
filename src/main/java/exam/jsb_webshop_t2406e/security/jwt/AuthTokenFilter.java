@@ -60,6 +60,7 @@ public class AuthTokenFilter extends OncePerRequestFilter {
       logger.error("Cannot set user authentication: {}", e);
     }
 
+    // bổ sung mã vào đây:
     filterChain.doFilter(request, response);
   }
 
