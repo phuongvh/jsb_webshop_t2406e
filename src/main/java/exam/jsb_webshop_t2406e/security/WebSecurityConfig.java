@@ -130,7 +130,6 @@ public class WebSecurityConfig
   {
       http.securityMatcher("/admin/**")
           .authorizeHttpRequests( auth -> auth
-                // .requestMatchers("/admin/login").permitAll()
                 .requestMatchers("/admin/loginform").permitAll()
                 .requestMatchers("/admin/logout").permitAll()
                 .requestMatchers("/admin/**").authenticated()

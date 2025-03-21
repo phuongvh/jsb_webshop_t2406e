@@ -21,8 +21,8 @@ import exam.jsb_webshop_t2406e.security.jwt.JwtUtils;
 public class AdminTestController 
 {
 
-     @Autowired
-    JwtUtils jwtUtils;
+    @Autowired
+    JwtUtils jwtUtils; // dòng này là bắt buộc, nếu không sẽ bị lỗi 403 khi submit Form Login !!!
 
     @Autowired
     private HttpServletRequest request;
