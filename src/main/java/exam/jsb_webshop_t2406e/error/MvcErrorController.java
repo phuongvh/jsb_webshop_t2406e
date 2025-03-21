@@ -11,7 +11,25 @@ import jakarta.servlet.http.HttpServletRequest;
 // Xử lý lỗi chung chung, không phân loại
 
 /**
- * @author Le Quang Huy
+ * @author Fpt Aptech T2406E
+ * 
+ * MvcErrorController này chẳng có tác dụng gì, khi trong dự án có
+ * RestControllerAdvice
+   public class RestControllerExceptionHandler.
+
+   Tức là MvcErrorController rules bị viết đè bởi RestControllerExceptionHandler. rules
+   https://stackoverflow.com/questions/43325685/spring-different-exception-handler-for-restcontroller-and-controller
+
+   2025.03.20: đã tìm ra cách khắc phục:
+   RestControllerAdvice(annotations = RestController.class)
+    public class RestControllerExceptionHandler 
+
+    Viết mã như thế thì sẽ loại bỏ ảnh hưởng của RestControllerExceptionHandler đối với các lỗi
+    phát sinh bởi MvcController (view thymeleaf html controller)
+
+    Vai trò của ErrorController là kiểm soát thông báo lỗi trả về cho người dùng
+    trình duyệt web. Trang báo lỗi sẽ được trang hoàng đẹp mắt, thân thiện
+    trước khi nó thực sự đến tay người dùng.
  */
 
 @Controller

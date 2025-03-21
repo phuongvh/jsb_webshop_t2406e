@@ -1,0 +1,13 @@
+DỄ
+1. Nếu sử dụng chung cách đăng nhập với Employee thì
+Customer sẽ chỉ phải sử dụng giao diện Login Logout khác mà thôi.
+
+Còn luồng quy trình đăng ký, đăng nhập giống hệt User.
+
+KHÓ
+2. Nếu Customer mà đăng kí chỉ có email và password
+thì lập trình viên phải làm ngầm bên dưới việc sau:
+Copy email đăng ký vào username, dùng chính email để làm username.
+Sau đó khi đăng nhập: thì dùng label là email, nhưng thực chất thẻ <input>
+hứng giá trị của username:
+        <input name="username" type="email"/>

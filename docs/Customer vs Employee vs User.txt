@@ -1,0 +1,44 @@
+Việc gộp chung `Customer` và `Employee` vào một bảng `User` trong Spring Boot Security là một quyết định thiết kế cần được cân nhắc kỹ lưỡng, tùy thuộc vào yêu cầu cụ thể của ứng dụng. Dưới đây là một số ưu và nhược điểm để bạn tham khảo:
+
+**Ưu điểm:**
+
+* **Đơn giản hóa mô hình dữ liệu:**
+    * Gộp chung giúp giảm số lượng bảng, làm cho mô hình dữ liệu trở nên đơn giản và dễ quản lý hơn.
+    * Việc quản lý người dùng (user management) cũng trở nên tập trung hơn.
+* **Dễ dàng quản lý quyền truy cập:**
+    * Spring Security hoạt động tốt với mô hình người dùng đơn giản. Việc có một bảng `User` duy nhất giúp việc quản lý quyền truy cập trở nên dễ dàng hơn.
+    * Giảm số lượng thao tác cần thiết để quản lý người dùng.
+* **Giảm thiểu sự trùng lặp code:**
+    * Nếu `Customer` và `Employee` có nhiều thuộc tính chung, việc gộp chung giúp tránh trùng lặp code.
+
+**Nhược điểm:**
+
+* **Khó khăn trong việc mở rộng:**
+    * Khi ứng dụng phát triển, `Customer` và `Employee` có thể có những thuộc tính và hành vi khác nhau. Việc gộp chung có thể gây khó khăn trong việc mở rộng và bảo trì.
+    * Ví dụ, nhân viên sẽ có các thông tin về lương thưởng, và phòng ban, trong khi đó khách hàng sẽ có các thông tin về lịch sử mua hàng, và địa chỉ giao hàng.
+* **Mất tính rõ ràng của mô hình:**
+    * Việc gộp chung có thể làm mất đi tính rõ ràng của mô hình, khiến cho việc hiểu và bảo trì code trở nên khó khăn hơn.
+    * Khi bảng User có quá nhiều cột, việc truy vấn thông tin, sẽ trở nên phức tạp.
+* **Vấn đề về hiệu năng:**
+    * Nếu bảng `User` trở nên quá lớn, việc truy vấn dữ liệu có thể ảnh hưởng đến hiệu năng của ứng dụng.
+
+**Khi nào nên gộp chung:**
+
+* Khi `Customer` và `Employee` có nhiều thuộc tính chung và ít khác biệt.
+* Khi ứng dụng có quy mô nhỏ và đơn giản.
+* Khi bạn muốn ưu tiên sự đơn giản và dễ quản lý.
+
+**Khi nào nên tách riêng:**
+
+* Khi `Customer` và `Employee` có nhiều thuộc tính và hành vi khác nhau.
+* Khi ứng dụng có quy mô lớn và phức tạp.
+* Khi bạn muốn ưu tiên tính rõ ràng, khả năng mở rộng và hiệu năng.
+
+**Giải pháp trung gian:**
+
+* Sử dụng mô hình kế thừa (inheritance) hoặc thành phần (composition) để chia sẻ các thuộc tính chung giữa `Customer` và `Employee` mà không cần gộp chung vào một bảng.
+* Sử dụng cơ chế Role, và Authority trong Spring Security, để phân quyền rõ ràng, giữa các đối tượng người dùng.
+
+**Kết luận:**
+
+Việc gộp chung hay tách riêng phụ thuộc vào yêu cầu cụ thể của ứng dụng. Hãy cân nhắc kỹ lưỡng các ưu và nhược điểm trước khi đưa ra quyết định.

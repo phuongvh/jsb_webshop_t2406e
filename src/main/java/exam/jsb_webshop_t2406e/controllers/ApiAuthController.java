@@ -41,7 +41,7 @@ import exam.jsb_webshop_t2406e.security.services.UserDetailsImpl;
 // https://security.stackexchange.com/questions/130548/should-jwt-token-be-stored-in-a-cookie-header-or-body
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
-@RequestMapping("/api/auth")
+@RequestMapping("/api/auth") // test thử cơ chế bắt lỗi: http://localhost:6868/api/xxxyyy
 public class ApiAuthController 
 {
   @Autowired

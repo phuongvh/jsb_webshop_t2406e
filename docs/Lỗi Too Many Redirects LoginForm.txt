@@ -1,0 +1,767 @@
+2025-03-19T23:11:43.724+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2025-03-19T23:11:43.732+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/admin/loginform", parameters={}
+2025-03-19T23:11:43.732+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to exam.jsb_webshop_t2406e.controllers.AdminTestController#loginForm(Model)
+2025-03-19T23:11:43.734+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-2] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-03-19T23:11:43.734+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-2] o.s.w.servlet.view.InternalResourceView  : View name [loginform3.html], model {}
+2025-03-19T23:11:43.734+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-2] o.s.w.servlet.view.InternalResourceView  : Forwarding to [loginform3.html]
+2025-03-19T23:11:43.736+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2025-03-19T23:11:43.739+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/admin/loginform", parameters={}
+2025-03-19T23:11:43.739+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to exam.jsb_webshop_t2406e.controllers.AdminTestController#loginForm(Model)
+2025-03-19T23:11:43.740+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-3] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-03-19T23:11:43.742+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-3] o.s.w.servlet.view.InternalResourceView  : View name [loginform3.html], model {}
+2025-03-19T23:11:43.743+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-3] o.s.w.servlet.view.InternalResourceView  : Forwarding to [loginform3.html]
+2025-03-19T23:11:43.744+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2025-03-19T23:11:43.751+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/admin/loginform", parameters={}
+2025-03-19T23:11:43.752+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to exam.jsb_webshop_t2406e.controllers.AdminTestController#loginForm(Model)
+2025-03-19T23:11:43.752+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-4] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-03-19T23:11:43.754+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-4] o.s.w.servlet.view.InternalResourceView  : View name [loginform3.html], model {}
+2025-03-19T23:11:43.754+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-4] o.s.w.servlet.view.InternalResourceView  : Forwarding to [loginform3.html]
+2025-03-19T23:11:43.755+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2025-03-19T23:11:43.761+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/admin/loginform", parameters={}
+2025-03-19T23:11:43.762+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to exam.jsb_webshop_t2406e.controllers.AdminTestController#loginForm(Model)
+2025-03-19T23:11:43.763+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-5] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-03-19T23:11:43.764+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-5] o.s.w.servlet.view.InternalResourceView  : View name [loginform3.html], model {}
+2025-03-19T23:11:43.765+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-5] o.s.w.servlet.view.InternalResourceView  : Forwarding to [loginform3.html]
+2025-03-19T23:11:43.768+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2025-03-19T23:11:43.774+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/admin/loginform", parameters={}
+2025-03-19T23:11:43.776+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to exam.jsb_webshop_t2406e.controllers.AdminTestController#loginForm(Model)
+2025-03-19T23:11:43.781+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-6] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-03-19T23:11:43.781+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-6] o.s.w.servlet.view.InternalResourceView  : View name [loginform3.html], model {}
+2025-03-19T23:11:43.782+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-6] o.s.w.servlet.view.InternalResourceView  : Forwarding to [loginform3.html]
+2025-03-19T23:11:43.783+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2025-03-19T23:11:43.787+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/admin/loginform", parameters={}
+2025-03-19T23:11:43.788+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to exam.jsb_webshop_t2406e.controllers.AdminTestController#loginForm(Model)
+2025-03-19T23:11:43.789+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-7] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-03-19T23:11:43.790+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-7] o.s.w.servlet.view.InternalResourceView  : View name [loginform3.html], model {}
+2025-03-19T23:11:43.790+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-7] o.s.w.servlet.view.InternalResourceView  : Forwarding to [loginform3.html]
+2025-03-19T23:11:43.795+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2025-03-19T23:11:43.800+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/admin/loginform", parameters={}
+2025-03-19T23:11:43.800+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to exam.jsb_webshop_t2406e.controllers.AdminTestController#loginForm(Model)
+2025-03-19T23:11:43.802+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-8] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-03-19T23:11:43.802+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-8] o.s.w.servlet.view.InternalResourceView  : View name [loginform3.html], model {}
+2025-03-19T23:11:43.803+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-8] o.s.w.servlet.view.InternalResourceView  : Forwarding to [loginform3.html]
+2025-03-19T23:11:43.804+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2025-03-19T23:11:43.808+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/admin/loginform", parameters={}
+2025-03-19T23:11:43.811+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to exam.jsb_webshop_t2406e.controllers.AdminTestController#loginForm(Model)
+2025-03-19T23:11:43.812+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-9] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-03-19T23:11:43.813+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-9] o.s.w.servlet.view.InternalResourceView  : View name [loginform3.html], model {}
+2025-03-19T23:11:43.813+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-9] o.s.w.servlet.view.InternalResourceView  : Forwarding to [loginform3.html]
+2025-03-19T23:11:43.817+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2025-03-19T23:11:43.821+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [io-6868-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/admin/loginform", parameters={}
+2025-03-19T23:11:43.821+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [io-6868-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to exam.jsb_webshop_t2406e.controllers.AdminTestController#loginForm(Model)
+2025-03-19T23:11:43.822+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [io-6868-exec-10] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-03-19T23:11:43.822+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [io-6868-exec-10] o.s.w.servlet.view.InternalResourceView  : View name [loginform3.html], model {}
+2025-03-19T23:11:43.823+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [io-6868-exec-10] o.s.w.servlet.view.InternalResourceView  : Forwarding to [loginform3.html]
+2025-03-19T23:11:43.824+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [io-6868-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2025-03-19T23:11:43.848+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/admin/loginform", parameters={}
+2025-03-19T23:11:43.849+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to exam.jsb_webshop_t2406e.controllers.AdminTestController#loginForm(Model)
+2025-03-19T23:11:43.851+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-2] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-03-19T23:11:43.852+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-2] o.s.w.servlet.view.InternalResourceView  : View name [loginform3.html], model {}
+2025-03-19T23:11:43.852+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-2] o.s.w.servlet.view.InternalResourceView  : Forwarding to [loginform3.html]
+2025-03-19T23:11:43.853+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2025-03-19T23:11:43.856+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/admin/loginform", parameters={}
+2025-03-19T23:11:43.856+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to exam.jsb_webshop_t2406e.controllers.AdminTestController#loginForm(Model)
+2025-03-19T23:11:43.858+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-3] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-03-19T23:11:43.858+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-3] o.s.w.servlet.view.InternalResourceView  : View name [loginform3.html], model {}
+2025-03-19T23:11:43.861+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-3] o.s.w.servlet.view.InternalResourceView  : Forwarding to [loginform3.html]
+2025-03-19T23:11:43.862+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2025-03-19T23:11:43.867+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/admin/loginform", parameters={}
+2025-03-19T23:11:43.868+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to exam.jsb_webshop_t2406e.controllers.AdminTestController#loginForm(Model)
+2025-03-19T23:11:43.869+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-4] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-03-19T23:11:43.869+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-4] o.s.w.servlet.view.InternalResourceView  : View name [loginform3.html], model {}
+2025-03-19T23:11:43.869+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-4] o.s.w.servlet.view.InternalResourceView  : Forwarding to [loginform3.html]
+2025-03-19T23:11:43.871+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2025-03-19T23:11:43.874+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/admin/loginform", parameters={}
+2025-03-19T23:11:43.875+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to exam.jsb_webshop_t2406e.controllers.AdminTestController#loginForm(Model)
+2025-03-19T23:11:43.876+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-5] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-03-19T23:11:43.877+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-5] o.s.w.servlet.view.InternalResourceView  : View name [loginform3.html], model {}
+2025-03-19T23:11:43.879+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-5] o.s.w.servlet.view.InternalResourceView  : Forwarding to [loginform3.html]
+2025-03-19T23:11:43.881+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2025-03-19T23:11:43.886+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/admin/loginform", parameters={}
+2025-03-19T23:11:43.886+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to exam.jsb_webshop_t2406e.controllers.AdminTestController#loginForm(Model)
+2025-03-19T23:11:43.887+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-6] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-03-19T23:11:43.888+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-6] o.s.w.servlet.view.InternalResourceView  : View name [loginform3.html], model {}
+2025-03-19T23:11:43.888+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-6] o.s.w.servlet.view.InternalResourceView  : Forwarding to [loginform3.html]
+2025-03-19T23:11:43.889+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2025-03-19T23:11:43.893+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/admin/loginform", parameters={}
+2025-03-19T23:11:43.893+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to exam.jsb_webshop_t2406e.controllers.AdminTestController#loginForm(Model)
+2025-03-19T23:11:43.895+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-7] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-03-19T23:11:43.896+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-7] o.s.w.servlet.view.InternalResourceView  : View name [loginform3.html], model {}
+2025-03-19T23:11:43.896+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-7] o.s.w.servlet.view.InternalResourceView  : Forwarding to [loginform3.html]
+2025-03-19T23:11:43.900+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2025-03-19T23:11:43.904+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/admin/loginform", parameters={}
+2025-03-19T23:11:43.904+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to exam.jsb_webshop_t2406e.controllers.AdminTestController#loginForm(Model)
+2025-03-19T23:11:43.905+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-8] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-03-19T23:11:43.905+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-8] o.s.w.servlet.view.InternalResourceView  : View name [loginform3.html], model {}
+2025-03-19T23:11:43.906+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-8] o.s.w.servlet.view.InternalResourceView  : Forwarding to [loginform3.html]
+2025-03-19T23:11:43.907+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2025-03-19T23:11:43.911+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/admin/loginform", parameters={}
+2025-03-19T23:11:43.913+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to exam.jsb_webshop_t2406e.controllers.AdminTestController#loginForm(Model)
+2025-03-19T23:11:43.914+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-9] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-03-19T23:11:43.916+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-9] o.s.w.servlet.view.InternalResourceView  : View name [loginform3.html], model {}
+2025-03-19T23:11:43.916+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-9] o.s.w.servlet.view.InternalResourceView  : Forwarding to [loginform3.html]
+2025-03-19T23:11:43.918+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2025-03-19T23:11:43.922+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [io-6868-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/admin/loginform", parameters={}
+2025-03-19T23:11:43.923+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [io-6868-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to exam.jsb_webshop_t2406e.controllers.AdminTestController#loginForm(Model)
+2025-03-19T23:11:43.925+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [io-6868-exec-10] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-03-19T23:11:43.925+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [io-6868-exec-10] o.s.w.servlet.view.InternalResourceView  : View name [loginform3.html], model {}
+2025-03-19T23:11:43.925+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [io-6868-exec-10] o.s.w.servlet.view.InternalResourceView  : Forwarding to [loginform3.html]
+2025-03-19T23:11:43.930+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [io-6868-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2025-03-19T23:11:43.934+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/admin/loginform", parameters={}
+2025-03-19T23:11:43.935+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to exam.jsb_webshop_t2406e.controllers.AdminTestController#loginForm(Model)
+2025-03-19T23:11:43.936+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-1] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-03-19T23:11:43.936+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-1] o.s.w.servlet.view.InternalResourceView  : View name [loginform3.html], model {}
+2025-03-19T23:11:43.936+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-1] o.s.w.servlet.view.InternalResourceView  : Forwarding to [loginform3.html]
+2025-03-19T23:11:43.937+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2025-03-19T23:11:43.940+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/admin/loginform", parameters={}
+2025-03-19T23:11:43.941+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to exam.jsb_webshop_t2406e.controllers.AdminTestController#loginForm(Model)
+2025-03-19T23:11:43.942+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-2] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-03-19T23:11:43.944+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-2] o.s.w.servlet.view.InternalResourceView  : View name [loginform3.html], model {}
+2025-03-19T23:11:43.944+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-2] o.s.w.servlet.view.InternalResourceView  : Forwarding to [loginform3.html]
+2025-03-19T23:11:43.946+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2025-03-19T23:11:43.952+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/admin/loginform", parameters={}
+2025-03-19T23:11:43.953+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to exam.jsb_webshop_t2406e.controllers.AdminTestController#loginForm(Model)
+2025-03-19T23:11:43.954+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-3] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-03-19T23:11:43.954+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-3] o.s.w.servlet.view.InternalResourceView  : View name [loginform3.html], model {}
+2025-03-19T23:11:43.954+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-3] o.s.w.servlet.view.InternalResourceView  : Forwarding to [loginform3.html]
+2025-03-19T23:11:43.956+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2025-03-19T23:11:43.961+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/admin/loginform", parameters={}
+2025-03-19T23:11:43.962+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to exam.jsb_webshop_t2406e.controllers.AdminTestController#loginForm(Model)
+2025-03-19T23:11:43.962+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-4] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-03-19T23:11:43.964+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-4] o.s.w.servlet.view.InternalResourceView  : View name [loginform3.html], model {}
+2025-03-19T23:11:43.964+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-4] o.s.w.servlet.view.InternalResourceView  : Forwarding to [loginform3.html]
+2025-03-19T23:11:43.970+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2025-03-19T23:11:43.973+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/admin/loginform", parameters={}
+2025-03-19T23:11:43.974+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to exam.jsb_webshop_t2406e.controllers.AdminTestController#loginForm(Model)
+2025-03-19T23:11:43.977+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-5] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-03-19T23:11:43.979+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-5] o.s.w.servlet.view.InternalResourceView  : View name [loginform3.html], model {}
+2025-03-19T23:11:43.979+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-5] o.s.w.servlet.view.InternalResourceView  : Forwarding to [loginform3.html]
+2025-03-19T23:11:43.981+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2025-03-19T23:11:43.983+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/admin/loginform", parameters={}
+2025-03-19T23:11:43.985+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to exam.jsb_webshop_t2406e.controllers.AdminTestController#loginForm(Model)
+2025-03-19T23:11:43.986+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-6] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-03-19T23:11:43.986+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-6] o.s.w.servlet.view.InternalResourceView  : View name [loginform3.html], model {}
+2025-03-19T23:11:43.986+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-6] o.s.w.servlet.view.InternalResourceView  : Forwarding to [loginform3.html]
+2025-03-19T23:11:43.987+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2025-03-19T23:11:43.990+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/admin/loginform", parameters={}
+2025-03-19T23:11:43.990+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to exam.jsb_webshop_t2406e.controllers.AdminTestController#loginForm(Model)
+2025-03-19T23:11:43.991+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-7] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-03-19T23:11:43.991+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-7] o.s.w.servlet.view.InternalResourceView  : View name [loginform3.html], model {}
+2025-03-19T23:11:43.991+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-7] o.s.w.servlet.view.InternalResourceView  : Forwarding to [loginform3.html]
+2025-03-19T23:11:43.995+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2025-03-19T23:11:44.001+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/admin/loginform", parameters={}
+2025-03-19T23:11:44.002+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to exam.jsb_webshop_t2406e.controllers.AdminTestController#loginForm(Model)
+2025-03-19T23:11:44.004+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-8] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-03-19T23:11:44.004+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-8] o.s.w.servlet.view.InternalResourceView  : View name [loginform3.html], model {}
+2025-03-19T23:11:44.004+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-8] o.s.w.servlet.view.InternalResourceView  : Forwarding to [loginform3.html]
+2025-03-19T23:11:44.005+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2025-03-19T23:11:44.010+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/admin/loginform", parameters={}
+2025-03-19T23:11:44.011+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to exam.jsb_webshop_t2406e.controllers.AdminTestController#loginForm(Model)
+2025-03-19T23:11:44.012+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-9] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-03-19T23:11:44.012+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-9] o.s.w.servlet.view.InternalResourceView  : View name [loginform3.html], model {}
+2025-03-19T23:11:44.012+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-9] o.s.w.servlet.view.InternalResourceView  : Forwarding to [loginform3.html]
+2025-03-19T23:11:44.017+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2025-03-19T23:11:44.022+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [io-6868-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/admin/loginform", parameters={}
+2025-03-19T23:11:44.023+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [io-6868-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to exam.jsb_webshop_t2406e.controllers.AdminTestController#loginForm(Model)
+2025-03-19T23:11:44.023+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [io-6868-exec-10] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-03-19T23:11:44.024+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [io-6868-exec-10] o.s.w.servlet.view.InternalResourceView  : View name [loginform3.html], model {}
+2025-03-19T23:11:44.024+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [io-6868-exec-10] o.s.w.servlet.view.InternalResourceView  : Forwarding to [loginform3.html]
+2025-03-19T23:11:44.027+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [io-6868-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2025-03-19T23:11:45.084+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/admin/loginform", parameters={}
+2025-03-19T23:11:45.085+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to exam.jsb_webshop_t2406e.controllers.AdminTestController#loginForm(Model)
+2025-03-19T23:11:45.087+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-1] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-03-19T23:11:45.088+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-1] o.s.w.servlet.view.InternalResourceView  : View name [loginform3.html], model {}
+2025-03-19T23:11:45.089+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-1] o.s.w.servlet.view.InternalResourceView  : Forwarding to [loginform3.html]
+2025-03-19T23:11:45.097+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2025-03-19T23:11:45.103+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/admin/loginform", parameters={}
+2025-03-19T23:11:45.104+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to exam.jsb_webshop_t2406e.controllers.AdminTestController#loginForm(Model)
+2025-03-19T23:11:45.105+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-2] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-03-19T23:11:45.105+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-2] o.s.w.servlet.view.InternalResourceView  : View name [loginform3.html], model {}
+2025-03-19T23:11:45.105+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-2] o.s.w.servlet.view.InternalResourceView  : Forwarding to [loginform3.html]
+2025-03-19T23:11:45.107+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2025-03-19T23:11:45.118+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/admin/loginform", parameters={}
+2025-03-19T23:11:45.120+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to exam.jsb_webshop_t2406e.controllers.AdminTestController#loginForm(Model)
+2025-03-19T23:11:45.121+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-3] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-03-19T23:11:45.121+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-3] o.s.w.servlet.view.InternalResourceView  : View name [loginform3.html], model {}
+2025-03-19T23:11:45.122+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-3] o.s.w.servlet.view.InternalResourceView  : Forwarding to [loginform3.html]
+2025-03-19T23:11:45.123+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2025-03-19T23:11:45.138+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/admin/loginform", parameters={}
+2025-03-19T23:11:45.139+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to exam.jsb_webshop_t2406e.controllers.AdminTestController#loginForm(Model)
+2025-03-19T23:11:45.141+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-4] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-03-19T23:11:45.141+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-4] o.s.w.servlet.view.InternalResourceView  : View name [loginform3.html], model {}
+2025-03-19T23:11:45.141+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-4] o.s.w.servlet.view.InternalResourceView  : Forwarding to [loginform3.html]
+2025-03-19T23:11:45.148+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2025-03-19T23:11:45.153+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/admin/loginform", parameters={}
+2025-03-19T23:11:45.154+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to exam.jsb_webshop_t2406e.controllers.AdminTestController#loginForm(Model)
+2025-03-19T23:11:45.155+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-5] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-03-19T23:11:45.156+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-5] o.s.w.servlet.view.InternalResourceView  : View name [loginform3.html], model {}
+2025-03-19T23:11:45.156+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-5] o.s.w.servlet.view.InternalResourceView  : Forwarding to [loginform3.html]
+2025-03-19T23:11:45.157+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2025-03-19T23:11:45.164+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/admin/loginform", parameters={}
+2025-03-19T23:11:45.165+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to exam.jsb_webshop_t2406e.controllers.AdminTestController#loginForm(Model)
+2025-03-19T23:11:45.166+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-6] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-03-19T23:11:45.167+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-6] o.s.w.servlet.view.InternalResourceView  : View name [loginform3.html], model {}
+2025-03-19T23:11:45.168+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-6] o.s.w.servlet.view.InternalResourceView  : Forwarding to [loginform3.html]
+2025-03-19T23:11:45.172+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2025-03-19T23:11:45.186+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/admin/loginform", parameters={}
+2025-03-19T23:11:45.187+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to exam.jsb_webshop_t2406e.controllers.AdminTestController#loginForm(Model)
+2025-03-19T23:11:45.188+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-7] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-03-19T23:11:45.188+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-7] o.s.w.servlet.view.InternalResourceView  : View name [loginform3.html], model {}
+2025-03-19T23:11:45.188+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-7] o.s.w.servlet.view.InternalResourceView  : Forwarding to [loginform3.html]
+2025-03-19T23:11:45.190+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2025-03-19T23:11:45.200+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/admin/loginform", parameters={}
+2025-03-19T23:11:45.200+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to exam.jsb_webshop_t2406e.controllers.AdminTestController#loginForm(Model)
+2025-03-19T23:11:45.201+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-8] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-03-19T23:11:45.201+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-8] o.s.w.servlet.view.InternalResourceView  : View name [loginform3.html], model {}
+2025-03-19T23:11:45.201+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-8] o.s.w.servlet.view.InternalResourceView  : Forwarding to [loginform3.html]
+2025-03-19T23:11:45.203+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2025-03-19T23:11:45.205+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/admin/loginform", parameters={}
+2025-03-19T23:11:45.206+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to exam.jsb_webshop_t2406e.controllers.AdminTestController#loginForm(Model)
+2025-03-19T23:11:45.207+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-9] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-03-19T23:11:45.207+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-9] o.s.w.servlet.view.InternalResourceView  : View name [loginform3.html], model {}
+2025-03-19T23:11:45.211+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-9] o.s.w.servlet.view.InternalResourceView  : Forwarding to [loginform3.html]
+2025-03-19T23:11:45.214+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2025-03-19T23:11:45.223+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [io-6868-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/admin/loginform", parameters={}
+2025-03-19T23:11:45.224+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [io-6868-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to exam.jsb_webshop_t2406e.controllers.AdminTestController#loginForm(Model)
+2025-03-19T23:11:45.224+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [io-6868-exec-10] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-03-19T23:11:45.225+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [io-6868-exec-10] o.s.w.servlet.view.InternalResourceView  : View name [loginform3.html], model {}
+2025-03-19T23:11:45.227+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [io-6868-exec-10] o.s.w.servlet.view.InternalResourceView  : Forwarding to [loginform3.html]
+2025-03-19T23:11:45.231+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [io-6868-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2025-03-19T23:11:45.235+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/admin/loginform", parameters={}
+2025-03-19T23:11:45.236+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to exam.jsb_webshop_t2406e.controllers.AdminTestController#loginForm(Model)
+2025-03-19T23:11:45.237+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-1] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-03-19T23:11:45.237+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-1] o.s.w.servlet.view.InternalResourceView  : View name [loginform3.html], model {}
+2025-03-19T23:11:45.237+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-1] o.s.w.servlet.view.InternalResourceView  : Forwarding to [loginform3.html]
+2025-03-19T23:11:45.239+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2025-03-19T23:11:45.244+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/admin/loginform", parameters={}
+2025-03-19T23:11:45.246+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to exam.jsb_webshop_t2406e.controllers.AdminTestController#loginForm(Model)
+2025-03-19T23:11:45.247+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-2] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-03-19T23:11:45.247+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-2] o.s.w.servlet.view.InternalResourceView  : View name [loginform3.html], model {}
+2025-03-19T23:11:45.247+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-2] o.s.w.servlet.view.InternalResourceView  : Forwarding to [loginform3.html]
+2025-03-19T23:11:45.249+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2025-03-19T23:11:45.252+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/admin/loginform", parameters={}
+2025-03-19T23:11:45.253+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to exam.jsb_webshop_t2406e.controllers.AdminTestController#loginForm(Model)
+2025-03-19T23:11:45.254+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-3] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-03-19T23:11:45.255+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-3] o.s.w.servlet.view.InternalResourceView  : View name [loginform3.html], model {}
+2025-03-19T23:11:45.255+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-3] o.s.w.servlet.view.InternalResourceView  : Forwarding to [loginform3.html]
+2025-03-19T23:11:45.256+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2025-03-19T23:11:45.264+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/admin/loginform", parameters={}
+2025-03-19T23:11:45.264+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to exam.jsb_webshop_t2406e.controllers.AdminTestController#loginForm(Model)
+2025-03-19T23:11:45.265+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-4] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-03-19T23:11:45.267+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-4] o.s.w.servlet.view.InternalResourceView  : View name [loginform3.html], model {}
+2025-03-19T23:11:45.267+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-4] o.s.w.servlet.view.InternalResourceView  : Forwarding to [loginform3.html]
+2025-03-19T23:11:45.268+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2025-03-19T23:11:45.272+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/admin/loginform", parameters={}
+2025-03-19T23:11:45.272+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to exam.jsb_webshop_t2406e.controllers.AdminTestController#loginForm(Model)
+2025-03-19T23:11:45.274+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-5] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-03-19T23:11:45.274+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-5] o.s.w.servlet.view.InternalResourceView  : View name [loginform3.html], model {}
+2025-03-19T23:11:45.277+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-5] o.s.w.servlet.view.InternalResourceView  : Forwarding to [loginform3.html]
+2025-03-19T23:11:45.281+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2025-03-19T23:11:45.284+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/admin/loginform", parameters={}
+2025-03-19T23:11:45.284+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to exam.jsb_webshop_t2406e.controllers.AdminTestController#loginForm(Model)
+2025-03-19T23:11:45.285+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-6] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-03-19T23:11:45.285+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-6] o.s.w.servlet.view.InternalResourceView  : View name [loginform3.html], model {}
+2025-03-19T23:11:45.285+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-6] o.s.w.servlet.view.InternalResourceView  : Forwarding to [loginform3.html]
+2025-03-19T23:11:45.286+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2025-03-19T23:11:45.288+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/admin/loginform", parameters={}
+2025-03-19T23:11:45.290+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to exam.jsb_webshop_t2406e.controllers.AdminTestController#loginForm(Model)
+2025-03-19T23:11:45.290+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-7] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-03-19T23:11:45.290+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-7] o.s.w.servlet.view.InternalResourceView  : View name [loginform3.html], model {}
+2025-03-19T23:11:45.291+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-7] o.s.w.servlet.view.InternalResourceView  : Forwarding to [loginform3.html]
+2025-03-19T23:11:45.294+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2025-03-19T23:11:45.298+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/admin/loginform", parameters={}
+2025-03-19T23:11:45.299+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to exam.jsb_webshop_t2406e.controllers.AdminTestController#loginForm(Model)
+2025-03-19T23:11:45.301+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-8] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-03-19T23:11:45.301+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-8] o.s.w.servlet.view.InternalResourceView  : View name [loginform3.html], model {}
+2025-03-19T23:11:45.302+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-8] o.s.w.servlet.view.InternalResourceView  : Forwarding to [loginform3.html]
+2025-03-19T23:11:45.303+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2025-03-19T23:11:45.308+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/admin/loginform", parameters={}
+2025-03-19T23:11:45.311+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to exam.jsb_webshop_t2406e.controllers.AdminTestController#loginForm(Model)
+2025-03-19T23:11:45.313+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-9] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-03-19T23:11:45.314+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-9] o.s.w.servlet.view.InternalResourceView  : View name [loginform3.html], model {}
+2025-03-19T23:11:45.314+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-9] o.s.w.servlet.view.InternalResourceView  : Forwarding to [loginform3.html]
+2025-03-19T23:11:45.316+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2025-03-19T23:11:45.320+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [io-6868-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/admin/loginform", parameters={}
+2025-03-19T23:11:45.320+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [io-6868-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to exam.jsb_webshop_t2406e.controllers.AdminTestController#loginForm(Model)
+2025-03-19T23:11:45.321+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [io-6868-exec-10] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-03-19T23:11:45.322+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [io-6868-exec-10] o.s.w.servlet.view.InternalResourceView  : View name [loginform3.html], model {}
+2025-03-19T23:11:45.322+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [io-6868-exec-10] o.s.w.servlet.view.InternalResourceView  : Forwarding to [loginform3.html]
+2025-03-19T23:11:45.323+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [io-6868-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2025-03-19T23:11:50.383+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/admin/loginform", parameters={}
+2025-03-19T23:11:50.384+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to exam.jsb_webshop_t2406e.controllers.AdminTestController#loginForm(Model)
+2025-03-19T23:11:50.385+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-1] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-03-19T23:11:50.389+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-1] o.s.w.servlet.view.InternalResourceView  : View name [loginform3.html], model {}
+2025-03-19T23:11:50.389+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-1] o.s.w.servlet.view.InternalResourceView  : Forwarding to [loginform3.html]
+2025-03-19T23:11:50.397+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2025-03-19T23:11:50.404+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/admin/loginform", parameters={}
+2025-03-19T23:11:50.405+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to exam.jsb_webshop_t2406e.controllers.AdminTestController#loginForm(Model)
+2025-03-19T23:11:50.406+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-2] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-03-19T23:11:50.406+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-2] o.s.w.servlet.view.InternalResourceView  : View name [loginform3.html], model {}
+2025-03-19T23:11:50.407+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-2] o.s.w.servlet.view.InternalResourceView  : Forwarding to [loginform3.html]
+2025-03-19T23:11:50.415+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2025-03-19T23:11:50.421+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/admin/loginform", parameters={}
+2025-03-19T23:11:50.431+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to exam.jsb_webshop_t2406e.controllers.AdminTestController#loginForm(Model)
+2025-03-19T23:11:50.433+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-3] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-03-19T23:11:50.433+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-3] o.s.w.servlet.view.InternalResourceView  : View name [loginform3.html], model {}
+2025-03-19T23:11:50.433+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-3] o.s.w.servlet.view.InternalResourceView  : Forwarding to [loginform3.html]
+2025-03-19T23:11:50.436+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2025-03-19T23:11:50.439+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/admin/loginform", parameters={}
+2025-03-19T23:11:50.440+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to exam.jsb_webshop_t2406e.controllers.AdminTestController#loginForm(Model)
+2025-03-19T23:11:50.441+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-4] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-03-19T23:11:50.441+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-4] o.s.w.servlet.view.InternalResourceView  : View name [loginform3.html], model {}
+2025-03-19T23:11:50.443+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-4] o.s.w.servlet.view.InternalResourceView  : Forwarding to [loginform3.html]
+2025-03-19T23:11:50.446+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2025-03-19T23:11:50.451+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/admin/loginform", parameters={}
+2025-03-19T23:11:50.452+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to exam.jsb_webshop_t2406e.controllers.AdminTestController#loginForm(Model)
+2025-03-19T23:11:50.454+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-5] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-03-19T23:11:50.454+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-5] o.s.w.servlet.view.InternalResourceView  : View name [loginform3.html], model {}
+2025-03-19T23:11:50.454+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-5] o.s.w.servlet.view.InternalResourceView  : Forwarding to [loginform3.html]
+2025-03-19T23:11:50.456+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2025-03-19T23:11:50.465+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/admin/loginform", parameters={}
+2025-03-19T23:11:50.466+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to exam.jsb_webshop_t2406e.controllers.AdminTestController#loginForm(Model)
+2025-03-19T23:11:50.466+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-6] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-03-19T23:11:50.467+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-6] o.s.w.servlet.view.InternalResourceView  : View name [loginform3.html], model {}
+2025-03-19T23:11:50.469+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-6] o.s.w.servlet.view.InternalResourceView  : Forwarding to [loginform3.html]
+2025-03-19T23:11:50.473+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2025-03-19T23:11:50.482+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/admin/loginform", parameters={}
+2025-03-19T23:11:50.484+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to exam.jsb_webshop_t2406e.controllers.AdminTestController#loginForm(Model)
+2025-03-19T23:11:50.486+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-7] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-03-19T23:11:50.486+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-7] o.s.w.servlet.view.InternalResourceView  : View name [loginform3.html], model {}
+2025-03-19T23:11:50.487+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-7] o.s.w.servlet.view.InternalResourceView  : Forwarding to [loginform3.html]
+2025-03-19T23:11:50.490+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2025-03-19T23:11:50.496+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/admin/loginform", parameters={}
+2025-03-19T23:11:50.498+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to exam.jsb_webshop_t2406e.controllers.AdminTestController#loginForm(Model)
+2025-03-19T23:11:50.498+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-8] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-03-19T23:11:50.500+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-8] o.s.w.servlet.view.InternalResourceView  : View name [loginform3.html], model {}
+2025-03-19T23:11:50.500+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-8] o.s.w.servlet.view.InternalResourceView  : Forwarding to [loginform3.html]
+2025-03-19T23:11:50.502+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2025-03-19T23:11:50.505+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/admin/loginform", parameters={}
+2025-03-19T23:11:50.507+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to exam.jsb_webshop_t2406e.controllers.AdminTestController#loginForm(Model)
+2025-03-19T23:11:50.507+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-9] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-03-19T23:11:50.509+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-9] o.s.w.servlet.view.InternalResourceView  : View name [loginform3.html], model {}
+2025-03-19T23:11:50.510+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-9] o.s.w.servlet.view.InternalResourceView  : Forwarding to [loginform3.html]
+2025-03-19T23:11:50.514+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2025-03-19T23:11:50.516+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [io-6868-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/admin/loginform", parameters={}
+2025-03-19T23:11:50.516+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [io-6868-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to exam.jsb_webshop_t2406e.controllers.AdminTestController#loginForm(Model)
+2025-03-19T23:11:50.517+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [io-6868-exec-10] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-03-19T23:11:50.517+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [io-6868-exec-10] o.s.w.servlet.view.InternalResourceView  : View name [loginform3.html], model {}
+2025-03-19T23:11:50.517+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [io-6868-exec-10] o.s.w.servlet.view.InternalResourceView  : Forwarding to [loginform3.html]
+2025-03-19T23:11:50.520+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [io-6868-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2025-03-19T23:11:50.523+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/admin/loginform", parameters={}
+2025-03-19T23:11:50.523+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to exam.jsb_webshop_t2406e.controllers.AdminTestController#loginForm(Model)
+2025-03-19T23:11:50.528+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-1] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-03-19T23:11:50.529+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-1] o.s.w.servlet.view.InternalResourceView  : View name [loginform3.html], model {}
+2025-03-19T23:11:50.530+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-1] o.s.w.servlet.view.InternalResourceView  : Forwarding to [loginform3.html]
+2025-03-19T23:11:50.532+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2025-03-19T23:11:50.536+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/admin/loginform", parameters={}
+2025-03-19T23:11:50.536+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to exam.jsb_webshop_t2406e.controllers.AdminTestController#loginForm(Model)
+2025-03-19T23:11:50.537+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-2] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-03-19T23:11:50.537+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-2] o.s.w.servlet.view.InternalResourceView  : View name [loginform3.html], model {}
+2025-03-19T23:11:50.537+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-2] o.s.w.servlet.view.InternalResourceView  : Forwarding to [loginform3.html]
+2025-03-19T23:11:50.538+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2025-03-19T23:11:50.549+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/admin/loginform", parameters={}
+2025-03-19T23:11:50.550+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to exam.jsb_webshop_t2406e.controllers.AdminTestController#loginForm(Model)
+2025-03-19T23:11:50.552+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-3] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-03-19T23:11:50.554+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-3] o.s.w.servlet.view.InternalResourceView  : View name [loginform3.html], model {}
+2025-03-19T23:11:50.554+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-3] o.s.w.servlet.view.InternalResourceView  : Forwarding to [loginform3.html]
+2025-03-19T23:11:50.556+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2025-03-19T23:11:50.564+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/admin/loginform", parameters={}
+2025-03-19T23:11:50.565+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to exam.jsb_webshop_t2406e.controllers.AdminTestController#loginForm(Model)
+2025-03-19T23:11:50.566+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-4] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-03-19T23:11:50.566+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-4] o.s.w.servlet.view.InternalResourceView  : View name [loginform3.html], model {}
+2025-03-19T23:11:50.566+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-4] o.s.w.servlet.view.InternalResourceView  : Forwarding to [loginform3.html]
+2025-03-19T23:11:50.568+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2025-03-19T23:11:50.571+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/admin/loginform", parameters={}
+2025-03-19T23:11:50.571+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to exam.jsb_webshop_t2406e.controllers.AdminTestController#loginForm(Model)
+2025-03-19T23:11:50.571+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-5] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-03-19T23:11:50.573+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-5] o.s.w.servlet.view.InternalResourceView  : View name [loginform3.html], model {}
+2025-03-19T23:11:50.573+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-5] o.s.w.servlet.view.InternalResourceView  : Forwarding to [loginform3.html]
+2025-03-19T23:11:50.575+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2025-03-19T23:11:50.582+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/admin/loginform", parameters={}
+2025-03-19T23:11:50.582+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to exam.jsb_webshop_t2406e.controllers.AdminTestController#loginForm(Model)
+2025-03-19T23:11:50.584+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-6] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-03-19T23:11:50.584+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-6] o.s.w.servlet.view.InternalResourceView  : View name [loginform3.html], model {}
+2025-03-19T23:11:50.585+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-6] o.s.w.servlet.view.InternalResourceView  : Forwarding to [loginform3.html]
+2025-03-19T23:11:50.600+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2025-03-19T23:11:50.606+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/admin/loginform", parameters={}
+2025-03-19T23:11:50.606+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to exam.jsb_webshop_t2406e.controllers.AdminTestController#loginForm(Model)
+2025-03-19T23:11:50.612+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-7] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-03-19T23:11:50.612+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-7] o.s.w.servlet.view.InternalResourceView  : View name [loginform3.html], model {}
+2025-03-19T23:11:50.614+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-7] o.s.w.servlet.view.InternalResourceView  : Forwarding to [loginform3.html]
+2025-03-19T23:11:50.615+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2025-03-19T23:11:50.619+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/admin/loginform", parameters={}
+2025-03-19T23:11:50.620+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to exam.jsb_webshop_t2406e.controllers.AdminTestController#loginForm(Model)
+2025-03-19T23:11:50.620+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-8] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-03-19T23:11:50.621+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-8] o.s.w.servlet.view.InternalResourceView  : View name [loginform3.html], model {}
+2025-03-19T23:11:50.621+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-8] o.s.w.servlet.view.InternalResourceView  : Forwarding to [loginform3.html]
+2025-03-19T23:11:50.623+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2025-03-19T23:11:50.629+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/admin/loginform", parameters={}
+2025-03-19T23:11:50.629+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to exam.jsb_webshop_t2406e.controllers.AdminTestController#loginForm(Model)
+2025-03-19T23:11:50.633+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-9] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-03-19T23:11:50.633+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-9] o.s.w.servlet.view.InternalResourceView  : View name [loginform3.html], model {}
+ters={}
+2025-03-19T23:11:50.639+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [io-6868-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to exam.jsb_webshop_t2406e.controllers.AdminTestController#loginForm(Model)
+2025-03-19T23:11:50.640+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [io-6868-exec-10] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-03-19T23:11:50.642+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [io-6868-exec-10] o.s.w.servlet.view.InternalResourceView  : View name [loginform3.html], model {}  
+2025-03-19T23:11:50.643+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [io-6868-exec-10] o.s.w.servlet.view.InternalResourceView  : Forwarding to [loginform3.html]        
+2025-03-19T23:11:50.645+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [io-6868-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2025-03-19T23:12:20.704+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/admin/loginform", parameters={}
+2025-03-19T23:12:20.707+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to exam.jsb_webshop_t2406e.controllers.AdminTestController#loginForm(Model)
+2025-03-19T23:12:20.708+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-1] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-03-19T23:12:20.709+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-1] o.s.w.servlet.view.InternalResourceView  : View name [loginform3.html], model {}
+2025-03-19T23:12:20.709+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-1] o.s.w.servlet.view.InternalResourceView  : Forwarding to [loginform3.html]
+2025-03-19T23:12:20.710+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2025-03-19T23:12:20.714+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/admin/loginform", parameters={}
+2025-03-19T23:12:20.715+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to exam.jsb_webshop_t2406e.controllers.AdminTestController#loginForm(Model)
+2025-03-19T23:12:20.715+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-2] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-03-19T23:12:20.715+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-2] o.s.w.servlet.view.InternalResourceView  : View name [loginform3.html], model {}
+2025-03-19T23:12:20.721+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-2] o.s.w.servlet.view.InternalResourceView  : Forwarding to [loginform3.html]
+2025-03-19T23:12:20.725+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2025-03-19T23:12:20.729+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/admin/loginform", parameters={}
+2025-03-19T23:12:20.730+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to exam.jsb_webshop_t2406e.controllers.AdminTestController#loginForm(Model)
+2025-03-19T23:12:20.731+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-3] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-03-19T23:12:20.732+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-3] o.s.w.servlet.view.InternalResourceView  : View name [loginform3.html], model {}  
+2025-03-19T23:12:20.739+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-3] o.s.w.servlet.view.InternalResourceView  : Forwarding to [loginform3.html]        
+2025-03-19T23:12:20.740+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2025-03-19T23:12:20.745+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/admin/loginform", parameters={}  
+2025-03-19T23:12:20.746+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to exam.jsb_webshop_t2406e.controllers.AdminTestController#loginForm(Model)
+2025-03-19T23:12:20.747+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-4] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-03-19T23:12:20.747+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-4] o.s.w.servlet.view.InternalResourceView  : View name [loginform3.html], model {}  
+2025-03-19T23:12:20.747+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-4] o.s.w.servlet.view.InternalResourceView  : Forwarding to [loginform3.html]        
+2025-03-19T23:12:20.751+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2025-03-19T23:12:20.759+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/admin/loginform", parameters={}  
+2025-03-19T23:12:20.760+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to exam.jsb_webshop_t2406e.controllers.AdminTestController#loginForm(Model)
+2025-03-19T23:12:20.760+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-5] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-03-19T23:12:20.760+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-5] o.s.w.servlet.view.InternalResourceView  : View name [loginform3.html], model {}  
+2025-03-19T23:12:20.761+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-5] o.s.w.servlet.view.InternalResourceView  : Forwarding to [loginform3.html]        
+2025-03-19T23:12:20.762+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2025-03-19T23:12:20.765+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/admin/loginform", parameters={}  
+2025-03-19T23:12:20.765+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to exam.jsb_webshop_t2406e.controllers.AdminTestController#loginForm(Model)
+2025-03-19T23:12:20.768+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-6] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-03-19T23:12:20.772+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-6] o.s.w.servlet.view.InternalResourceView  : View name [loginform3.html], model {}  
+2025-03-19T23:12:20.772+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-6] o.s.w.servlet.view.InternalResourceView  : Forwarding to [loginform3.html]        
+2025-03-19T23:12:20.774+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2025-03-19T23:12:20.778+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/admin/loginform", parameters={}
+2025-03-19T23:12:20.779+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to exam.jsb_webshop_t2406e.controllers.AdminTestController#loginForm(Model)
+2025-03-19T23:12:20.779+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-7] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-03-19T23:12:20.779+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-7] o.s.w.servlet.view.InternalResourceView  : View name [loginform3.html], model {}  
+2025-03-19T23:12:20.780+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-7] o.s.w.servlet.view.InternalResourceView  : Forwarding to [loginform3.html]        
+2025-03-19T23:12:20.781+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2025-03-19T23:12:20.786+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/admin/loginform", parameters={}  
+2025-03-19T23:12:20.787+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to exam.jsb_webshop_t2406e.controllers.AdminTestController#loginForm(Model)
+2025-03-19T23:12:20.788+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-8] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-03-19T23:12:20.790+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-8] o.s.w.servlet.view.InternalResourceView  : View name [loginform3.html], model {}  
+2025-03-19T23:12:20.790+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-8] o.s.w.servlet.view.InternalResourceView  : Forwarding to [loginform3.html]        
+2025-03-19T23:12:20.791+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2025-03-19T23:12:20.793+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/admin/loginform", parameters={}  
+2025-03-19T23:12:20.794+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to exam.jsb_webshop_t2406e.controllers.AdminTestController#loginForm(Model)
+2025-03-19T23:12:20.794+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-9] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-03-19T23:12:20.795+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-9] o.s.w.servlet.view.InternalResourceView  : View name [loginform3.html], model {}  
+2025-03-19T23:12:20.795+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-9] o.s.w.servlet.view.InternalResourceView  : Forwarding to [loginform3.html]        
+2025-03-19T23:12:20.795+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2025-03-19T23:12:20.798+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [io-6868-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/admin/loginform", parameters={}  
+2025-03-19T23:12:20.798+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [io-6868-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to exam.jsb_webshop_t2406e.controllers.AdminTestController#loginForm(Model)
+2025-03-19T23:12:20.802+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [io-6868-exec-10] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-03-19T23:12:20.803+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [io-6868-exec-10] o.s.w.servlet.view.InternalResourceView  : View name [loginform3.html], model {}  
+2025-03-19T23:12:20.803+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [io-6868-exec-10] o.s.w.servlet.view.InternalResourceView  : Forwarding to [loginform3.html]        
+2025-03-19T23:12:20.806+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [io-6868-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2025-03-19T23:12:20.809+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/admin/loginform", parameters={}
+2025-03-19T23:12:20.809+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to exam.jsb_webshop_t2406e.controllers.AdminTestController#loginForm(Model)
+2025-03-19T23:12:20.810+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-1] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-03-19T23:12:20.811+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-1] o.s.w.servlet.view.InternalResourceView  : View name [loginform3.html], model {}  
+2025-03-19T23:12:20.811+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-1] o.s.w.servlet.view.InternalResourceView  : Forwarding to [loginform3.html]        
+2025-03-19T23:12:20.812+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2025-03-19T23:12:20.815+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/admin/loginform", parameters={}  
+2025-03-19T23:12:20.815+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to exam.jsb_webshop_t2406e.controllers.AdminTestController#loginForm(Model)
+2025-03-19T23:12:20.821+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-2] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-03-19T23:12:20.821+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-2] o.s.w.servlet.view.InternalResourceView  : View name [loginform3.html], model {}
+2025-03-19T23:12:20.823+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-2] o.s.w.servlet.view.InternalResourceView  : Forwarding to [loginform3.html]        
+2025-03-19T23:12:20.825+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2025-03-19T23:12:20.829+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/admin/loginform", parameters={}  
+2025-03-19T23:12:20.829+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to exam.jsb_webshop_t2406e.controllers.AdminTestController#loginForm(Model)
+2025-03-19T23:12:20.829+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-3] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-03-19T23:12:20.829+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-3] o.s.w.servlet.view.InternalResourceView  : View name [loginform3.html], model {}  
+2025-03-19T23:12:20.830+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-3] o.s.w.servlet.view.InternalResourceView  : Forwarding to [loginform3.html]        
+2025-03-19T23:12:20.831+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2025-03-19T23:12:20.840+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/admin/loginform", parameters={}
+2025-03-19T23:12:20.840+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to exam.jsb_webshop_t2406e.controllers.AdminTestController#loginForm(Model)
+2025-03-19T23:12:20.840+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-4] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-03-19T23:12:20.842+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-4] o.s.w.servlet.view.InternalResourceView  : View name [loginform3.html], model {}  
+2025-03-19T23:12:20.842+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-4] o.s.w.servlet.view.InternalResourceView  : Forwarding to [loginform3.html]        
+2025-03-19T23:12:20.843+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2025-03-19T23:12:20.845+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/admin/loginform", parameters={}  
+2025-03-19T23:12:20.845+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to exam.jsb_webshop_t2406e.controllers.AdminTestController#loginForm(Model)
+2025-03-19T23:12:20.845+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-5] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-03-19T23:12:20.846+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-5] o.s.w.servlet.view.InternalResourceView  : View name [loginform3.html], model {}  
+2025-03-19T23:12:20.846+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-5] o.s.w.servlet.view.InternalResourceView  : Forwarding to [loginform3.html]        
+2025-03-19T23:12:20.846+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2025-03-19T23:12:20.852+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/admin/loginform", parameters={}  
+2025-03-19T23:12:20.853+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to exam.jsb_webshop_t2406e.controllers.AdminTestController#loginForm(Model)
+2025-03-19T23:12:20.855+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-6] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-03-19T23:12:20.855+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-6] o.s.w.servlet.view.InternalResourceView  : View name [loginform3.html], model {}  
+2025-03-19T23:12:20.855+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-6] o.s.w.servlet.view.InternalResourceView  : Forwarding to [loginform3.html]        
+2025-03-19T23:12:20.856+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2025-03-19T23:12:20.860+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/admin/loginform", parameters={}  
+2025-03-19T23:12:20.860+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to exam.jsb_webshop_t2406e.controllers.AdminTestController#loginForm(Model)
+2025-03-19T23:12:20.861+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-7] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-03-19T23:12:20.861+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-7] o.s.w.servlet.view.InternalResourceView  : View name [loginform3.html], model {}  
+2025-03-19T23:12:20.861+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-7] o.s.w.servlet.view.InternalResourceView  : Forwarding to [loginform3.html]        
+2025-03-19T23:12:20.862+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2025-03-19T23:12:20.865+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/admin/loginform", parameters={}  
+2025-03-19T23:12:20.865+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to exam.jsb_webshop_t2406e.controllers.AdminTestController#loginForm(Model)
+2025-03-19T23:12:20.866+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-8] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-03-19T23:12:20.866+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-8] o.s.w.servlet.view.InternalResourceView  : View name [loginform3.html], model {}  
+2025-03-19T23:12:20.866+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-8] o.s.w.servlet.view.InternalResourceView  : Forwarding to [loginform3.html]        
+2025-03-19T23:12:20.873+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2025-03-19T23:12:20.876+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/admin/loginform", parameters={}  
+2025-03-19T23:12:20.877+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to exam.jsb_webshop_t2406e.controllers.AdminTestController#loginForm(Model)
+2025-03-19T23:12:20.877+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-9] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-03-19T23:12:20.877+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-9] o.s.w.servlet.view.InternalResourceView  : View name [loginform3.html], model {}  
+2025-03-19T23:12:20.877+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-9] o.s.w.servlet.view.InternalResourceView  : Forwarding to [loginform3.html]        
+2025-03-19T23:12:20.878+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2025-03-19T23:12:20.880+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [io-6868-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/admin/loginform", parameters={}  
+2025-03-19T23:12:20.881+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [io-6868-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to exam.jsb_webshop_t2406e.controllers.AdminTestController#loginForm(Model)
+2025-03-19T23:12:20.881+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [io-6868-exec-10] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-03-19T23:12:20.881+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [io-6868-exec-10] o.s.w.servlet.view.InternalResourceView  : View name [loginform3.html], model {}  
+2025-03-19T23:12:20.881+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [io-6868-exec-10] o.s.w.servlet.view.InternalResourceView  : Forwarding to [loginform3.html]        
+2025-03-19T23:12:20.882+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [io-6868-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2025-03-19T23:13:20.945+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/admin/loginform", parameters={}
+2025-03-19T23:13:20.946+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to exam.jsb_webshop_t2406e.controllers.AdminTestController#loginForm(Model)
+2025-03-19T23:13:20.947+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-2] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-03-19T23:13:20.948+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-2] o.s.w.servlet.view.InternalResourceView  : View name [loginform3.html], model {}  
+2025-03-19T23:13:20.948+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-2] o.s.w.servlet.view.InternalResourceView  : Forwarding to [loginform3.html]        
+2025-03-19T23:13:20.950+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2025-03-19T23:13:20.963+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/admin/loginform", parameters={}
+2025-03-19T23:13:20.964+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to exam.jsb_webshop_t2406e.controllers.AdminTestController#loginForm(Model)
+2025-03-19T23:13:20.966+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-3] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-03-19T23:13:20.976+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-3] o.s.w.servlet.view.InternalResourceView  : View name [loginform3.html], model {}
+2025-03-19T23:13:20.980+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-3] o.s.w.servlet.view.InternalResourceView  : Forwarding to [loginform3.html]        
+2025-03-19T23:13:20.989+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2025-03-19T23:13:20.995+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/admin/loginform", parameters={}  
+2025-03-19T23:13:20.997+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to exam.jsb_webshop_t2406e.controllers.AdminTestController#loginForm(Model)
+2025-03-19T23:13:20.998+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-4] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-03-19T23:13:20.998+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-4] o.s.w.servlet.view.InternalResourceView  : View name [loginform3.html], model {}  
+2025-03-19T23:13:20.998+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-4] o.s.w.servlet.view.InternalResourceView  : Forwarding to [loginform3.html]        
+2025-03-19T23:13:21.000+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2025-03-19T23:13:21.006+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/admin/loginform", parameters={}
+2025-03-19T23:13:21.007+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to exam.jsb_webshop_t2406e.controllers.AdminTestController#loginForm(Model)
+2025-03-19T23:13:21.008+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-5] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-03-19T23:13:21.010+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-5] o.s.w.servlet.view.InternalResourceView  : View name [loginform3.html], model {}  
+2025-03-19T23:13:21.010+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-5] o.s.w.servlet.view.InternalResourceView  : Forwarding to [loginform3.html]        
+2025-03-19T23:13:21.011+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2025-03-19T23:13:21.013+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/admin/loginform", parameters={}  
+2025-03-19T23:13:21.015+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to exam.jsb_webshop_t2406e.controllers.AdminTestController#loginForm(Model)
+2025-03-19T23:13:21.015+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-6] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-03-19T23:13:21.016+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-6] o.s.w.servlet.view.InternalResourceView  : View name [loginform3.html], model {}  
+2025-03-19T23:13:21.016+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-6] o.s.w.servlet.view.InternalResourceView  : Forwarding to [loginform3.html]        
+2025-03-19T23:13:21.017+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2025-03-19T23:13:21.024+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/admin/loginform", parameters={}
+2025-03-19T23:13:21.024+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to exam.jsb_webshop_t2406e.controllers.AdminTestController#loginForm(Model)
+2025-03-19T23:13:21.025+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-7] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-03-19T23:13:21.026+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-7] o.s.w.servlet.view.InternalResourceView  : View name [loginform3.html], model {}  
+2025-03-19T23:13:21.026+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-7] o.s.w.servlet.view.InternalResourceView  : Forwarding to [loginform3.html]        
+2025-03-19T23:13:21.027+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2025-03-19T23:13:21.030+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/admin/loginform", parameters={}  
+2025-03-19T23:13:21.031+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to exam.jsb_webshop_t2406e.controllers.AdminTestController#loginForm(Model)
+2025-03-19T23:13:21.031+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-8] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-03-19T23:13:21.032+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-8] o.s.w.servlet.view.InternalResourceView  : View name [loginform3.html], model {}  
+2025-03-19T23:13:21.032+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-8] o.s.w.servlet.view.InternalResourceView  : Forwarding to [loginform3.html]        
+2025-03-19T23:13:21.032+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2025-03-19T23:13:21.038+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/admin/loginform", parameters={}
+2025-03-19T23:13:21.039+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to exam.jsb_webshop_t2406e.controllers.AdminTestController#loginForm(Model)
+2025-03-19T23:13:21.040+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-9] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-03-19T23:13:21.040+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-9] o.s.w.servlet.view.InternalResourceView  : View name [loginform3.html], model {}  
+2025-03-19T23:13:21.040+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-9] o.s.w.servlet.view.InternalResourceView  : Forwarding to [loginform3.html]        
+2025-03-19T23:13:21.043+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2025-03-19T23:13:21.046+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [io-6868-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/admin/loginform", parameters={}  
+2025-03-19T23:13:21.047+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [io-6868-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to exam.jsb_webshop_t2406e.controllers.AdminTestController#loginForm(Model)
+2025-03-19T23:13:21.048+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [io-6868-exec-10] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-03-19T23:13:21.048+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [io-6868-exec-10] o.s.w.servlet.view.InternalResourceView  : View name [loginform3.html], model {}  
+2025-03-19T23:13:21.048+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [io-6868-exec-10] o.s.w.servlet.view.InternalResourceView  : Forwarding to [loginform3.html]        
+2025-03-19T23:13:21.050+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [io-6868-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2025-03-19T23:13:21.056+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/admin/loginform", parameters={}  
+2025-03-19T23:13:21.056+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to exam.jsb_webshop_t2406e.controllers.AdminTestController#loginForm(Model)
+2025-03-19T23:13:21.057+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-1] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-03-19T23:13:21.057+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-1] o.s.w.servlet.view.InternalResourceView  : View name [loginform3.html], model {}  
+2025-03-19T23:13:21.057+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-1] o.s.w.servlet.view.InternalResourceView  : Forwarding to [loginform3.html]        
+2025-03-19T23:13:21.060+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2025-03-19T23:13:21.063+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/admin/loginform", parameters={}  
+2025-03-19T23:13:21.063+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to exam.jsb_webshop_t2406e.controllers.AdminTestController#loginForm(Model)
+2025-03-19T23:13:21.065+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-2] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-03-19T23:13:21.065+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-2] o.s.w.servlet.view.InternalResourceView  : View name [loginform3.html], model {}  
+2025-03-19T23:13:21.066+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-2] o.s.w.servlet.view.InternalResourceView  : Forwarding to [loginform3.html]        
+2025-03-19T23:13:21.067+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2025-03-19T23:13:21.072+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/admin/loginform", parameters={}  
+2025-03-19T23:13:21.073+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to exam.jsb_webshop_t2406e.controllers.AdminTestController#loginForm(Model)
+2025-03-19T23:13:21.074+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-3] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-03-19T23:13:21.074+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-3] o.s.w.servlet.view.InternalResourceView  : View name [loginform3.html], model {}  
+2025-03-19T23:13:21.074+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-3] o.s.w.servlet.view.InternalResourceView  : Forwarding to [loginform3.html]        
+2025-03-19T23:13:21.076+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2025-03-19T23:13:21.078+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/admin/loginform", parameters={}  
+2025-03-19T23:13:21.078+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to exam.jsb_webshop_t2406e.controllers.AdminTestController#loginForm(Model)
+2025-03-19T23:13:21.079+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-4] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-03-19T23:13:21.079+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-4] o.s.w.servlet.view.InternalResourceView  : View name [loginform3.html], model {}  
+2025-03-19T23:13:21.079+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-4] o.s.w.servlet.view.InternalResourceView  : Forwarding to [loginform3.html]        
+2025-03-19T23:13:21.081+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2025-03-19T23:13:21.084+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/admin/loginform", parameters={}  
+2025-03-19T23:13:21.084+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to exam.jsb_webshop_t2406e.controllers.AdminTestController#loginForm(Model)
+2025-03-19T23:13:21.087+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-5] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-03-19T23:13:21.090+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-5] o.s.w.servlet.view.InternalResourceView  : View name [loginform3.html], model {}  
+2025-03-19T23:13:21.091+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-5] o.s.w.servlet.view.InternalResourceView  : Forwarding to [loginform3.html]        
+2025-03-19T23:13:21.093+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2025-03-19T23:13:21.095+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/admin/loginform", parameters={}  
+2025-03-19T23:13:21.097+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to exam.jsb_webshop_t2406e.controllers.AdminTestController#loginForm(Model)
+2025-03-19T23:13:21.098+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-6] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-03-19T23:13:21.098+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-6] o.s.w.servlet.view.InternalResourceView  : View name [loginform3.html], model {}  
+2025-03-19T23:13:21.098+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-6] o.s.w.servlet.view.InternalResourceView  : Forwarding to [loginform3.html]        
+2025-03-19T23:13:21.099+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2025-03-19T23:13:21.108+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/admin/loginform", parameters={}  
+2025-03-19T23:13:21.108+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to exam.jsb_webshop_t2406e.controllers.AdminTestController#loginForm(Model)
+2025-03-19T23:13:21.111+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-7] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-03-19T23:13:21.111+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-7] o.s.w.servlet.view.InternalResourceView  : View name [loginform3.html], model {}  
+2025-03-19T23:13:21.111+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-7] o.s.w.servlet.view.InternalResourceView  : Forwarding to [loginform3.html]        
+2025-03-19T23:13:21.112+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2025-03-19T23:13:21.116+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/admin/loginform", parameters={}  
+2025-03-19T23:13:21.116+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to exam.jsb_webshop_t2406e.controllers.AdminTestController#loginForm(Model)
+2025-03-19T23:13:21.123+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-8] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-03-19T23:13:21.124+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-8] o.s.w.servlet.view.InternalResourceView  : View name [loginform3.html], model {}  
+2025-03-19T23:13:21.124+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-8] o.s.w.servlet.view.InternalResourceView  : Forwarding to [loginform3.html]        
+2025-03-19T23:13:21.126+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2025-03-19T23:13:21.129+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/admin/loginform", parameters={}
+2025-03-19T23:13:21.129+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to exam.jsb_webshop_t2406e.controllers.AdminTestController#loginForm(Model)
+2025-03-19T23:13:21.130+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-9] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-03-19T23:13:21.130+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-9] o.s.w.servlet.view.InternalResourceView  : View name [loginform3.html], model {}  
+2025-03-19T23:13:21.130+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-9] o.s.w.servlet.view.InternalResourceView  : Forwarding to [loginform3.html]        
+2025-03-19T23:13:21.132+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2025-03-19T23:13:21.134+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [io-6868-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/admin/loginform", parameters={}  
+2025-03-19T23:13:21.138+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [io-6868-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to exam.jsb_webshop_t2406e.controllers.AdminTestController#loginForm(Model)
+2025-03-19T23:13:21.139+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [io-6868-exec-10] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-03-19T23:13:21.140+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [io-6868-exec-10] o.s.w.servlet.view.InternalResourceView  : View name [loginform3.html], model {}  
+2025-03-19T23:13:21.140+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [io-6868-exec-10] o.s.w.servlet.view.InternalResourceView  : Forwarding to [loginform3.html]        
+2025-03-19T23:13:21.141+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [io-6868-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2025-03-19T23:13:21.147+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/admin/loginform", parameters={}
+2025-03-19T23:13:21.147+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to exam.jsb_webshop_t2406e.controllers.AdminTestController#loginForm(Model)
+2025-03-19T23:13:21.147+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-1] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-03-19T23:13:21.147+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-1] o.s.w.servlet.view.InternalResourceView  : View name [loginform3.html], model {}  
+2025-03-19T23:13:21.148+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-1] o.s.w.servlet.view.InternalResourceView  : Forwarding to [loginform3.html]        
+2025-03-19T23:13:21.148+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2025-03-19T23:15:10.616+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/admin/loginform", parameters={}
+2025-03-19T23:15:10.618+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to exam.jsb_webshop_t2406e.controllers.AdminTestController#loginForm(Model)
+2025-03-19T23:15:10.620+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-4] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-03-19T23:15:10.620+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-4] o.s.w.servlet.view.InternalResourceView  : View name [loginform3.html], model {}  
+2025-03-19T23:15:10.621+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-4] o.s.w.servlet.view.InternalResourceView  : Forwarding to [loginform3.html]        
+2025-03-19T23:15:10.630+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2025-03-19T23:15:10.634+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/admin/loginform", parameters={}  
+2025-03-19T23:15:10.635+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to exam.jsb_webshop_t2406e.controllers.AdminTestController#loginForm(Model)
+2025-03-19T23:15:10.635+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-5] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-03-19T23:15:10.636+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-5] o.s.w.servlet.view.InternalResourceView  : View name [loginform3.html], model {}  
+2025-03-19T23:15:10.636+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-5] o.s.w.servlet.view.InternalResourceView  : Forwarding to [loginform3.html]        
+2025-03-19T23:15:10.637+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2025-03-19T23:15:10.641+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/admin/loginform", parameters={}  
+2025-03-19T23:15:10.644+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to exam.jsb_webshop_t2406e.controllers.AdminTestController#loginForm(Model)
+2025-03-19T23:15:10.645+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-6] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-03-19T23:15:10.645+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-6] o.s.w.servlet.view.InternalResourceView  : View name [loginform3.html], model {}  
+2025-03-19T23:15:10.645+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-6] o.s.w.servlet.view.InternalResourceView  : Forwarding to [loginform3.html]        
+2025-03-19T23:15:10.647+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2025-03-19T23:15:10.652+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/admin/loginform", parameters={}  
+2025-03-19T23:15:10.653+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to exam.jsb_webshop_t2406e.controllers.AdminTestController#loginForm(Model)
+2025-03-19T23:15:10.654+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-7] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-03-19T23:15:10.654+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-7] o.s.w.servlet.view.InternalResourceView  : View name [loginform3.html], model {}  
+2025-03-19T23:15:10.654+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-7] o.s.w.servlet.view.InternalResourceView  : Forwarding to [loginform3.html]        
+2025-03-19T23:15:10.656+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2025-03-19T23:15:10.667+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/admin/loginform", parameters={}  
+2025-03-19T23:15:10.667+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to exam.jsb_webshop_t2406e.controllers.AdminTestController#loginForm(Model)
+2025-03-19T23:15:10.668+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-8] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-03-19T23:15:10.669+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-8] o.s.w.servlet.view.InternalResourceView  : View name [loginform3.html], model {}
+2025-03-19T23:15:10.670+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-8] o.s.w.servlet.view.InternalResourceView  : Forwarding to [loginform3.html]        
+2025-03-19T23:15:10.673+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2025-03-19T23:15:10.682+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/admin/loginform", parameters={}  
+2025-03-19T23:15:10.683+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to exam.jsb_webshop_t2406e.controllers.AdminTestController#loginForm(Model)
+2025-03-19T23:15:10.684+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-9] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-03-19T23:15:10.685+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-9] o.s.w.servlet.view.InternalResourceView  : View name [loginform3.html], model {}
+2025-03-19T23:15:10.685+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-9] o.s.w.servlet.view.InternalResourceView  : Forwarding to [loginform3.html]        
+2025-03-19T23:15:10.686+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2025-03-19T23:15:10.692+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [io-6868-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/admin/loginform", parameters={}  
+2025-03-19T23:15:10.694+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [io-6868-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to exam.jsb_webshop_t2406e.controllers.AdminTestController#loginForm(Model)
+2025-03-19T23:15:10.698+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [io-6868-exec-10] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-03-19T23:15:10.698+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [io-6868-exec-10] o.s.w.servlet.view.InternalResourceView  : View name [loginform3.html], model {}  
+2025-03-19T23:15:10.702+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [io-6868-exec-10] o.s.w.servlet.view.InternalResourceView  : Forwarding to [loginform3.html]
+2025-03-19T23:15:10.704+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [io-6868-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2025-03-19T23:15:10.718+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/admin/loginform", parameters={}
+2025-03-19T23:15:10.718+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to exam.jsb_webshop_t2406e.controllers.AdminTestController#loginForm(Model)
+2025-03-19T23:15:10.719+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-1] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-03-19T23:15:10.720+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-1] o.s.w.servlet.view.InternalResourceView  : View name [loginform3.html], model {}  
+2025-03-19T23:15:10.720+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-1] o.s.w.servlet.view.InternalResourceView  : Forwarding to [loginform3.html]        
+2025-03-19T23:15:10.727+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2025-03-19T23:15:10.737+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/admin/loginform", parameters={}
+2025-03-19T23:15:10.737+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to exam.jsb_webshop_t2406e.controllers.AdminTestController#loginForm(Model)
+2025-03-19T23:15:10.739+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-3] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-03-19T23:15:10.740+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-3] o.s.w.servlet.view.InternalResourceView  : View name [loginform3.html], model {}  
+2025-03-19T23:15:10.740+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-3] o.s.w.servlet.view.InternalResourceView  : Forwarding to [loginform3.html]        
+2025-03-19T23:15:10.750+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2025-03-19T23:15:10.757+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/admin/loginform", parameters={}  
+2025-03-19T23:15:10.762+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to exam.jsb_webshop_t2406e.controllers.AdminTestController#loginForm(Model)
+2025-03-19T23:15:10.767+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-2] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-03-19T23:15:10.769+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-2] o.s.w.servlet.view.InternalResourceView  : View name [loginform3.html], model {}  
+2025-03-19T23:15:10.770+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-2] o.s.w.servlet.view.InternalResourceView  : Forwarding to [loginform3.html]        
+2025-03-19T23:15:10.772+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2025-03-19T23:15:10.779+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/admin/loginform", parameters={}
+2025-03-19T23:15:10.779+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to exam.jsb_webshop_t2406e.controllers.AdminTestController#loginForm(Model)
+2025-03-19T23:15:10.780+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-4] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-03-19T23:15:10.780+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-4] o.s.w.servlet.view.InternalResourceView  : View name [loginform3.html], model {}  
+2025-03-19T23:15:10.781+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-4] o.s.w.servlet.view.InternalResourceView  : Forwarding to [loginform3.html]        
+2025-03-19T23:15:10.783+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2025-03-19T23:15:10.789+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/admin/loginform", parameters={}  
+2025-03-19T23:15:10.789+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to exam.jsb_webshop_t2406e.controllers.AdminTestController#loginForm(Model)
+2025-03-19T23:15:10.794+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-5] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-03-19T23:15:10.795+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-5] o.s.w.servlet.view.InternalResourceView  : View name [loginform3.html], model {}  
+2025-03-19T23:15:10.795+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-5] o.s.w.servlet.view.InternalResourceView  : Forwarding to [loginform3.html]        
+2025-03-19T23:15:10.799+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2025-03-19T23:15:10.803+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/admin/loginform", parameters={}  
+2025-03-19T23:15:10.805+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to exam.jsb_webshop_t2406e.controllers.AdminTestController#loginForm(Model)
+2025-03-19T23:15:10.807+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-6] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-03-19T23:15:10.807+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-6] o.s.w.servlet.view.InternalResourceView  : View name [loginform3.html], model {}
+2025-03-19T23:15:10.812+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-6] o.s.w.servlet.view.InternalResourceView  : Forwarding to [loginform3.html]        
+2025-03-19T23:15:10.817+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2025-03-19T23:15:10.828+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/admin/loginform", parameters={}
+2025-03-19T23:15:10.830+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to exam.jsb_webshop_t2406e.controllers.AdminTestController#loginForm(Model)
+2025-03-19T23:15:10.832+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-7] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-03-19T23:15:10.834+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-7] o.s.w.servlet.view.InternalResourceView  : View name [loginform3.html], model {}  
+2025-03-19T23:15:10.834+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-7] o.s.w.servlet.view.InternalResourceView  : Forwarding to [loginform3.html]        
+2025-03-19T23:15:10.837+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2025-03-19T23:15:10.845+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/admin/loginform", parameters={}
+2025-03-19T23:15:10.847+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to exam.jsb_webshop_t2406e.controllers.AdminTestController#loginForm(Model)
+2025-03-19T23:15:10.848+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-8] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-03-19T23:15:10.848+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-8] o.s.w.servlet.view.InternalResourceView  : View name [loginform3.html], model {}  
+2025-03-19T23:15:10.849+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-8] o.s.w.servlet.view.InternalResourceView  : Forwarding to [loginform3.html]        
+2025-03-19T23:15:10.852+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2025-03-19T23:15:10.859+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/admin/loginform", parameters={}
+2025-03-19T23:15:10.861+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to exam.jsb_webshop_t2406e.controllers.AdminTestController#loginForm(Model)
+2025-03-19T23:15:10.862+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-9] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-03-19T23:15:10.864+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-9] o.s.w.servlet.view.InternalResourceView  : View name [loginform3.html], model {}  
+2025-03-19T23:15:10.864+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-9] o.s.w.servlet.view.InternalResourceView  : Forwarding to [loginform3.html]        
+2025-03-19T23:15:10.866+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2025-03-19T23:15:10.873+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [io-6868-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/admin/loginform", parameters={}
+2025-03-19T23:15:10.873+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [io-6868-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to exam.jsb_webshop_t2406e.controllers.AdminTestController#loginForm(Model)
+2025-03-19T23:15:10.879+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [io-6868-exec-10] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-03-19T23:15:10.879+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [io-6868-exec-10] o.s.w.servlet.view.InternalResourceView  : View name [loginform3.html], model {}  
+2025-03-19T23:15:10.880+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [io-6868-exec-10] o.s.w.servlet.view.InternalResourceView  : Forwarding to [loginform3.html]        
+2025-03-19T23:15:10.882+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [io-6868-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2025-03-19T23:15:10.888+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/admin/loginform", parameters={}
+2025-03-19T23:15:10.889+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to exam.jsb_webshop_t2406e.controllers.AdminTestController#loginForm(Model)
+2025-03-19T23:15:10.890+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-1] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-03-19T23:15:10.890+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-1] o.s.w.servlet.view.InternalResourceView  : View name [loginform3.html], model {}  
+2025-03-19T23:15:10.892+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-1] o.s.w.servlet.view.InternalResourceView  : Forwarding to [loginform3.html]        
+2025-03-19T23:15:10.896+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2025-03-19T23:15:10.902+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/admin/loginform", parameters={}
+2025-03-19T23:15:10.903+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to exam.jsb_webshop_t2406e.controllers.AdminTestController#loginForm(Model)
+2025-03-19T23:15:10.903+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-3] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-03-19T23:15:10.905+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-3] o.s.w.servlet.view.InternalResourceView  : View name [loginform3.html], model {}  
+2025-03-19T23:15:10.906+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-3] o.s.w.servlet.view.InternalResourceView  : Forwarding to [loginform3.html]        
+2025-03-19T23:15:10.908+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2025-03-19T23:15:10.916+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/admin/loginform", parameters={}
+2025-03-19T23:15:10.916+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to exam.jsb_webshop_t2406e.controllers.AdminTestController#loginForm(Model)
+2025-03-19T23:15:10.917+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-2] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-03-19T23:15:10.917+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-2] o.s.w.servlet.view.InternalResourceView  : View name [loginform3.html], model {}  
+2025-03-19T23:15:10.918+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-2] o.s.w.servlet.view.InternalResourceView  : Forwarding to [loginform3.html]        
+2025-03-19T23:15:10.920+07:00 DEBUG 15784 --- [jsb_webshop_t2406e] [nio-6868-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND

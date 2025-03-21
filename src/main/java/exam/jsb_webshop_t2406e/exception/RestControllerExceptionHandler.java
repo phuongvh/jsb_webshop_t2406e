@@ -9,14 +9,18 @@ import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.context.request.WebRequest;
 
-// tham khảo:
+// tham khảo các bài viết hay
 // https://www.bezkoder.com/spring-boot-restcontrolleradvice/
 // https://github.com/bezkoder/spring-boot-restcontrolleradvice
-// Kiểm soát lỗi ApiControllerExceptionHandler
-@RestControllerAdvice
+// https://stackoverflow.com/questions/43325685/spring-different-exception-handler-for-restcontroller-and-controller
+// Kiểm soát lỗi ApiControllerExceptionHandler/ 
+// Vấn đề là làm thế nào để Handler này chỉ xử lý lỗi của RestController
+// Chứ không phải lỗi của MvcController (view thymeleaf html controller)
+@RestControllerAdvice(annotations = RestController.class)
 public class RestControllerExceptionHandler 
 {
 

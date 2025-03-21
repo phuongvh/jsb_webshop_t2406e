@@ -1,0 +1,62 @@
+PS C:\Users\Public\Java\JavaSpringWeb\jsb_webshop_t2406e>  C:; cd 'C:\Users\Public\Java\JavaSpringWeb\jsb_webshop_t2406e'; & 'C:\Program Files\Java\jdk-23\bin\java.exe' '@C:\Users\vst88\AppData\Local\Temp\cp_diyav3rzqeuh41tvocgg70s44.argfile' 'exam.jsb_webshop_t2406e.JsbWebshopT2406eApplication' 
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.4.3)
+
+2025-03-19T23:19:10.842+07:00  INFO 18844 --- [jsb_webshop_t2406e] [           main] e.j.JsbWebshopT2406eApplication          : Starting JsbWebshopT2406eApplication using Java 23 with PID 18844 (C:\Users\Public\Java\JavaSpringWeb\jsb_webshop_t2406e\target\classes started by vst88 in C:\Users\Public\Java\JavaSpringWeb\jsb_webshop_t2406e)
+2025-03-19T23:19:10.845+07:00  INFO 18844 --- [jsb_webshop_t2406e] [           main] e.j.JsbWebshopT2406eApplication          : No active profile set, falling back to 1 default profile: "default"
+2025-03-19T23:19:13.609+07:00  INFO 18844 --- [jsb_webshop_t2406e] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-03-19T23:19:13.610+07:00  INFO 18844 --- [jsb_webshop_t2406e] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-03-19T23:19:13.799+07:00  INFO 18844 --- [jsb_webshop_t2406e] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-03-19T23:19:14.205+07:00  INFO 18844 --- [jsb_webshop_t2406e] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-03-19T23:19:14.423+07:00  INFO 18844 --- [jsb_webshop_t2406e] [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.8.Final
+2025-03-19T23:19:14.577+07:00  INFO 18844 --- [jsb_webshop_t2406e] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-03-19T23:19:15.015+07:00  INFO 18844 --- [jsb_webshop_t2406e] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-03-19T23:19:15.242+07:00  INFO 18844 --- [jsb_webshop_t2406e] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@734f8317
+2025-03-19T23:19:15.243+07:00  INFO 18844 --- [jsb_webshop_t2406e] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-03-19T23:19:15.306+07:00  WARN 18844 --- [jsb_webshop_t2406e] [           main] org.hibernate.dialect.Dialect            : HHH000511: The 5.7.24 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2025-03-19T23:19:15.311+07:00  WARN 18844 --- [jsb_webshop_t2406e] [           main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-03-19T23:19:15.344+07:00  INFO 18844 --- [jsb_webshop_t2406e] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+        Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+        Database driver: undefined/unknown
+        Database version: 5.7.24
+        Autocommit mode: undefined/unknown
+        Isolation level: undefined/unknown
+        Minimum pool size: undefined/unknown
+        Maximum pool size: undefined/unknown
+2025-03-19T23:19:16.381+07:00  INFO 18844 --- [jsb_webshop_t2406e] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-03-19T23:19:16.422+07:00 DEBUG 18844 --- [jsb_webshop_t2406e] [           main] org.hibernate.SQL                        : alter table role modify column name enum ('ROLE_ADMIN','ROLE_MODERATOR','ROLE_USER')
+2025-03-19T23:19:17.462+07:00 DEBUG 18844 --- [jsb_webshop_t2406e] [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : 22 mappings in 'requestMappingHandlerMapping'
+2025-03-19T23:19:17.781+07:00 DEBUG 18844 --- [jsb_webshop_t2406e] [           main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2025-03-19T23:19:18.039+07:00 DEBUG 18844 --- [jsb_webshop_t2406e] [           main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2025-03-19T23:19:18.177+07:00 DEBUG 18844 --- [jsb_webshop_t2406e] [           main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2025-03-19T23:19:18.487+07:00  INFO 18844 --- [jsb_webshop_t2406e] [           main] e.j.JsbWebshopT2406eApplication          : Started JsbWebshopT2406eApplication in 8.163 seconds (process running for 8.624)
+2025-03-19T23:19:33.555+07:00  INFO 18844 --- [jsb_webshop_t2406e] [nio-6868-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-03-19T23:19:33.555+07:00  INFO 18844 --- [jsb_webshop_t2406e] [nio-6868-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-03-19T23:19:33.556+07:00 DEBUG 18844 --- [jsb_webshop_t2406e] [nio-6868-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2025-03-19T23:19:33.556+07:00 DEBUG 18844 --- [jsb_webshop_t2406e] [nio-6868-exec-1] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2025-03-19T23:19:33.556+07:00 DEBUG 18844 --- [jsb_webshop_t2406e] [nio-6868-exec-1] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2025-03-19T23:19:33.557+07:00 DEBUG 18844 --- [jsb_webshop_t2406e] [nio-6868-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@1a598e30
+2025-03-19T23:19:33.558+07:00 DEBUG 18844 --- [jsb_webshop_t2406e] [nio-6868-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@17b9c9ff
+2025-03-19T23:19:33.558+07:00 DEBUG 18844 --- [jsb_webshop_t2406e] [nio-6868-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2025-03-19T23:19:33.559+07:00  INFO 18844 --- [jsb_webshop_t2406e] [nio-6868-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2025-03-19T23:19:33.619+07:00 DEBUG 18844 --- [jsb_webshop_t2406e] [nio-6868-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/admin/login", parameters={}
+2025-03-19T23:19:33.620+07:00 DEBUG 18844 --- [jsb_webshop_t2406e] [nio-6868-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to exam.jsb_webshop_t2406e.controllers.AdminTestController#login()
+2025-03-19T23:19:33.637+07:00 DEBUG 18844 --- [jsb_webshop_t2406e] [nio-6868-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Using 'text/html', given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7] and supported [text/plain, */*, application/json, application/*+json]
+2025-03-19T23:19:33.639+07:00 DEBUG 18844 --- [jsb_webshop_t2406e] [nio-6868-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Writing ["Login page under construction"]
+2025-03-19T23:19:33.645+07:00 DEBUG 18844 --- [jsb_webshop_t2406e] [nio-6868-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-03-19T23:19:33.739+07:00 DEBUG 18844 --- [jsb_webshop_t2406e] [nio-6868-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/favicon.ico", parameters={}
+2025-03-19T23:19:33.744+07:00 DEBUG 18844 --- [jsb_webshop_t2406e] [nio-6868-exec-3] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2025-03-19T23:19:33.750+07:00 DEBUG 18844 --- [jsb_webshop_t2406e] [nio-6868-exec-3] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not found
+2025-03-19T23:19:33.755+07:00 DEBUG 18844 --- [jsb_webshop_t2406e] [nio-6868-exec-3] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler exam.jsb_webshop_t2406e.exception.RestControllerExceptionHandler#globalExceptionHandler(Exception, WebRequest)
+2025-03-19T23:19:33.801+07:00 DEBUG 18844 --- [jsb_webshop_t2406e] [nio-6868-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json;q=0.8', given [image/avif, image/webp, image/apng, image/svg+xml, image/*, */*;q=0.8] and supported [application/json, application/*+json]
+2025-03-19T23:19:33.804+07:00 DEBUG 18844 --- [jsb_webshop_t2406e] [nio-6868-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Writing [exam.jsb_webshop_t2406e.exception.ErrorMessage@3f29381c]
+2025-03-19T23:19:33.846+07:00 DEBUG 18844 --- [jsb_webshop_t2406e] [nio-6868-exec-3] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource favicon.ico.]
+2025-03-19T23:19:33.847+07:00 DEBUG 18844 --- [jsb_webshop_t2406e] [nio-6868-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 500 INTERNAL_SERVER_ERROR
+PS C:\Users\Public\Java\JavaSpringWeb\jsb_webshop_t2406e> 

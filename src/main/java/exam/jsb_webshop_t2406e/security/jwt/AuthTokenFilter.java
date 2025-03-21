@@ -27,6 +27,16 @@ public class AuthTokenFilter extends OncePerRequestFilter {
 
   private static final Logger logger = LoggerFactory.getLogger(AuthTokenFilter.class);
 
+  /**
+   * Vấn đề:
+   * https://stackoverflow.com/questions/50673400/how-to-log-in-by-email-instead-of-username-in-spring-security
+   * 
+   * Giải pháp là: Customer đăng ký tài khoản bằng Email, hệ thống sẽ tự động tạo Username từ Email.
+   * Khi Customer đăng nhập bằng Email, chúng ta sẽ dùng thẻ <input type="email" name="username"> trong form login.
+   * Tức là đây là một thủ thuật: label thì là email, nhưng <input name="username"> vẫn là username.
+   * 
+   * Như vậy là ta có thể tái sử dụng được hệ thống User Role đã có sẵn, không cần phải sửa đổi gì nhiều.
+   */
   @Override
   protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
       throws ServletException, IOException {
