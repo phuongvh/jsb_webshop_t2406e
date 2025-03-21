@@ -163,12 +163,18 @@ public class WebSecurityConfig
   @Order(2)
   SecurityFilterChain customerFilterChain(HttpSecurity http) throws Exception 
   {
+      // Muốn url nào truy cập mà không cần tài khoản, thì phải gọi hàm permitAll() tường minh !!!
+      // Không gọi là Spring Security sẽ chặn và bắt đăng nhập.
       http.securityMatcher("/customer/**")
           .authorizeHttpRequests( auth -> auth
                 .requestMatchers("/customer/test").permitAll()
+                // .requestMatchers("/customer/public").permitAll() // bị authenticated, mặc dù đã comment
                 .requestMatchers("/customer/login").permitAll()
-                .requestMatchers("/customer/loginpost").permitAll()
-                .requestMatchers(HttpMethod.POST, "/customer/loginpost").permitAll() // vẫn failed
+                // .requestMatchers("/customer/loginpost").permitAll()
+                // .requestMatchers(HttpMethod.POST, "/customer/loginpost").permitAll() // vẫn failed
+                .requestMatchers("/customer/logout").permitAll()
+                // .requestMatchers("/customer/**").authenticated() // bắt chước admin
+                // .requestMatchers("/customer/bimat").authenticated() // không ăn thua, phải permitAll() tường minh
                 .requestMatchers("/customer/**").authenticated()
             
           )
