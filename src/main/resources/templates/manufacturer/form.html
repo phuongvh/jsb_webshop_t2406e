@@ -1,0 +1,76 @@
+<form class="ui" method="post" th:action="${action}" th:object="${entity}" style="margin: 0px;">
+    <div class="card-header">
+        <h4 class="pull-left">
+            <i class="bi-pencil"></i>Form Nhà Sản Xuất
+        </h4>
+        <a class="btn btn-primary float-right" href="/admin/manufacturer">
+            <i class="bi bi-list"></i>&nbsp;Danh Sách
+        </a>
+    </div>
+
+    <div class="card-body">
+        <input type="hidden" th:field="*{id}" />
+
+        <div class="form-group">
+            <label>Tên Nhà Sản Xuất </label>
+            <input type="text" th:field="*{name}" class="bs4 form-control" />
+        </div>
+
+        <div class="form-group">
+            <label>Mô tả (SummerNote)</label>
+
+            <textarea th:field="*{description}" class="HtmlEditor"></textarea>
+
+            <script>    
+                // 
+                // Gây lỗi, khi bị render theo kiểu Ajax
+                // try {
+                //     $('.HtmlEditor').summernote();
+                // } catch (error) 
+                // { // Không bắt được lỗi: TypeError: TypeError: "x" is not a function
+                //     console.log('summernote failed for ajax rendering html');
+                //     // alert('summernote failed');
+                // }
+            </script>
+
+        </div>
+
+        <div class="form-group">
+            <label>Đường link</label>
+            <input type="text" th:field="*{link}" class="bs4 form-control" />
+        </div>
+
+        <div class="form-group">
+            <label>Ảnh</label>
+            <input type="text" th:field="*{image}" class="bs4 form-control" />
+        </div>
+
+        <div class="form-group">
+            <label>Thứ tự</label>
+            <input type="number" th:field="*{orderNumber}" class="bs4 form-control" />
+        </div>
+
+        <!-- <div class="form-group">
+            <label>Cho Phép: </label>
+            <input type="checkbox" th:field="*{choPhep}" />
+        </div> -->
+
+        <div class="form-group form-check">
+            <label class="form-check-label">
+                <input class="form-check-input" type="checkbox" th:field="*{active}"> Cho Phép
+            </label>
+        </div>
+
+        <br />
+        <div style="overflow: auto;">
+            <button type="submit" class="bs4 btn btn-primary float-right" ><i class="bi-save"></i>&nbsp;Lưu</button>
+
+            <button type="reset" class="bs4 btn btn-secondary float-right mx-1" ><i class="bi-reply"></i>&nbsp;Huỷ</button>
+            <a class="btn btn-primary float-right" href="/admin/manufacturer">
+                <i class="bi bi-list"></i>&nbsp;Danh Sách
+            </a>
+
+        </div>
+    </div>
+
+</form>

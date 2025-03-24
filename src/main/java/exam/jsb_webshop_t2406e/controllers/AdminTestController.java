@@ -16,7 +16,14 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import exam.jsb_webshop_t2406e.security.jwt.JwtUtils;
 
-
+/**
+ * Có nên chăng, tạo ra một trang login riêng cho admin, riêng cho user ?
+ * Ví dụ:
+ * http://localhost:8080/admin/login
+ * http://localhost:8080/user/login
+ * http://loclahost:8080/visitor/login
+ * http://loclahost:8080/customer/login
+ */
 @Controller
 public class AdminTestController 
 {
