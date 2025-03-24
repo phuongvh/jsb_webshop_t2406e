@@ -1,0 +1,15 @@
+<div>
+    Authenticated as <span sec:authentication="email"></span>
+    <div></div>
+        <p>Username: <span sec:authentication="principal.username"></span></p>
+        <p>Roles: <span sec:authentication="principal.authorities"></span></p>
+    </div>
+</div>
+
+<!-- <div th:text="$ { #authentication.principal.email}"></div> -->
+
+<span class="message" th:text="'Hello '+${#ctx.session.userDetails.username}"> </span>
+<br>
+<span class="message" th:text="'Your email is '+${#ctx.session.userDetails.email}"> </span>
+<br>
+<span class="message" th:text="'Your email is '+${#ctx.session.userDetails.password}"> </span>

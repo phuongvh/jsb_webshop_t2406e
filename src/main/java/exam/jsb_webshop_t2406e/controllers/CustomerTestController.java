@@ -46,10 +46,30 @@ public class CustomerTestController
 
     @GetMapping("/customer/bimat")
     // @PreAuthorize("hasRole('USER')") // vẫn failed
-    @ResponseBody
+    // @ResponseBody
     public String bimat(){
-        return "Day la noi dung bi mat, danh cho khach hang";
+        // return "Day la noi dung bi mat, danh cho khach hang";
+
+        Object principal = SecurityContextHolder.getContext()
+     .getAuthentication().getPrincipal();
+
+// put the UserDetails object here.
+session.setAttribute("userDetails", principal);
+
+        return "customer-bimat.html";
     }
+
+    // todo: Xây dựng tính năng đăng ký tài khoản khách hàng !
+    // registerCustomer()
+    // todo: Sau khi Customer đăng nhập thành công, thì phải hiện được lời chào kèm tên khách hàng
+    // ở góc phải phía trên màn hình web, để Customer luôn cảm nhận/nhận thức được trạng thái đăng nhập của mình
+    // tags: how to rertrieve username after login success in spring security
+    /* https://www.baeldung.com/get-user-in-spring-security
+     * <body>
+            <div sec:authorize="isAuthenticated()">
+            Authenticated as <span sec:authentication="name"></span></div>
+        </body>
+     */
 
     @GetMapping("/customer/login")
     public String login(){

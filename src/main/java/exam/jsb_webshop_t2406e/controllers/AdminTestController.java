@@ -62,8 +62,10 @@ public class AdminTestController
      * @return
      */
     @GetMapping("/admin/loginform")
-    public String loginForm(Model model){
-        return "loginform2";
+    public String loginForm(Model model)
+    {
+        // return "loginform2";
+        return "admin-login.html";
     }
 
     @PostMapping("/admin/loginform")

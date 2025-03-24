@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--Hay phải chạy Maven Compile để layout.html mới có hiệu lực-->
+
+<head>
+    <title>Admin Login</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://semantic-ui.com/dist/semantic.min.js"></script>
+
+    <link  href="https://semantic-ui.com/dist/semantic.min.css"     rel="stylesheet"/>
+    <link  href="https://semantic-ui.com/dist/components/reset.css" rel="stylesheet"/>
+    <link  href="https://semantic-ui.com/dist/components/site.css"  rel="stylesheet"/>
+    <link  href="https://semantic-ui.com/dist/components/grid.css"  rel="stylesheet"/>
+    <link  href="https://semantic-ui.com/dist/components/form.css"  rel="stylesheet"/>
+</head>
+
+<body style="background: linear-gradient(rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);">
+
+    <div class="ui segments" style="width: 30%; margin: 100px auto;">
+        <div class="ui segment">
+            <h2 class="ui header" style="text-align: center;">
+                Admin Login Form
+            </h2>
+        </div>
+		<form th:action="@{/admin/loginform}" method="post" class="ui huge form segment">
+
+            <div th:if="${param.error}" class="ui negative message close">
+                <i class="icon close"></i>
+                Invalid username and password.
+            </div>
+            <div th:if="${param.logout}">
+                You have been logged out.
+            </div>
+
+            <div class="field">
+                <div class="ui left icon input">
+                    <i class="user icon"></i>
+
+                    <input type="text" name="username" />
+                </div>
+            </div>
+            <div class="field">
+                <div class="ui left icon input">
+                    <i class="lock icon"></i>
+
+                    <input type="password" name="password" />
+                </div>
+            </div>
+            <!-- Hỏi AI CoPilot về mã Semantic UI để tạo icon cần thiết icon sign in và icon reset -->
+            <div style="overflow: auto;">
+                <button class="ui teal submit button" type="submit" style="float: right;">
+                    <i class="sign in icon"></i>Login
+                </button>
+                <button class="ui button" type="reset" style="float: right;">
+                    <i class="redo icon"></i>Reset
+                </button>
+            </div>
+            <!-- </div> -->
+        </form>
+    </div>
+
+    <script>
+        // Initialize the close icon functionality
+        // Đóng thông báo lỗi màu đỏ khi nhấp chuột vào
+        // Mã này là do hỏi AI Copilot nó nói cho
+        $('.message .close').on('click', function() {
+            $(this).closest('.message').transition('fade');
+        });
+    </script>
+</body>
+
+</html>
