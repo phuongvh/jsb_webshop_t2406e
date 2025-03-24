@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--Hay phải chạy Maven Compile để layout.html mới có hiệu lực-->
+
+<head>
+    <!-- <title>Layout-Admin UI</title> -->
+    <title th:text="${title}">
+        Layout-Admin UI
+    </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Cài đặt thư viện giao diện (uix) jQuery Semantic -->
+    <link  href="https://semantic-ui.com/dist/semantic.min.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://semantic-ui.com/dist/semantic.min.js"></script>
+
+    <!--Cài đặt trình soạn thảo văn bản jQuery Rich Text Editor : xem thử ở them.html của quangcao -->
+    <link   rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link   rel="stylesheet" href="https://www.jqueryscript.net/demo/Rich-Text-Editor-jQuery-RichText/richtext.min.css">
+    <script src="https://www.jqueryscript.net/demo/Rich-Text-Editor-jQuery-RichText/jquery.richtext.js"></script>
+
+    <!-- Cài đặt thư viện jQuery Summernote độc lập, không phụ thuộc Bootstrap -->
+    <link  href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote-lite.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote-lite.js"></script>
+
+    <!--Cài đặt thư viện jQuery TinyMCE (Rich Text Editor)
+    cái này tham khảo thêm thôi: xem quangcao/them.html -->
+    <link  href="/tinymce/skin.min.css" rel="stylesheet">
+    <script src="https://yellowred.info/stagb/plugins/tinymce/tinymce.min.js"></script>
+
+    <!--
+        Semantic UI > Table > Ajax
+        https://education.iupui.edu/tep_admin/Editor-PHP-1.9.4/examples/styling/semanticui.html
+    -->
+
+    <!--Cài đặt jQuery Plugin: Menu Context: https://swisnl.github.io/jQuery-contextMenu -->
+    <link  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" >
+    <link  href="https://cdnjs.cloudflare.com/ajax/libs/jquery-contextmenu/2.7.1/jquery.contextMenu.min.css" rel="stylesheet" >
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-contextmenu/2.7.1/jquery.contextMenu.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-contextmenu/2.7.1/jquery.ui.position.js"></script>
+</head>
+
+<body>
+
+    <div class="ui bottom attached segment pushable">
+        <div class="ui inverted left vertical sidebar menu">
+            <a class="item" href="/qdl/nhanvien">
+                <i class="home icon"></i> Admin (Logo)
+            </a>
+           
+            <a class="item" href="/qdl/quangcao">
+                <i class="icon adversal"></i> Quảng Cáo
+            </a>
+
+            <a class="item" href="/qdl/phanhoi">
+                <i class="icon chat"></i> Phản Hồi
+            </a>
+            <a class="item" href="/qdl/khachhang">
+                <i class="icon smile"></i> Khách Hàng
+            </a>
+            <a class="item" href="/qdl/donhang">
+                <i class="icon tag"></i> Đơn Hàng
+            </a>
+
+            <a class="item" href="/qdl/nhanvien">
+                <i class="icon user"></i> Nhân Viên
+            </a>
+            <a class="item" href="/qdl/caidat">
+                <i class="icon wrench"></i> Cài Đặt
+            </a>
+            <a class="item" href="/admin/image">
+                <i class="icon smile"></i> Ảnh Hệ Thống
+            </a>
+            
+            <a class="item" href="/qdl/loai">
+                <i class="icon block layout"></i> Danh Mục, Loại
+            </a>
+            <a class="item" href="/qdl/sanpham">
+                <i class="icon product hunt"></i> Sản Phẩm
+            </a>
+            <a class="item" href="/qdl/anhsanpham">
+                <i class="icon product hunt"></i> Ảnh Sản Phẩm
+            </a>
+            <a class="item" href="/qdl/nhasanxuat">
+                <i class="icon amazon"></i> Nhà Sản Xuất
+            </a>
+
+        </div>
+        <div class="pusher">
+
+            <div class="ui stackable menu">
+                <a class="item header toggle button">
+                    ☰
+                </a>
+
+                <div class="menu right">
+                    <a class="item header" th:text="'Xin chào '+${session.User_Fullname}">
+                        Xin chào NV Quan Tri
+                    </a>
+                    <a class="item header" href="/admin/user/logout">
+                        <i class="icon sign-out"></i>Log Out2
+                    </a>
+                </div>
+
+
+
+            </div>
+
+            <!--nội dung riêng-->
+            <i th:replace="${content}"></i>
+
+
+        </div>
+    </div>
+
+    <script>
+        $(function () {
+            // Điều khiển hiệu ứng ẩn,hiện của SideBar Menu (thanh menu dọc bên tay trái)
+            $('.ui.dropdown').dropdown();
+            $('.ui.sidebar').sidebar('attach events', '.toggle.button');
+
+            // Đóng các hộp thoại thông báo một cách từ từ
+            $('.message .close')
+                .on('click', function () {
+                    $(this)
+                        .closest('.message')
+                        .transition('fade')
+                    ;
+                })
+            ;
+
+            $('textarea').richText();
+            // $('htmlEditor').richText();
+        });
+    </script>
+
+    <footer class="ui container">
+        <!-- <div class="ui divider"></div> -->
+        &copy; <span th:text="${#dates.format(#dates.createNow(),'YYYY')}"></span>. Powered by Java Spring Boot
+        &nbsp;
+        <!-- <span th:text="${caidat.get('email')}"></span> &nbsp;
+    <span th:text="${caidat.get('phone')}"></span> &nbsp;
+    <span th:text="${caidat.get('dia_chi')}"></span> &nbsp; -->
+    </footer>
+
+
+</body>
+
+</html>

@@ -45,6 +45,17 @@ public class AdminTestController
         return "Noi dung bi mat, phai dang nhap moi xem duoc";
     }
 
+    @GetMapping("/admin/dashboard")
+    public String dashboard(Model model)
+    {
+         // Nội dung riêng của trang...
+         model.addAttribute("content", "admin/dashboard.html");
+         // model.addAttribute("dsBangNgoai", this.dvlBangNgoai.dsBangNgoai());
+
+        // return "admin-dashboard.html";
+        return "layout/layout-admin.html";
+    }
+
     @GetMapping("/admin/login")
     @ResponseBody
     public String login(){
