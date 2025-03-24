@@ -8,8 +8,17 @@
                 Form Manufacturer (Nhà Sản Xuất)
             </h2>
         </div>
-        <form class="ui form large segment manufacturer" method="post" th:action="${action}" th:object="${entity}" style="margin: 0px;">
-         
+        <form class="ui form" method="post" th:action="${action}" th:object="${entity}" style="margin: 0px;">
+            <div class="ui segment">
+                <h4 class="ui header">
+                    <i class="pencil icon"></i>Form Nhà Sản Xuất
+                </h4>
+                <a class="ui primary button right floated" href="/admin/manufacturer">
+                    <i class="list icon"></i>&nbsp;Danh Sách
+                </a>
+            </div>
+
+            <div class="ui segment">
                 <input type="hidden" th:field="*{id}" />
 
                 <div class="field">
@@ -56,7 +65,7 @@
                 </div>
 
                 <br />
-                <div class="ui buttons right floated">
+                <div class="ui buttons">
                     <button type="submit" class="ui primary button"><i class="save icon"></i>&nbsp;Lưu</button>
                     <div class="or"></div>
                     <button type="reset" class="ui button"><i class="reply icon"></i>&nbsp;Huỷ</button>
@@ -64,9 +73,7 @@
                         <i class="list icon"></i>&nbsp;Danh Sách
                     </a>
                 </div>
-            
-                <div class="ui error message"></div>
-                <br style="clear: both"/> <!--chống sập: collapsed -->
+            </div>
         </form>
     </div>
 </div>
