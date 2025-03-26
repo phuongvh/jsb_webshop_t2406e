@@ -1,0 +1,46 @@
+Cách Làm Truyền Thống: PHP, JSP, ASP
+Web bán hàng sẽ có 2 phần chính:
+1. Front Store: public ra bên ngoài cho khách hàng
+(trang mua bán trực tuyến)
+
+2. Admin Back Office: private, nội bộ bên trong nhân viên cửa hàng.
+(cũng truy cập qua internet, hoặc mạng nội bộ công ty)
+- Access Control ???
+- RBAC: Role based Access Control
+- User, Role, User_Roles
+- User Permissions căn cứ trên User Role
+Mỗi vai trò sẽ có quyền hạn nhất định.
+Mỗi nhóm người dùng sẽ có quyền hạn nhất định.
+
+password_hash()
+password_verify()
+
+Quá Trình Đăng Nhập Diễn Ra Như Nào ?
+- Hiện lên HTML Form Login ?
+- User nhập tài khoản đúng thì sao ? (username & password)
+    Session : lưu danh tính của User bên trong Session
+- Điều hướng User tới tài nguyên mà họ muốn
+
+Vấn đề: User sử dụng thiết bị truy cập không hỗ trợ Session
+(Stateless >< Statefull(giao thức truyền lưu trạng thái))
+
+Cookie >< Session:
+Session không lưu thông tin phía người dùng.
+Cookie lưu thông tin trên máy người dùng.
+
+JWT: Json Web Token: lưu trong LocalStorage (JS) 
+hay Cookie của trình duyệt.
+
+(Người dùng phải đồng ý cho phép dùng Coookie)
+Nếu lưu JWT trong Key bằng Symbol Object (không tĩnh)
+Symbol Object này phải là duy nhất trong lúc Web Page hoạt động.
+Thì JavaScript của bên thứ 3 sẽ không bao giờ đoán được, hack được.
+2 câu lệnh tạo Symbol Object sẽ không sinh ra 2 Object giống nhau.
+Hacker sẽ không có cơ hội để dò hay tạo lại Object đó.
+
+Còn nếu mà dùng Key theo dạng chuỗi tĩnh (dễ đoán)
+
+LocalStorage cho phép tắt tab đi thì dữ liệu Key Value vẫn còn.
+Lúc đấy Object không còn trong Ram nữa, thì liệu có khả thi.
+
+SessionStorage có ưu điểm hơn là tắt tab trình duyệt thì dữ liệu Key/Value mất.

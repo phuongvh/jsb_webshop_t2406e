@@ -1,0 +1,25 @@
+method: GET
+url: http://localhost:8080/api/test/mod
+
+Headers:
+Content-Type  application/json;charset=UTF-8
+
+
+Body Raw:
+
+{
+ "username" : "ballmer",
+  "password": "123456",
+  "role": ["mod"]
+}
+
+Response Header:
+    Moderator Board.
+
+//////////////////////////////////////////////////////////
+Điều kiện để chạy được bài test này là phải đăng nhập vào trước:
+Expiration Time cho jwt đang đặt là 30000 ms tức là 30 giây
+https://www.bezkoder.com/spring-boot-jwt-authentication/
+
+Khi truy cập vào thì có 2 cách là sử dụng đầy đủ Username, password, 
+hoặc là chuỗi JWT nhận được trước đó.

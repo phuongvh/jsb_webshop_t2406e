@@ -1,0 +1,32 @@
+method=POST
+url=http://localhost:8080/api/auth/signin
+
+
+Headers:
+Content-Type: application/json;charset=UTF-8
+
+
+Body Raw Json
+
+{
+ "username" : "ballmer",
+  "password": "123456"
+}
+hoặc
+{
+ "username" : "ballmer",
+   "password": "123456",
+     "email" : "ballmer@microsoft.com",
+       "role" : ["user", "mod"]
+}
+
+Response:
+    {
+    "id": 4,
+    "username": "ballmer",
+    "email": "ballmer@microsoft.com",
+    "roles": [
+        "ROLE_MODERATOR",
+        "ROLE_USER"
+    ]
+}

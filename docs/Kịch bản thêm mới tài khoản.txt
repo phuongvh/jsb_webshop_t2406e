@@ -1,0 +1,38 @@
+method: POST
+http://localhost:8080/api/auth/signup
+
+
+Headers:
+Content-Type       application/json;charset=UTF-8
+
+
+Body Raw Json
+
+{
+ "username" : "stevejobs",
+  "password": "123456",
+  "email" : "steve@apple.com",
+  "role" : ["user"]
+}
+
+{
+ "username" : "ballmer",
+ "password": "123456",
+ "email" : "ballmer@microsoft.com",
+ "role" : ["user", "mod"]
+}
+
+{
+ "username" : "admin",
+   "password": "123456",
+     "email" : "admin@apple.com",
+       "role" : ["user", "mod", "admin"]
+}
+
+// làm thế này là sai, vì role ở đây nó code là Set<String> --> json là [ ....], xem SignupRequest
+{
+ "username" : "stevejobs",
+   "password": "123456",
+     "email" : "steve@apple.com",
+       "role" : "USER"
+}

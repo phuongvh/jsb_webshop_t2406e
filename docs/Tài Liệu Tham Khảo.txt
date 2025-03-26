@@ -1,0 +1,189 @@
+https://stackoverflow.com/questions/64414584/cannot-resolve-symbol-security-while-importing-io-jsonwebtoken-security-keys
+
+Issue with parserBuilder() method in JJWT library for JWT token validation
+https://stackoverflow.com/questions/78805779/issue-with-parserbuilder-method-in-jjwt-library-for-jwt-token-validation
+
+
+https://www.baeldung.com/spring-security-login
+
+https://github.com/Orange-OpenSource/spring-security-formlogin-restbasic/blob/master/README.MD
+
+https://blog.octoperf.com/securing-a-rest-api-with-spring-security/
+https://github.com/buingoctruong/springboot3-springsecurity6-jwt/blob/master/src/main/java/com/truongbn/security/config/SecurityConfiguration.java
+
+https://bwgjoseph.com/spring-security-custom-pre-authentication-flow
+
+https://viblo.asia/p/phan-1-spring-boot-30-va-spring-security-60-GAWVpdBYV05
+
+
+Bài viết hay về Java Spring Security, JWT, RESTful API
+Giống mã đang làm:
+https://bootify.io/spring-security/rest-api-spring-security-with-jwt.html
+https://www.toptal.com/spring/spring-security-tutorial
+https://www.geeksforgeeks.org/spring-boot-3-0-jwt-authentication-with-spring-security-using-mysql-database/
+https://bootify.io/spring-security/rest-api-spring-security-with-jwt.html
+https://docs.spring.io/spring-security/reference/servlet/configuration/java.html
+bài viết gốc: 
+https://www.bezkoder.com/spring-boot-jwt-authentication/
+
+So sánh Spring3 Security và Spring2 Security: (có nhiều điểm khác nhau đấy)
+https://spring.io/blog/2022/02/21/spring-security-without-the-websecurityconfigureradapter 
+
+ApiBookController vs MvcBookController vs AdmBookController
+
+
+Decode the Bcrypt encoded password in Spring Security to deactivate user account
+https://stackoverflow.com/questions/26905721/decode-the-bcrypt-encoded-password-in-spring-security-to-deactivate-user-account
+/*
+The problem is solved by using below code:
+
+    BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();  
+    encoder.matches(password, user.getPassword());  
+
+    //password - from form(JSP)
+    //user.getPassword() - from database
+
+    BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+    if(email.equalsIgnoreCase(user.getEmail()) && encoder.matches(password, user.getPassword())) {
+        userService.deactivateUserByID(user.getId());
+        redirectAttributes.addFlashAttribute("successmsg", "Your account has been deactivated successfully.");
+        model.setViewName("redirect:/logout");
+    }else{
+        redirectAttributes.addFlashAttribute("errormsg", "Email or Password is incorrect");
+        model.setViewName("redirect:/app/profile/deactivate");
+    }
+*/
+
+////////////////////////////////////////////
+Excluding autoconfiguration class gives 404 not found error
+https://stackoverflow.com/questions/73994990/excluding-autoconfiguration-class-gives-404-not-found-error
+1
+
+Remove the exclude part from the @SpringBootApplication and. 
+Add this two lines in your application.properties file.
+
+spring.security.user.name=abc
+spring.security.user.password=xxx
+///////////////////////////////////////////////
+
+How to disable spring-security login screen?
+https://stackoverflow.com/questions/23636368/how-to-disable-spring-security-login-screen
+Stuck on login screen using spring security
+https://stackoverflow.com/questions/66344573/stuck-on-login-screen-using-spring-security
+
+Spring Framework 6.0 has been released on 16 November 2022 and came with a Java 17+ baseline
+ and a move to Jakarta EE 9+ (in the jakarta namespace), with a focus on the recently released 
+ Jakarta EE 10 APIs such as Servlet 6.0 and JPA 3.1.
+ https://en.wikipedia.org/wiki/Spring_Framework#:~:text=Spring%20Framework%206.0%20has%20been,Servlet%206.0%20and%20JPA%203.1.
+
+ Spring 6.0 Boot 3.0 are both released in 2022
+
+Các khái niệm phiên bản phần mềm:
+ What is the difference between Spring's GA, RC and M2 releases?
+
+ WHAT IS THE RECOMMENDED PROJECT STRUCTURE FOR SPRING BOOT REST PROJECTS? [CLOSED]
+ From the docs: (https://docs.spring.io/spring-boot/reference/using/structuring-your-code.html#using.structuring-your-code.locating-the-main-class)
+
+The following listing shows a typical layout:
+
+com
+ +- example
+     +- myapplication
+         +- MyApplication.java
+         |
+         +- customer
+         |   +- Customer.java
+         |   +- CustomerController.java
+         |   +- CustomerService.java
+         |   +- CustomerRepository.java
+         |
+         +- order
+             +- Order.java
+             +- OrderController.java
+             +- OrderService.java
+             +- OrderRepository.java
+
+97
+
+config - class which will read from property files
+
+cache - caching mechanism class files
+
+constants - constant defined class
+
+controller - controller class
+
+exception - exception class
+
+model - pojos classes will be present
+
+security - security classes
+
+service - Impl classes
+
+util - utility classes
+
+validation - validators classes
+--------------------------------------
+Though this question has an accepted answer, still I would like to share my project structure for RESTful services.
+
+src/main/java
+    +- com
+        +- example
+            +- Application.java
+            +- ApplicationConstants.java
+                +- configuration
+                |   +- ApplicationConfiguration.java
+                +- controller
+                |   +- ApplicationController.java
+                +- dao
+                |   +- impl
+                |   |   +- ApplicationDaoImpl.java
+                |   +- ApplicationDao.java
+                +- dto
+                |   +- ApplicationDto.java
+                +- service
+                |   +- impl
+                |   |   +- ApplicationServiceImpl.java
+                |   +- ApplicationService.java
+                +- util
+                |   +- ApplicationUtils.java
+                +- validation
+                |   +- impl
+                |   |   +- ApplicationValidationImpl.java
+                |   +- ApplicationValidation.java
+DAO = Data Access Object.
+DTO = Data Transfer Object.
+
+// https://stackoverflow.com/questions/34817617/should-jwt-be-stored-in-localstorage-or-cookie
+// https://steemit.com/utopian-io/@alfarisi94/consuming-jwt-in-client-side-with-jquery
+// https://security.stackexchange.com/questions/130548/should-jwt-token-be-stored-in-a-cookie-header-or-body
+
+
+// OK, đã điều hướng được /admin/test vào /admin/login form
+    // https://stackoverflow.com/questions/73666236/default-login-form-for-secured-methodes-in-spring-security
+    // https://stackoverflow.com/questions/77207127/spring-security-err-too-many-redirects-form-login
+    // https://stackoverflow.com/questions/76206733/spring-boot-3-form-login-cannot-complete-the-process
+    // https://github.com/spring-projects/spring-security/issues/13285
+    // https://stackoverflow.com/questions/55829669/how-to-call-controller-post-method-with-custom-spring-boot-login-form
+
+    // THỰC RA THÌ CHỈ CẦN TẠO SecurityFilterChain CHO CÁC MODULE CẦN SỰ KIỂM SOÁT
+    // TRUY CẬP THÔI, chứ khu vực nào để tự do ra vào thì chả cần !!!
+    // https://github.com/spring-projects/spring-security/issues/15220
+
+      // https://github.com/spring-projects/spring-security/issues/15220
+      https://www.baeldung.com/spring-security-multiple-entry-points
+      https://stackoverflow.com/questions/61936297/spring-boot-how-to-have-thymeleaf-web-page-and-rest-api-with-different-authentic
+
+      https://www.danvega.dev/blog/multiple-spring-security-configs
+
+Spring Boot Redirect too many times ! (Do WebConfig hoặc thiếu thư viện ThymeLeaf)
+
+    // https://stackoverflow.com/questions/73666236/default-login-form-for-secured-methodes-in-spring-security
+    // https://stackoverflow.com/questions/77207127/spring-security-err-too-many-redirects-form-login
+    // https://stackoverflow.com/questions/76206733/spring-boot-3-form-login-cannot-complete-the-process
+    // https://github.com/spring-projects/spring-security/issues/13285
+    // https://stackoverflow.com/questions/55829669/how-to-call-controller-post-method-with-custom-spring-boot-login-form
+
+Login Form: Username vs Email
+https://stackoverflow.com/questions/50673400/how-to-log-in-by-email-instead-of-username-in-spring-security

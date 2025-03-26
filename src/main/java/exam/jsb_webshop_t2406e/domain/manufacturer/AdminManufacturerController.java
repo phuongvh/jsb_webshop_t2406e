@@ -147,4 +147,42 @@ public class AdminManufacturerController
         return "redirect:/admin/manufacturer/list";
     }
     
+    @GetMapping("/admin/manufacturer/edit")
+    public String getEdit(Model model, @RequestParam("id") int id) 
+    {
+
+        // Lấy ra bản ghi theo mã định danh
+        var entity = jpaManufacturer.findById(id).get();
+
+        // Gửi đối tượng dữ liệu sang giao diện (ui view) html form
+        model.addAttribute("entity", entity);
+        model.addAttribute("action", "/admin/manufacturer/edit");
+
+        // Hiển thị giao diện view html
+        // Nội dung riêng của trang...
+        // model.addAttribute("content", "manufacturer/edit.html"); // edit.html
+        model.addAttribute("content", "manufacturer/form.html"); // edit.html
+
+        // ...được đặt vào bố cục chung của toàn website
+        return "layout/layout-admin.html"; // layout.html
+    }
+
+    @PostMapping("/admin/manufacturer/edit")
+    public String postEdit(@ModelAttribute Manufacturer dl) 
+    {
+        // Một số thông tin cập nhật do hệ thống làm
+        // bên cạnh dữ liệu mà user gõ trên Form Edit/Update
+        // dl.setNgayedit(LocalDate.now());
+
+        // int id = Integer.parseInt(request.getParameter("id"));
+        
+        // dl.setId(id); // Đề phòng Ajax Form xử lý id không mượt
+
+        jpaManufacturer.save(dl);
+
+        // Gửi thông báo thành công từ view Add/Edit sang view List
+        session.setAttribute("SUCCESS_MESSAGE", "Successfully updated manufacturer !");
+
+        return "redirect:/admin/manufacturer/list";
+    }
 }// end class
