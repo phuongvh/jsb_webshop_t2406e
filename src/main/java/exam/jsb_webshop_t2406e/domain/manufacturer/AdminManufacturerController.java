@@ -9,6 +9,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
+import lombok.experimental.var;
+
+import org.springframework.web.bind.annotation.RequestParam;
+
 
 // http://localhost:8080/admin/manufacturer
 @Controller
@@ -28,6 +32,27 @@ public class AdminManufacturerController
     // và khởi tạo 3 biến đặc biệt ở trên: jpa, request, session
     // Spring Boot sẽ làm tự động giúp chúng ta.
 
+    // Viết ra lộ trình (route) đến trang danh sách (list page)
+    // Khai báo chương trình con chịu trách nhiệm hiển thị trang html có chứa danh sách
+    @GetMapping("/admin/manufacturer/list")
+    public String 
+    getList(Model model) 
+    {
+        // SQL Server -> (Java Server -> FE/UiX Server) -> Browser
+        // Lấy dữ liệu các bản ghi trong CSDL
+        var list = jpaManufacturer.findAll();
+
+        // Gửi dữ liệu sang view HTML
+        model.addAttribute("list", list);
+
+        // Chỉ định view HTML nào sẽ hiển thị dữ liệu
+        model.addAttribute("content", "manufacturer/list.html");
+
+        // Chỉ định bố cục cho trang (layout)
+        return "layout/layout-admin.html";
+        // return new String("layout/layout-admin.html");
+    }
+    
     // Chú ý đánh dấu @Controller cho lớp này
     // để Java Spring Boot biết đây là một Controller
     @GetMapping("/admin/manufacturer/add")
@@ -76,6 +101,6 @@ public class AdminManufacturerController
         session.setAttribute("SUCCESS_MESSAGE", "Successfully added new user !");
 
         // return "redirect:/admin/manufacturer/list";
-        return "redirect:/app/test";
+        return "redirect:/add-ok.htm";
     }
 }// end class

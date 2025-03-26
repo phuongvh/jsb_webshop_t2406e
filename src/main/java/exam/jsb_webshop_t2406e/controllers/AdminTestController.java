@@ -76,6 +76,9 @@ public class AdminTestController
      * Khi client truy cập vào địa chỉ localhost:8080/admin/loginform
      * thì springboot lại hiểu lầm là truy cập vào localhost:8080/admin/loginform.html
      * 
+     * Lỗi 403 do không sử dụng thư viện ThymeLeaf th:action="@{/admin/loginform}"
+     * https://stackoverflow.com/questions/62264324/403-error-for-custom-login-page-spring-security
+     * 
      * @param model
      * @return
      */

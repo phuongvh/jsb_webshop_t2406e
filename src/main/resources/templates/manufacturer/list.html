@@ -1,0 +1,35 @@
+
+<div class="ui" style="margin: 2%;">
+    <table class="ui table celled selectable">
+        <caption>
+            Danh Sách Nhà Sản Xuất
+        </caption>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Tên Nhà Sản Xuất</th>
+                <th>Ảnh</th>
+                <th>Đường Link</th>
+                <th>Thứ Tự</th>
+                <th>Cho Phép</th>
+                <th>Thao Tác</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="manufacturer : ${list}">
+                <td th:text="${manufacturer.id}">1</td>
+                <td th:text="${manufacturer.name}">Nhà Sản Xuất 1</td>
+                <td>
+                    <img th:src="${manufacturer.image}" style="width: 100px; height: 100px;" />
+                </td>
+                <td th:text="${manufacturer.link}">Đường Link 1</td>
+                <td th:text="${manufacturer.orderNumber}">1</td>
+                <td th:text="${manufacturer.active}">Có</td>
+                <td>
+                    <a th:href="@{/admin/manufacturer/edit/{id}(id=${manufacturer.id})}">Sửa</a>
+                    <a th:href="@{/admin/manufacturer/delete/{id}(id=${manufacturer.id})}">Xóa</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
