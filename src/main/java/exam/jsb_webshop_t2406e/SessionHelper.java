@@ -26,6 +26,19 @@ public class SessionHelper
         }
     }
 
+    public void removeSuccessMessageFromSession() 
+    {
+        try {
+            System.out.println("removing message form session ");
+            HttpSession session = ((ServletRequestAttributes)RequestContextHolder.getRequestAttributes()).getRequest().getSession();
+            session.removeAttribute("SUCCESS_MESSAGE");
+            session.removeAttribute("SuccessMessage");
+               
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
     public String HtmlUnEscaped(String htmlCode)
     {
         return HtmlUtils.htmlUnescape(htmlCode);

@@ -34,7 +34,10 @@ public class AdminManufacturerController
 
     // Viết ra lộ trình (route) đến trang danh sách (list page)
     // Khai báo chương trình con chịu trách nhiệm hiển thị trang html có chứa danh sách
-    @GetMapping("/admin/manufacturer/list")
+    @GetMapping({
+        "/admin/manufacturer/list",
+        "/admin/manufacturer"
+    })
     public String 
     getList(Model model) 
     {
@@ -82,6 +85,10 @@ public class AdminManufacturerController
     @PostMapping("/admin/manufacturer/add")
     public String postAdd(@ModelAttribute Manufacturer entity) 
     {
+        // todo: Làm sao phòng chống việc form không submit giá trị null, undefined lên
+        // Tinh chỉnh lại giá trị NULL mà form submit lên
+        if(entity.getOrderNumber()==null)
+            entity.setOrderNumber(0);
 
         // Một số thông tin thêm mới do hệ thống làm
         // bên cạnh dữ liệu mà user gõ trên Form Add New
@@ -98,9 +105,46 @@ public class AdminManufacturerController
         jpaManufacturer.save(entity);
 
         // Gửi thông báo thành công từ giao diện Thêm Mới sang giao diện Duyệt
-        session.setAttribute("SUCCESS_MESSAGE", "Successfully added new user !");
 
-        // return "redirect:/admin/manufacturer/list";
-        return "redirect:/add-ok.htm";
+        session.setAttribute("SUCCESS_MESSAGE", "Successfully added new manufacturer !");
+
+        return "redirect:/admin/manufacturer/list";
+        // return "redirect:/add-ok.htm";
     }
+
+    // http://localhost:8080/admin/manufacturer/delete?id=123
+    @GetMapping("/admin/manufacturer/delete")
+    public String getDelete(Model model, @RequestParam(value = "id") int id) 
+    {
+        // Lấy ra bản ghi cần xóa
+        var entity = jpaManufacturer.findById(id).get();
+
+        // Gửi sang view
+        // Gửi đối tượng dữ liệu sang giao diện html form xác nhận xóa
+        model.addAttribute("entity", entity);
+
+        // Hiển thị giao diện xác nhận xóa
+        // Nội dung riêng của trang...
+        model.addAttribute("content", "manufacturer/delete.html"); // xoa.html
+
+        // ...được đặt vào bố cục chung của toàn website
+        return "layout/layout-admin.html"; // layout.html
+    }
+
+        // request param phải khớp với name="Id" của thẻ html input
+    // Khi xóa thì Java chỉ cần biết mã định danh của bản ghi cần xóa
+    @PostMapping("/admin/manufacturer/delete")
+    public String postXoa(Model model, @RequestParam("id") int id) 
+    {
+
+        // Xoá dữ liệu
+        jpaManufacturer.deleteById(id);
+
+        // Gửi thông báo thành công từ view Add/Edit sang view List
+        session.setAttribute("SUCCESS_MESSAGE", "Đã xóa nhà sản xuất !");
+
+        // Điều hướng sang trang giao diện
+        return "redirect:/admin/manufacturer/list";
+    }
+    
 }// end class

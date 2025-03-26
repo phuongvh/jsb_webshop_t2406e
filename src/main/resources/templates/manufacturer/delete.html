@@ -1,0 +1,43 @@
+<div class="ui container">
+    <!-- <a class="ui button primary" href="/admin/manufacturer/list">
+        <i class="icon arrow left"></i>Quay Lại Danh Sách</a> -->
+
+    <div class="ui segments">
+        <div class="ui segment">
+            <h2 class="ui header left floated">
+                Form Nhà Sản Xuất
+            </h2>
+            <a class="ui button primary right floated" href="/admin/manufacturer/list" title="Danh sách nhà sản xuất">
+                <i class="icon list"></i>
+            </a>
+            &nbsp;
+            <br style="clear:both"/>
+        </div>
+        <form class="ui form large segment manufacturer" method="post" th:action="@{/admin/manufacturer/delete}" th:object="${entity}">
+
+            <input type="hidden" th:field="*{id}" />
+
+            <div class="field">
+                <label>Tên Nhà Sản Xuất </label>
+                <input type="text" th:field="*{name}" disabled/>
+            </div>
+
+
+            <br />
+            <div style="overflow: auto;">
+                <button type="submit" class="ui button negative" style="float: right"><i class="icon trash"></i>Xóa</button>
+
+                <button type="reset" class="ui button" onclick="window.history.go(-1); return false;" style="float: right; margin-right: 10px;">
+                    <i class="icon cancel"></i>Huỷ
+                </button>
+
+            </div>
+
+            <div class="ui error message"></div>
+
+            <!-- </fieldset> -->
+
+        </form>
+    </div>
+</div>
+
