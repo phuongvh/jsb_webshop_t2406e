@@ -11,28 +11,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!--Cài đặt thư viện giao diện (uix) jQuery Semantic -->
-    <!--Cài đặt thư viện jQuery 3, Semantic UI 3 (có đủ Toast, Icon, Modal, Animation, ...)-->
-    <script src="https://fomantic-ui.com/javascript/library/jquery.min.js" type="text/javascript"></script>
-    <!--Cài đặt các thư viện jQuery Plugins vào chỗ giữa này để semantic không bị ảnh hưởng-->
-    <script src="https://fomantic-ui.com/dist/semantic.min.js" type="text/javascript"></script>
-    <link href="https://fomantic-ui.com/dist/semantic.min.css" type="text/css" rel="stylesheet" />
-    <!--
-            Semantic UI > Table > Ajax
-            https://education.iupui.edu/tep_admin/Editor-PHP-1.9.4/examples/styling/semanticui.html
-        -->
+    <link  href="https://semantic-ui.com/dist/semantic.min.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://semantic-ui.com/dist/semantic.min.js"></script>
 
     <!--Cài đặt trình soạn thảo văn bản jQuery Rich Text Editor : xem thử ở them.html của quangcao -->
-    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://www.jqueryscript.net/demo/Rich-Text-Editor-jQuery-RichText/richtext.min.css">
+    <link   rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link   rel="stylesheet" href="https://www.jqueryscript.net/demo/Rich-Text-Editor-jQuery-RichText/richtext.min.css">
     <script src="https://www.jqueryscript.net/demo/Rich-Text-Editor-jQuery-RichText/jquery.richtext.js"></script>
 
     <!-- Cài đặt thư viện jQuery Summernote độc lập, không phụ thuộc Bootstrap -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote-lite.css" rel="stylesheet">
+    <link  href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote-lite.css" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote-lite.js"></script>
 
     <!--Cài đặt thư viện jQuery TinyMCE (Rich Text Editor)
     cái này tham khảo thêm thôi: xem quangcao/them.html -->
-    <link href="/tinymce/skin.min.css" rel="stylesheet">
+    <link  href="/tinymce/skin.min.css" rel="stylesheet">
     <script src="https://yellowred.info/stagb/plugins/tinymce/tinymce.min.js"></script>
 
     <!--
@@ -41,9 +35,8 @@
     -->
 
     <!--Cài đặt jQuery Plugin: Menu Context: https://swisnl.github.io/jQuery-contextMenu -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/jquery-contextmenu/2.7.1/jquery.contextMenu.min.css"
-        rel="stylesheet">
+    <link  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" >
+    <link  href="https://cdnjs.cloudflare.com/ajax/libs/jquery-contextmenu/2.7.1/jquery.contextMenu.min.css" rel="stylesheet" >
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-contextmenu/2.7.1/jquery.contextMenu.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-contextmenu/2.7.1/jquery.ui.position.js"></script>
 </head>
@@ -52,44 +45,44 @@
 
     <div class="ui bottom attached segment pushable">
         <div class="ui inverted left vertical sidebar menu">
-            <a class="item" href="/admin/dashboard">
+            <a class="item" href="/qdl/nhanvien">
                 <i class="home icon"></i> Admin (Logo)
             </a>
-
-            <a class="item" href="/admin/ads">
+           
+            <a class="item" href="/qdl/quangcao">
                 <i class="icon adversal"></i> Quảng Cáo
             </a>
 
-            <a class="item" href="/admin/feedback">
+            <a class="item" href="/qdl/phanhoi">
                 <i class="icon chat"></i> Phản Hồi
             </a>
-            <a class="item" href="/admin/customer">
+            <a class="item" href="/qdl/khachhang">
                 <i class="icon smile"></i> Khách Hàng
             </a>
-            <a class="item" href="/admin/order">
+            <a class="item" href="/qdl/donhang">
                 <i class="icon tag"></i> Đơn Hàng
             </a>
 
-            <a class="item" href="/admin/user">
+            <a class="item" href="/qdl/nhanvien">
                 <i class="icon user"></i> Nhân Viên
             </a>
-            <a class="item" href="/admin/settings">
+            <a class="item" href="/qdl/caidat">
                 <i class="icon wrench"></i> Cài Đặt
             </a>
             <a class="item" href="/admin/image">
                 <i class="icon smile"></i> Ảnh Hệ Thống
             </a>
-
-            <a class="item" href="/admin/category">
+            
+            <a class="item" href="/qdl/loai">
                 <i class="icon block layout"></i> Danh Mục, Loại
             </a>
-            <a class="item" href="/admin/product">
+            <a class="item" href="/qdl/sanpham">
                 <i class="icon product hunt"></i> Sản Phẩm
             </a>
-            <a class="item" href="/admin/product-image">
+            <a class="item" href="/qdl/anhsanpham">
                 <i class="icon product hunt"></i> Ảnh Sản Phẩm
             </a>
-            <a class="item" href="/admin/manufacturer">
+            <a class="item" href="/qdl/nhasanxuat">
                 <i class="icon amazon"></i> Nhà Sản Xuất
             </a>
 
@@ -133,9 +126,9 @@
                     $(this)
                         .closest('.message')
                         .transition('fade')
-                        ;
+                    ;
                 })
-                ;
+            ;
 
             $('textarea').richText();
             // $('htmlEditor').richText();
