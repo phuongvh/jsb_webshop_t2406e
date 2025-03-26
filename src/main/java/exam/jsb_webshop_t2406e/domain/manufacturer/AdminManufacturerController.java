@@ -1,6 +1,13 @@
 package exam.jsb_webshop_t2406e.domain.manufacturer;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,6 +25,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class AdminManufacturerController 
 {
+
+    private final SecurityFilterChain adminFilterChain;
     @Autowired
     private JpaManufacturer jpaManufacturer; // cung cấp các dịch vụ thao tác dữ liệu
     // todo: có thể phải quan tâm đến jpa bảng phụ
@@ -27,6 +36,10 @@ public class AdminManufacturerController
 
     @Autowired
     private HttpSession session;
+
+    AdminManufacturerController(SecurityFilterChain adminFilterChain) {
+        this.adminFilterChain = adminFilterChain;
+    }
 
     // @Autowired cho phép coder không cần phải viết tường minh hàm khởi tạo
     // và khởi tạo 3 biến đặc biệt ở trên: jpa, request, session
@@ -184,5 +197,151 @@ public class AdminManufacturerController
         session.setAttribute("SUCCESS_MESSAGE", "Successfully updated manufacturer !");
 
         return "redirect:/admin/manufacturer/list";
+    }
+
+        // Chú Ý: Nếu hàm getPhanTrang() có các @RequestParam,thì bắt buộc
+    // trên URL nó phải có các tham số đấy
+    // Về mặt phong cách lập trình
+    // thì nó khá giống với thư viện MVC Paging của .Net
+    // Đem lại sự tiện lợi cho lập trình viên (Less Code, Do More)
+    // @GetMapping("/page/{pageNo}")
+    // //localhost:6868/nhansu/phantrang/3?sortField=ten&sortDirection=asc
+    // Kiểm thử link Search & Pagination
+    // http://localhost:6868/admin/manufacturer/phantrang/1?pageSize=10&sortField=ten&sortDir=desc&keyword=Apple
+    // http://localhost:6868/admin/manufacturer/phantrang/1?pageSize=10&sortField=ten&sortDir=desc&keyword=av
+    // @update: 2024.08.20 16h08 ITPlus K2022
+    // bắt tham số phân trang, lọc, sắp xếp, bên trong hàm(), chứ không dùng @RequestParam vì nó cứng nhắc
+    // và không tổng quát (Nó ép cho URL của mình phải có tham số đấy)
+    // http://localhost:6868/admin/manufacturer/phantrang?pageSize=4
+    // @GetMapping("/admin/manufacturer/phantrang")
+    @GetMapping("/admin/manufacturer/pagedlist")
+    public String getPagedList(Model model) 
+    {
+        String sortField; // tên cột sắp xếp
+        String sortDir;   // sort direction, chiều sắp xếp: asc, desc
+        String sortRev;   // sort reversion, đảo chiều sắp xếp
+
+        int pageNumber; // current page number, no: số thứ tự của trang hiện tại
+        int pageSize; // kích thước của mỗi trang (số phần tử (tối đa)trên mỗi trang).
+        // int pageCount; // đếm số phần tử thực tế của trang hiện tại
+
+        // Tiếp nhận các tham số phân trang từ URL, link của máy khách
+        try {
+            pageNumber = request.getParameter("pageNumber") == null ? 1 :
+                Integer.parseInt(request.getParameter("pageNumber"));
+            pageSize = Integer.parseInt(request.getParameter("pageSize"));
+        }catch(Exception e)
+        {
+            pageNumber = 1;
+            pageSize = 5;
+            // @todo: Liệu có đọc được ra từ setting ???
+        }
+
+        // Chuẩn hóa triệt để, không bao giờ để tham số phân trang bị null hoặc Zero
+        if(pageNumber < 1) pageNumber = 1;
+        if(pageSize < 1)   pageSize = 5;
+
+        // bắt các tham số sắp xếp trên URL
+        sortField = request.getParameter("sortField");
+        sortDir   = request.getParameter("sortDir");
+
+        // Nếu phía máy khách không chỉ rõ cột sắp xếp
+        // thì sử dụng một cột mặc định bất kì nào đấy, thường là cột "tên"
+        // 1. là sortField ko xuất hiện trên url params
+        // 2. là sortField có xuất hiện, nhưng ko có giá trị
+        if(sortField==null || sortField.trim().isEmpty())
+            sortField = "Name";
+
+        // Tinh chỉnh, chuẩn hóa giá trị của sortDir và sortRev: 
+        // xác định chiều sắp xếp:
+        if(sortDir == null || sortDir.trim().isEmpty()) 
+        {
+            sortDir = "asc";
+            sortRev = "desc";
+        }
+        else if (sortDir.equals("asc")) 
+        {
+            sortRev = "desc";
+        }
+        else if (sortDir.equals("desc")) 
+        {
+            sortRev = "asc";
+        }
+        else 
+        { // url có chứa sortDir, nhưng giá trị không đúng, ko phù hợp
+            sortDir = "asc";
+            sortRev = "desc";
+        }
+
+        // Các đường link gửi sang bênview
+        // Link sắp xếp theo cột: ten
+        String linkSortTen = "/admin/manufacturer/pagedlist?pageNumber=" + pageNumber + "&pageSize="+pageSize + "&sortField=ten&sortDir=" + sortRev;
+        // Link gắn vào các nút phân trang, có số trang là đang chờ để lắp ghép bên view
+        String linkPage    = "/admin/manufacturer/pagedlist?sortField=" + sortField + "&sortDir=" + sortDir + "&pageSize="+pageSize+"&pageNumber=";
+
+        Page<Manufacturer> page; // biến mô phỏng thông tin trang hiện tại
+        List<Manufacturer> list; // danh sách các thực thể sẽ xuất hiện trên trang hiện tại (current page)
+
+        {
+            // Tiến hành phân trang bảng dữ liệu
+            // page = service.listginated(pageNo, pageSize, sortField, sortDir);
+            // page = service.getPaged(pageNumber, pageSize, sortField, sortDir);
+
+            // Sắp xếp theo chiều nào, cột nào ?
+            // Nếu giá trị của biến sortDirection mà giống với chuỗi "ASC", "asc", "aSc"
+            // thì tiến hành sắp xếp tăng,
+            // ngược lại thì sắp xếp giảm
+            Sort sort = sortDir.equalsIgnoreCase(Sort.Direction.ASC.name()) ? Sort.by(sortField).ascending()
+            : Sort.by(sortField).descending();
+
+            // Truyền mẩu tin sắp xếp đấy vào quá trình phân trang
+            // chỉ số từ 0 của trang: pageIndex = pageNumber - 1
+            // kích thước trang
+            // thông tin sắp xếp chứa trong object: sort
+            Pageable pageable = PageRequest.of(pageNumber - 1, pageSize, sort);
+            page = jpaManufacturer.findAll(pageable);
+        }
+        list = page.getContent();
+
+        // Gửi các thông tin phân trang sang cho View
+        // Bên dưới bảng dữ liệu sẽ là Pagination Controls
+        model.addAttribute("currentPage", pageNumber); // trang hiện tại
+        model.addAttribute("pageNumber", pageNumber); // trang hiện tại
+        model.addAttribute("pageSize", pageSize); // kích thước mỗi trang
+        model.addAttribute("pageItems", list); // các phần tử (object) trên trang
+        // model.addAttribute("page", list.size()); // các phần tử (object) trên trang
+        model.addAttribute("pageCount", list.size()); // các phần tử (object) trên trang
+        model.addAttribute("totalPages", page.getTotalPages()); // tổng số trang
+        model.addAttribute("totalItems", page.getTotalElements()); // tổng số phần tử tìm thấy
+        model.addAttribute("totalElements", page.getTotalElements()); // tổng số phần tử tìm thấy
+
+        // Các thông tin cài cắm vào đường link của các nút phân trang
+        model.addAttribute("sortField", sortField);
+        model.addAttribute("sortDir", sortDir);
+        model.addAttribute("sortRev", sortRev);
+
+        // Các thông tin cài cắm vào link cột sắp xếp
+        // Chiều sắp xếp sẽ ngược lại so với chiều hiện tại
+        model.addAttribute("linkSortTen", linkSortTen);
+        model.addAttribute("linkPage", linkPage);
+
+        // Gửi danh sách sang giao diện View HTML
+        model.addAttribute("list", list);
+        
+        // model.addAttribute("ds", service.list());
+        // Gửi object sang Modal Form thêm mới hiện ngay trên trang duyệt
+        // (ràng buộc new object java vào Modal Form trên giao diện html)
+        model.addAttribute("dl", new Manufacturer());
+        // Gửi dữ liệu bảng ngoại sang cho thẻ select của Modal Form nhúng vào trang
+        // duyet
+        // model.addAttribute("ds", this.dvlPhongBan.duyet());
+
+        // Nội dung riêng của trang...
+        model.addAttribute("title", "Phân Trang Nhà Sản Xuất"); // duyet.html
+        model.addAttribute("content", "manufacturer/pagedlist.html")  ;//phan-trang-bs4.html"); // duyet.html
+
+        // ...được đặt vào bố cục chung của toàn website
+        // return "layout.html";
+        return "layout/layout-admin.html"; //-bs4.html";
     }
 }// end class

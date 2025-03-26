@@ -1,0 +1,89 @@
+
+<div class="ui" style="margin: 2%;">
+    <div class="ui positive message" th:if="${session.SUCCESS_MESSAGE}">
+        <i class="close icon"></i>
+        <div class="header" th:text="${session.SUCCESS_MESSAGE}">
+            You are eligible for a reward
+        </div>
+        <p>Bạn có thể tiếp tục các tác vụ khác được rồi.</p>
+        <th:block th:text="${@sessionHelper.removeSuccessMessageFromSession()}"></th:block>
+    </div>
+
+    <table class="ui table celled selectable">
+        <caption>
+            Danh Sách Nhà Sản Xuất
+        </caption>
+        <thead>
+            <tr>
+                <th colspan="11">
+                    <form action="timkiem.php" method="post" style="float: left">
+                        <div class="ui icon input ">
+                            <i class="search icon"></i>
+                            <input type="text" placeholder="Search...">
+                        </div>
+                    </form>
+                    <div class="ui buttons" style="float: right;">
+                        <a class="ui button positive" href="/admin/manufacturer/add"><i class="icon plus"></i>Thêm</a>Fil
+                        <!-- <button class="ui button yellow"><i class="icon pencil"></i>Sửa</button>
+                        <button class="ui button negative"><i class="icon trash"></i>Xóa</button> -->
+                        <!-- <button class="ui button"><i class="icon eye"></i>Xem</button> -->
+                        <button class="ui button primary modal-control"><i class="icon plus circle"></i>Modal</button>
+                        <button class="ui button secondary modal-control"><i class="icon filter circle"></i>Filter</button>
+                    </div>
+                    <br style="clear:both" />
+                </th>
+            </tr>
+            <tr>
+                <th>Id</th>
+                <th>Tên Nhà Sản Xuất</th>
+                <th>Ảnh</th>
+                <th>Đường Link</th>
+                <th>Thứ Tự</th>
+                <th>Cho Phép</th>
+                <th>Thao Tác</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="manufacturer : ${list}">
+                <td th:text="${manufacturer.id}">1</td>
+                <td th:text="${manufacturer.name}">Nhà Sản Xuất 1</td>
+                <td>
+                    <img th:src="${manufacturer.image}" style="width: 100px; height: 100px;" />
+                </td>
+                <td th:text="${manufacturer.link}">Đường Link 1</td>
+                <td th:text="${manufacturer.orderNumber}">1</td>
+                <td th:text="${manufacturer.active}">Có</td>
+                <td>
+                    <!-- <a th:href="@{/admin/manufacturer/xem/{id}(id=${manufacturer.id})}" class="ui button positive">
+                        <i class="icon eye"></i>Xem</a> 
+                    &nbsp; -->
+                    <a th:href="@{/admin/manufacturer/edit(id=${manufacturer.id})}" class="ui button yellow">
+                        <i class="icon pencil"></i>Sửa</a> <!-- /nhasanxuat/sua?id=3 -->
+                    &nbsp;
+                    <a th:href="@{/admin/manufacturer/delete(id=${manufacturer.id})}" class="ui button negative">
+                        <i class="icon trash"></i>Xoá</a><!-- /nhasanxuat/xoa?id=3 -->
+                    <!-- &nbsp;
+                    <a th:href="@{/admin/manufacturer/copy(id=${manufacturer.id})}" class="ui button purple basic">
+                        <i class="icon copy"></i>Copy
+                    </a> -->
+                </td>
+            </tr>
+        </tbody>
+
+        <tfoot><!--Đặt nội dung phân trang bên trong chân của table-->
+            <tr>
+                <th colspan="11" style="text-align: center;font-weight: bold">
+                    Tìm thấy [[${pageCount}]] bản ghi trên trang.
+                </th>
+            </tr>
+
+            <tr>
+                <th colspan="11">
+                    <p th:replace="manufacturer/pager.html"></p>
+                </th>
+            </tr>
+        </tfoot>
+    </table>
+
+    
+</div>
