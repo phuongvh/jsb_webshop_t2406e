@@ -36,6 +36,9 @@ public class AuthTokenFilter extends OncePerRequestFilter {
    * Tức là đây là một thủ thuật: label thì là email, nhưng <input name="username"> vẫn là username.
    * 
    * Như vậy là ta có thể tái sử dụng được hệ thống User Role đã có sẵn, không cần phải sửa đổi gì nhiều.
+   * 
+   * Sử dụng JWT Token Based thay vì JWT Cookie
+   * https://stackoverflow.com/questions/51213813/401-status-when-trying-to-use-jwt-to-login-to-api-from-react
    */
   @Override
   protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
@@ -66,7 +69,10 @@ public class AuthTokenFilter extends OncePerRequestFilter {
 
   // so sánh JWT Cookies và JWT localStorage
   // https://stackoverflow.com/questions/34817617/should-jwt-be-stored-in-localstorage-or-cookie
-  private String parseJwt(HttpServletRequest request) {
+  // Sử dụng JWT Token Based thay vì JWT Cookie
+  // https://stackoverflow.com/questions/51213813/401-status-when-trying-to-use-jwt-to-login-to-api-from-react
+  private String parseJwt(HttpServletRequest request) 
+  {
     String jwt = jwtUtils.getJwtFromCookies(request);
     return jwt;
   }

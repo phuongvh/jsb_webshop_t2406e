@@ -8,6 +8,8 @@ public class UserInfoResponse {
 	private String email;
 	private List<String> roles;
 
+	// private String status = "success";
+
 	public UserInfoResponse(Long id, String username, String email, List<String> roles) {
 		this.id = id;
 		this.username = username;

@@ -282,6 +282,8 @@ public class AdminManufacturerController
         Page<Manufacturer> page; // biến mô phỏng thông tin trang hiện tại
         List<Manufacturer> list; // danh sách các thực thể sẽ xuất hiện trên trang hiện tại (current page)
 
+        // Khối lệnh thực hiện việc phân trang
+        // (đáng lẽ ra phải đóng gói nó trong một hàm của lớp Service)
         {
             // Tiến hành phân trang bảng dữ liệu
             // page = service.listginated(pageNo, pageSize, sortField, sortDir);
@@ -300,8 +302,9 @@ public class AdminManufacturerController
             // thông tin sắp xếp chứa trong object: sort
             Pageable pageable = PageRequest.of(pageNumber - 1, pageSize, sort);
             page = jpaManufacturer.findAll(pageable);
+            list = page.getContent();
         }
-        list = page.getContent();
+        
 
         // Gửi các thông tin phân trang sang cho View
         // Bên dưới bảng dữ liệu sẽ là Pagination Controls
