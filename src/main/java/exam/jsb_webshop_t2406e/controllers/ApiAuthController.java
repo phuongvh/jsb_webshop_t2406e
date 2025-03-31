@@ -39,7 +39,8 @@ import exam.jsb_webshop_t2406e.security.services.UserDetailsImpl;
 // https://stackoverflow.com/questions/34817617/should-jwt-be-stored-in-localstorage-or-cookie
 // https://steemit.com/utopian-io/@alfarisi94/consuming-jwt-in-client-side-with-jquery
 // https://security.stackexchange.com/questions/130548/should-jwt-token-be-stored-in-a-cookie-header-or-body
-@CrossOrigin(origins = "*", maxAge = 3600)
+// @CrossOrigin(origins = "*", maxAge = 3600)
+@CrossOrigin(origins = "http://localhost:3000", allowCredentials="true") // for ReactJS credentials included
 @RestController
 @RequestMapping("/api/auth") // test thử cơ chế bắt lỗi: http://localhost:6868/api/xxxyyy
 public class ApiAuthController 
@@ -75,7 +76,8 @@ public class ApiAuthController
         .map(item -> item.getAuthority())
         .collect(Collectors.toList());
 
-        // https://www.cyberchief.ai/2023/05/secure-jwt-token-storage.html
+    // https://www.cyberchief.ai/2023/05/secure-jwt-token-storage.html
+    // Set Cookie ở phía backend để FE ReactJS có thể nhận được !!!
     return ResponseEntity.ok()
                         .header(HttpHeaders.SET_COOKIE, jwtCookie.toString())
                         .body(new UserInfoResponse(userDetails.getId(),
@@ -83,6 +85,16 @@ public class ApiAuthController
                                    userDetails.getEmail(),
                                    roles)
                         );
+
+    // localStorage: trả về json có chứa JWT
+    // https://viblo.asia/p/huong-dan-spring-security-jwt-json-web-token-hibernate-oOVlYGmoK8W
+    // return "
+    //   {
+    //     jwtStr: .....,
+    //     ủe
+
+    //   }
+    // ";
   }
 
   /*
