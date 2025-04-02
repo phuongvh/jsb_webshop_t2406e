@@ -49,7 +49,7 @@ public class AdminManufacturerController
     // Khai báo chương trình con chịu trách nhiệm hiển thị trang html có chứa danh sách
     @GetMapping({
         "/admin/manufacturer/list",
-        "/admin/manufacturer"
+        "/admin/manufacturer/index"
     })
     public String 
     getList(Model model) 
@@ -347,4 +347,151 @@ public class AdminManufacturerController
         // return "layout.html";
         return "layout/layout-admin.html"; //-bs4.html";
     }
+
+    /**
+     * @author T2406E, Fpt Aptech
+     * @update 2025.04.02 18h29
+     * Hàm chịu trách nhiệm Lọc Tìm / Sắp Xếp / Phân Trang: Nhà Sản Xuất
+     * @param model
+     * @return
+     */
+    @GetMapping("/admin/manufacturer")
+    public String getFilteredPagedList(Model model) 
+    {
+        
+        //#region THAM SỐ PHÂN TRANG
+        int pageNumber; // current page number, no: số thứ tự của trang hiện tại
+        int pageSize; // kích thước của mỗi trang (số phần tử (tối đa)trên mỗi trang).
+        // int pageCount; // đếm số phần tử thực tế của trang hiện tại
+
+        // Tiếp nhận các tham số phân trang từ URL, link của máy khách
+        try {
+            pageNumber = request.getParameter("pageNumber") == null ? 1 :
+                Integer.parseInt(request.getParameter("pageNumber"));
+            pageSize = Integer.parseInt(request.getParameter("pageSize"));
+        }catch(Exception e)
+        {
+            pageNumber = 1;
+            pageSize = 5;
+            // @todo: Liệu có đọc được ra từ setting ???
+        }
+
+        // Chuẩn hóa triệt để, không bao giờ để tham số phân trang bị null hoặc Zero
+        if(pageNumber < 1) pageNumber = 1;
+        if(pageSize < 1)   pageSize = 5;
+        //#endregion
+
+        //#region THAM SỐ SẮP XẾP TĂNG GIẢM THEO CỘT NÀO
+        String sortField; // tên cột sắp xếp
+        String sortDir;   // sort direction, chiều sắp xếp: asc, desc
+        String sortRev;   // sort reversion, đảo chiều sắp xếp
+        // bắt các tham số sắp xếp trên URL
+        sortField = request.getParameter("sortField");
+        sortDir   = request.getParameter("sortDir");
+
+        // Nếu phía máy khách không chỉ rõ cột sắp xếp
+        // thì sử dụng một cột mặc định bất kì nào đấy, thường là cột "tên"
+        // 1. là sortField ko xuất hiện trên url params
+        // 2. là sortField có xuất hiện, nhưng ko có giá trị
+        if(sortField==null || sortField.trim().isEmpty())
+            sortField = "Name";
+
+        // Tinh chỉnh, chuẩn hóa giá trị của sortDir và sortRev: 
+        // xác định chiều sắp xếp:
+        if(sortDir == null || sortDir.trim().isEmpty()) 
+        {
+            sortDir = "asc";
+            sortRev = "desc";
+        }
+        else if (sortDir.equals("asc")) 
+        {
+            sortRev = "desc";
+        }
+        else if (sortDir.equals("desc")) 
+        {
+            sortRev = "asc";
+        }
+        else 
+        { // url có chứa sortDir, nhưng giá trị không đúng, ko phù hợp
+            sortDir = "asc";
+            sortRev = "desc";
+        }
+        //#endregion
+
+        // Các đường link gửi sang bênview
+        // Link sắp xếp theo cột: ten
+        String linkSortTen = String.format("/admin/manufacturer?pageNumber=%d&pageSize=%d&sortField=ten&sortDir=%s", 
+                                    pageNumber, pageSize, sortRev);
+        // Link gắn vào các nút phân trang, có số trang là đang chờ để lắp ghép bên view
+        String linkPage = String.format("/admin/manufacturer?sortField=%s&sortDir=%s&pageSize=%d&pageNumber=", 
+                                    sortField, sortDir, pageSize);
+
+        Page<Manufacturer> page; // biến mô phỏng thông tin trang hiện tại
+        List<Manufacturer> list; // danh sách các thực thể sẽ xuất hiện trên trang hiện tại (current page)
+
+        // Khối lệnh thực hiện việc phân trang
+        {
+
+            // Sắp xếp theo chiều nào, cột nào ?
+            // Nếu giá trị của biến sortDirection mà giống với chuỗi "ASC", "asc", "aSc"
+            // thì tiến hành sắp xếp tăng,
+            // ngược lại thì sắp xếp giảm
+            // org.springframework.data.domain.
+            Sort sort = sortDir.equalsIgnoreCase(Sort.Direction.ASC.name()) 
+                        ? Sort.by(sortField).ascending()
+                        : Sort.by(sortField).descending();
+
+            // Truyền mẩu tin sắp xếp đấy vào quá trình phân trang
+            // chỉ số từ 0 của trang: pageIndex = pageNumber - 1
+            // kích thước trang
+            // thông tin sắp xếp chứa trong object: sort
+            // org.springframework.data.domain.
+            Pageable pageable = PageRequest.of(pageNumber - 1, pageSize, sort);
+            page = jpaManufacturer.findAll(pageable);
+            list = page.getContent();
+        }
+        
+        // Gửi các thông tin phân trang sang cho View
+        // Bên dưới bảng dữ liệu sẽ là Pagination Controls
+        model
+        .addAttribute("currentPage", pageNumber) // trang hiện tại
+        .addAttribute("pageNumber", pageNumber) // trang hiện tại
+        .addAttribute("pageSize", pageSize) // kích thước mỗi trang
+        .addAttribute("pageItems", list) // các phần tử (object) trên trang
+        // model.addAttribute("page", list.size()); // các phần tử (object) trên trang
+        .addAttribute("pageCount", list.size()) // các phần tử (object) trên trang
+        .addAttribute("totalPages", page.getTotalPages()) // tổng số trang
+        .addAttribute("totalItems", page.getTotalElements()) // tổng số phần tử tìm thấy
+        .addAttribute("totalElements", page.getTotalElements()) // tổng số phần tử tìm thấy
+
+        // Các thông tin cài cắm vào đường link của các nút phân trang
+        .addAttribute("sortField", sortField)
+        .addAttribute("sortDir", sortDir)
+        .addAttribute("sortRev", sortRev)
+
+        // Các thông tin cài cắm vào link cột sắp xếp
+        // Chiều sắp xếp sẽ ngược lại so với chiều hiện tại
+        .addAttribute("linkSortTen", linkSortTen)
+        .addAttribute("linkPage", linkPage)
+
+        // Gửi danh sách sang giao diện View HTML
+        .addAttribute("list", list)
+        
+        // model.addAttribute("ds", service.list());
+        // Gửi object sang Modal Form thêm mới hiện ngay trên trang duyệt
+        // (ràng buộc new object java vào Modal Form trên giao diện html)
+        .addAttribute("dl", new Manufacturer())
+        // Gửi dữ liệu bảng ngoại sang cho thẻ select của Modal Form nhúng vào trang
+        // duyet
+        // model.addAttribute("ds", this.dvlPhongBan.duyet());
+
+        // Nội dung riêng của trang...
+        .addAttribute("title", "Lọc Tìm Nhà Sản Xuất") 
+        .addAttribute("content", "manufacturer/filtered-paged-list.html")  //phan-trang-bs4.html"); // duyet.html
+        ;
+
+        // ...được đặt vào bố cục chung của toàn website
+        return "layout/layout-admin.html"; 
+    }
+    
 }// end class

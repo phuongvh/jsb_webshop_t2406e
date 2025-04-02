@@ -13,21 +13,24 @@ public class JsbWebshopT2406eApplication {
 		SpringApplication.run(JsbWebshopT2406eApplication.class, args);
 	}
 
+	// Bỏ hàm này đi thì ReactJS vẫn chạy tốt,
+	// Hàm này là nó làm CORS toàn cục (global)
+	// Nhưng ở Controller mình đã làm riêng (specific rồi)
 	// https://spring.io/guides/gs/rest-service-cors
 	// https://stackoverflow.com/questions/49049312/cors-error-when-connecting-local-react-frontend-to-local-spring-boot-middleware
 	// CORS error when connecting local React frontend to local Spring Boot middleware application
-	@Bean
-	public WebMvcConfigurer corsConfigurer() {
-		return new WebMvcConfigurer() {
-			@Override
-			public void addCorsMappings(CorsRegistry registry) {
-				registry.addMapping("/**")
-				                .allowedOrigins("http://localhost:3000") // React app origin
-				                .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
-				                // .allowCredentials(true)
-								;
-			}
-		};
-	}
+	// @Bean
+	// public WebMvcConfigurer corsConfigurer() {
+	// 	return new WebMvcConfigurer() {
+	// 		@Override
+	// 		public void addCorsMappings(CorsRegistry registry) {
+	// 			registry.addMapping("/**")
+	// 			                .allowedOrigins("http://localhost:3000") // React app origin
+	// 			                .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
+	// 			                // .allowCredentials(true)
+	// 							;
+	// 		}
+	// 	};
+	// }
 
 }

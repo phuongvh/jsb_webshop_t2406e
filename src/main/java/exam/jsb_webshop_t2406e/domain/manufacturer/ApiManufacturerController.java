@@ -54,8 +54,13 @@ public class ApiManufacturerController
         return new ResponseEntity<Manufacturer>(Manufacturer,HttpStatus.OK); // 200
     }
     
+    @CrossOrigin(origins = "http://localhost:3000", allowCredentials="true")
     @PostMapping
-    public ResponseEntity<String> Create(@RequestBody Manufacturer Manufacturer, UriComponentsBuilder uricBuilder) 
+    // public ResponseEntity<String> Create(@RequestBody Manufacturer Manufacturer, UriComponentsBuilder uricBuilder) 
+    public ResponseEntity<Manufacturer> Create(
+        @RequestBody 
+        Manufacturer Manufacturer
+    ) 
     {
         System.out.println("Đang thêm cầu thủ mới...");
 
@@ -81,9 +86,11 @@ public class ApiManufacturerController
         
 
         // Trả về dữ liệu json cho phía máy khách
-        HttpHeaders headers = new HttpHeaders();
-        headers.setLocation(uricBuilder.path("/api/manufacturer/{id}").buildAndExpand(Manufacturer.getId()).toUri());
-        return new ResponseEntity<String>(headers, HttpStatus.CREATED); // 201
+        // HttpHeaders headers = new HttpHeaders();
+        // headers.setLocation(uricBuilder.path("/api/manufacturer/{id}").buildAndExpand(Manufacturer.getId()).toUri());
+        // return new ResponseEntity<String>(headers, HttpStatus.CREATED); // 201 // gây chết ReactJS
+        // return new ResponseEntity<String>(HttpStatus.CREATED); // 201
+        return new ResponseEntity<Manufacturer>(HttpStatus.CREATED); // 201
     }
 
     /**

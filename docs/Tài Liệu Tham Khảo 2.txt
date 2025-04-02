@@ -1,0 +1,15 @@
+https://stackoverflow.com/questions/79140567/react-cookies-not-being-saved-or-sent-to-backend-after-login-authenticated
+
+https://www.bezkoder.com/react-jwt-auth/
+
+https://github.com/bezkoder/react-hooks-jwt-auth
+https://www.bezkoder.com/spring-boot-react-jwt-auth/
+https://mui.com/x/react-data-grid/
+https://drive.google.com/file/d/1p4K6ML00x3nqshQxNs9gYntd4E4nTImV/view
+
+https://www.baeldung.com/spring-boot-react-crud
+
+https://github.com/axios/axios/issues/569
+
+https://stackoverflow.com/questions/62296194/post-request-blocked-in-react-axios-due-to-cors-error
+https://viblo.asia/p/huong-dan-spring-security-jwt-json-web-token-hibernate-oOVlYGmoK8W

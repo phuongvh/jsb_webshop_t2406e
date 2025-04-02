@@ -70,7 +70,7 @@ public class JwtUtils
                             .path("/api")
                             .maxAge(24 * 60 * 60)
                             .httpOnly(true)
-                            // .sameSite("None").secure(true)
+                            // .sameSite("None").secure(true) // đề xuất bởi Mr.Thanh, nhưng ko cần thiết.
                             .build();
     return cookie;
   }

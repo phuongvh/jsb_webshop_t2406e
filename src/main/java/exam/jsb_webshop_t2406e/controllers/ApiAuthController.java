@@ -39,8 +39,19 @@ import exam.jsb_webshop_t2406e.security.services.UserDetailsImpl;
 // https://stackoverflow.com/questions/34817617/should-jwt-be-stored-in-localstorage-or-cookie
 // https://steemit.com/utopian-io/@alfarisi94/consuming-jwt-in-client-side-with-jquery
 // https://security.stackexchange.com/questions/130548/should-jwt-token-be-stored-in-a-cookie-header-or-body
-// @CrossOrigin(origins = "*", maxAge = 3600)
-@CrossOrigin(origins = "http://localhost:3000", allowCredentials="true") // for ReactJS credentials included
+
+// Caused by: java.lang.IllegalArgumentException: When allowCredentials is true, allowedOrigins cannot contain the special value "*" since that cannot be set on the "Access-Control-Allow-Origin" response header. To allow credentials to a set of origins, list them explicitly or consider using "allowedOriginPatterns" instead.
+// Cách làm sai:
+// @CrossOrigin(origins = "*", maxAge = 3600, allowCredentials = "true")
+
+// for ReactJS Axios, withCredentials: true included
+@CrossOrigin(origins = "http://localhost:3000", allowCredentials="true") 
+// @CrossOrigin(origins = {"http://localhost:3000", "http://localhost:6868"}, allowCredentials="true") // RestMAN Response: Invalid CORS request
+
+// thế còn cổng này thì sao ? http://localhost:6868/api/auth/signin
+// Được ReactJS thì lại chết RestMAN, PostMAN
+// @CrossOrigin(origins = "*", maxAge = 3600) // for RestMAN only, gây chết React: has been blocked by CORS policy
+
 @RestController
 @RequestMapping("/api/auth") // test thử cơ chế bắt lỗi: http://localhost:6868/api/xxxyyy
 public class ApiAuthController 
