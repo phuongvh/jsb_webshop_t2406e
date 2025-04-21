@@ -1,0 +1,63 @@
+<div style="overflow: auto;">
+    <!--Báo Cáo Phân Trang-->
+    <div class="ui left floated" style="float: left">
+        Page: [[${currentPage}]] of [[${totalPages}]] (Count: [[${pageCount}]] rows; Total: [[${totalItems}]] items) &nbsp;
+
+        <!-- Page Size: (đưa lên bộ lọc Filter Box, chứ không đặt ở đây)
+        <select class="ui dropdown">
+            <option>3</option>
+            <option>5</option>
+            <option>7</option>
+        </select> -->
+    </div>
+
+    <!--Nút Phân Trang Semantic UI-->
+    <nav class="ui right floated pagination menu">
+        <!-- Trang đầu: First, kí hiệu: |< -->
+        <a class="item" th:classappend="${currentPage == 1} ? 'disabled' : ''"
+            th:href="@{${linkPage}+1}" title="Đầu Tiên">
+            |<i class="left chevron icon"></i>
+        </a>
+
+        <!-- Trang trước đó: Previous, kí hiệu: [<<] -->
+        <a class="item" th:href="@{${linkPage} + ${currentPage - 1}}" title="Trước Đó" th:if="${currentPage > 1}"
+            th:classappend="${currentPage == 1} ? 'disabled' : ''">
+            <i class="angle double left icon"></i>
+        </a>
+
+        <!-- Trang đầu tiên có đánh số: [1]-->
+        <a class="item" th:href="@{${linkPage}+1}" th:classappend="${currentPage == 1} ? 'active' : ''">1</a>
+
+        <!-- Hiển thị "..." nếu cần và tổng số trang lớn hơn 2 -->
+        <span th:if="${totalPages > 2} and ${currentPage > 4}">
+            <span class="item">...</span>
+        </span>
+
+        <!-- Các trang giữa [j][q][k] -->
+        <a class="item" th:href="@{${linkPage} + ${i}}"
+            th:each="i : ${#numbers.sequence(currentPage > 3 ? currentPage - 1 : 2, currentPage < totalPages - 2 ? currentPage + 1 : totalPages - 1)}"
+            th:classappend="${currentPage == i} ? 'active' : ''" th:if="${totalPages > 2}">[[${i}]]
+        </a>
+
+
+        <!-- Hiển thị "..." nếu cần và tổng số trang lớn hơn 2 -->
+            <span class="item" th:if="${totalPages > 2} and ${currentPage < totalPages - 3}">...</span>
+
+        <!-- Trang cuối [N] -->
+            <a class="item" th:href="@{${linkPage} + ${totalPages}}" th:classappend="${currentPage == totalPages} ? 'active' : ''" th:if="${totalPages > 1}">[[${totalPages}]]</a>
+
+        <!-- Trang tiếp theo: Next, kí hiệu: [>>] -->
+        <a class="item" th:if="${currentPage < totalPages}" th:href="@{${linkPage} + ${currentPage + 1}}"
+            th:classappend="${currentPage >= totalPages} ? 'disabled' : ''" title="Tiếp Theo">
+            <i class="angle double right icon"></i>
+        </a>
+
+        <!-- Trang chặn cuối, kí hiệu: >| -->
+        <a class="item" th:href="@{${linkPage} + ${totalPages}}" title="Cuối Cùng"
+            th:classappend="${currentPage >= totalPages} ? 'disabled' : ''">
+            <i class="icon chevron right"></i>|
+        </a>
+
+    </nav>
+
+</div>

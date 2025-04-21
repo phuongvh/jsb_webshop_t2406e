@@ -1,0 +1,28 @@
+Lớp Controller: xem mẫu ở QdlPhanHoi.java
+- cụ thể: Autowired dvl, request, session
+- Xác minh danh tính nhân viên mỗi khi họ truy cập vào 1 Action cụ thể của Controller
+- Gửi thông báo thành công/thất bại từ Controler sang View
+thì dùng Session chứ không dùng Flash Message nữa
+
++ Các thông tin chung của 1 thực thể:
+@Id // Khóa chính
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // Tăng tự động từ 1,2,3,...
+    private Integer id;
+
+    private int       thuTu; // Thứ tự sắp xếp tăng dần từ 1,2,3,...
+    private LocalDate ngayTao; // theo dõi xem bản ghi được tạo khi nào (đặt đơn hàng)
+    private LocalDate ngaySua; // theo dõi xem bản ghi bị sửa khi nào (đổi trạng thái đơn hàng)
+    private Boolean   choPhep; // Cho phép xuất hiện trên trang Public, Store Front hay không
+    
+    private String    ten; //tuaDe; //tieuDe
+
+    @Column(columnDefinition="LONGTEXT")
+    private String    moTa; // html form textarea, jquery plugin, rich text editor (summernote)
+
+    @Transient
+    private MultipartFile mtFile; // Phục vụ việc upload file, ảnh đại diện của thực thể
+
+    1. Menu Links ở cuối bảng: bấm vào thì mở ra các trang Thêm/Sửa/Xóa
+2. Menu Context: nhấp chuột phải: bấm vào thì mở ra các Modal Form (ajax)
+3. Phân Trang: sử dụng 3 chấm để nó không bị dài ra, phình ra.
+4. Lọc Tìm: Filter Form nằm phía trên bảng, backend sử dụng: EntityFilter, EntitySpec

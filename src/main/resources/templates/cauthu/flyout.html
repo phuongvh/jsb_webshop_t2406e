@@ -1,0 +1,151 @@
+<div class="ui flyout right">
+    <i class="close icon"></i>
+    <div class="ui header">
+      <i class="question icon"></i>
+      <div class="content">
+        Archive Old Messages
+      </div>
+    </div>
+    <div class="content">
+      <p>Your inbox is getting full, would you like us to enable automatic archiving of old messages?</p>
+      <form id="formFilter" action="?" class="ui form">
+
+        <div class="ui">
+            <div class="ui field">
+                <label for="">Tên:</label>
+                    <div class="ui icon input ">
+                        <i class="search icon"></i>
+                        <input type="text" class="form-control" placeholder="Tìm theo tên" id="filter_ten" name="filter_ten"
+                    th:value="${filter_ten}">
+                    </div>
+            </div>
+
+            <div class=" ui field ">
+                <label>Hợp Đồng</label>
+                <select name="filter_conHopdong" id="filter_conHopDong" class="form-control">
+                    <option value="">---Không chọn---</option>
+                    <option value="1">Còn</option>
+                    <option value="0">Hết</option>
+                </select>
+                <script th:inline="javascript">
+                    $('select#filter_gioi option[value=[[${filter_conHopDong}]]]').prop('selected', true);
+                </script>
+            </div>
+
+            <div class="ui field">
+                <label>Nhóm Máu</label>
+                <select name="filter_nhomMau" id="filter_nhomMau" class="form-control">
+                    <option value="">---Không Phân Biệt---</option>
+                    <option value="A">A</option>
+                    <option value="B">B</option>
+                    <option value="O">O</option>
+                </select>
+                <script th:inline="javascript">
+                    $('select#filter_nhomMau option[value=[[${filter_nhomMau}]]]').prop('selected', true);
+                </script>
+            </div>
+
+            <div class="ui field">
+                <label>Tỉnh Thành </label>
+                <select name="filter_maTinhThanh" id="filter_maTinhThanh" class="form-control">
+                    <option value="">---Không Phân Biệt---</option>
+                    <option th:each="tinhThanh : ${listTinhThanh}" th:value="${tinhThanh.id}" th:text="${tinhThanh.ten}">
+                    </option>
+                </select>
+                <script th:inline="javascript">
+                    $('select#filter_maTinhThanh option[value=[[${filter_maTinhThanh}]]]').prop('selected', true);
+                </script>
+            </div>
+        </div>
+
+        <!--java web slider range-->
+        <div class="form-group">
+            <div class="ui field">
+                <label for="amount">Khoảng Cân Nặng:</label>
+                <input type="text" id="amount" readonly="" style="border:0; color:#f6931f; font-weight:bold;">
+            </div>
+
+            <div id="slider-range-flyout"></div>
+            <!--Các giá trị mà người dùng chọn trên slider-->
+            <input type="hidden" name="filter_canNang_from" th:value="${filter_canNang_from}" >
+            <input type="hidden" name="filter_canNang_to" th:value="${filter_canNang_to}" >
+        </div>
+        <script>
+         
+            $(function() {
+                $("#slider-range-flyout").slider({
+                    range: true,
+                    //min: 30,
+                    //max: 100,
+                    // values: [40,70],
+                    min: [[${filter_canNang_min}]],
+                    max: [[${filter_canNang_max}]],
+                    values: [ 
+                        [[${filter_canNang_from} != null ? ${filter_canNang_from} : ${filter_canNang_min}]], 
+                        [[${filter_canNang_to}   != null ? ${filter_canNang_to}   : ${filter_canNang_max}]] 
+                    ],
+                    slide: function(event, ui) {
+                        // $("#amount").val("$" + ui.values[0] + " - $" + ui.values[1]);
+                        $("#amount").val(ui.values[0] + " - " + ui.values[1]);
+                        $('input[name="filter_canNang_from"]').val(ui.values[0]);
+                        $('input[name="filter_canNang_to"]').val(ui.values[1]);
+                    }
+                });
+
+                // $("#amount").val("$" + $("#slider-range").slider("values", 0) +
+                //     " - $" + $("#slider-range").slider("values", 1));
+
+                // Đọc dữ liệu mặc định ban đầu trong mảng values: [1990, 2000]
+                // ra và nhét nó vào html
+                $("#amount").val(
+                        $("#slider-range-flyout").slider("values", 0) +" - " + $("#slider-range-flyout").slider("values", 1)
+                );
+            });
+
+              
+        </script>
+
+        <div class="form-group ">
+            <label>Kích thước Phân Trang</label>
+            <select name="pageSize" id="pageSize" class="form-control">
+                <option value="3">3</option>
+                <option value="5">5</option>
+                <option value="7">7</option>
+                <option value="9">9</option>
+            </select>
+            <script th:inline="javascript">
+                $('select#pageSize option[value="[[${pageSize}]]"]').prop('selected', true);
+            </script>
+        </div>
+
+        
+
+        <input type="hidden" name="sortField" th:value="${sortField}" />
+        <input type="hidden" name="sortDir" th:value="${sortDir}" />
+        <br>
+        
+
+        <div style="overflow: auto;">
+            <button type="submit" class="ui button primary right floated">
+                <i class="icon search"></i> Lọc Tìm
+            </button>
+            <button type="reset" class="ui button secondary right floated" >
+                <i class="icon undo"></i>Hủy
+            </button>
+          
+        </div>
+
+        <br style="clear: both;"/>
+    </form>
+    </div>
+    <div class="actions">
+      <div class="ui red cancel button">
+        <i class="remove icon"></i>
+        No
+      </div>
+      <div class="ui green ok button">
+        <i class="checkmark icon"></i>
+        Yes
+      </div>
+    </div>
+  </div>

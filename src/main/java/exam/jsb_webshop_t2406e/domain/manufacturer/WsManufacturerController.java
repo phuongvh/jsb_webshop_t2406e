@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
 
-// 2025.04.10: ApiController sẽ được thiết kế để phục vụ riêng các requests từ ReactJS
+
 // @todo: How to secured Api Web Services
 // Client phải có username, password, secret key thì mới được
 // gọi hàm dịch vụ của tôi
@@ -25,33 +25,33 @@ import org.springframework.web.util.UriComponentsBuilder;
 // JWT: Json Web Token
 
 // @CrossOrigin(origins="*") 
-// @CrossOrigin(origins = "http://localhost:3000")
-// @CrossOrigin(origins = "*", maxAge = 3600)
-// @CrossOrigin(origins = "http://localhost:3000", maxAge = 3600, allowCredentials="true")
-@CrossOrigin(origins = "http://localhost:3000", allowCredentials="true")
+@CrossOrigin(origins = "*", maxAge = 3600) // để jQuery.ajax(), window.fetch() có thể gọi được.
 // chấp nhận tên miền khác của máy khách gửi yêu cầu
 // serverCuaTui.com -> serverCuaBan.com
-@RequestMapping("/api/manufacturer") // http://leminhhoa.com/api5/Manufacturer
+@RequestMapping("/ws/manufacturer") // http://localhost:6868/ws/manufacturer
 @RestController
-public class ApiManufacturerController
+public class WsManufacturerController
 {
     @Autowired
     private JpaManufacturer jpaManufacturer;
 
     //CRUDS: Create, Read, Update, Search(searchById, searchByText, searchByFilter, searchByCriteria)
 
-    @GetMapping("/{id}") // http://quanlyManufacturer/api5/Manufacturer/5
+
+    @GetMapping("/{id}") // http://localhost:6868/bpi/manufacturer/5
     public ResponseEntity<Manufacturer> ReadById(@PathVariable("id") int id)
     {
 
-        var Manufacturer = jpaManufacturer.findById(id).orElse(null);
-        if(Manufacturer==null)
+        var entity = jpaManufacturer.findById(id).orElse(null);
+        if(entity==null)
         {
-            System.out.println("Không tìm thấy cầu thủ này !");
+            System.out.
+            println("Không tìm thấy nhà sản xuất này !");
+
             return new ResponseEntity<Manufacturer>(HttpStatus.NOT_FOUND);
         }
 
-        return new ResponseEntity<Manufacturer>(Manufacturer,HttpStatus.OK); // 200
+        return new ResponseEntity<Manufacturer>(entity,HttpStatus.OK); // 200
     }
     
     /**
@@ -61,15 +61,11 @@ public class ApiManufacturerController
         CoPilot Answer:
      The issue is that the @RequestBody annotation expects the incoming request to have a Content-Type of application/json. To fix this, ensure that the client sends the correct Content-Type header, and also add @RequestMapping with consumes = "application/json" to explicitly specify the expected content type.
      */
-    // @CrossOrigin(origins = "http://localhost:3000", allowCredentials="true")
-    @PostMapping(consumes = "application/json")
-    // public ResponseEntity<String> Create(@RequestBody Manufacturer Manufacturer, UriComponentsBuilder uricBuilder) 
-    public ResponseEntity<Manufacturer> Create(
-        @RequestBody 
-        Manufacturer entity
-    ) 
+    // @PostMapping(consumes = "application/json")
+    public ResponseEntity<Manufacturer> Create(@RequestBody Manufacturer manufacturer) 
     {
-        System.out.println("Đang thêm cầu thủ mới...");
+        System.out.
+        println("Đang thêm cầu thủ mới...");
 
         // @todo Kiểm tra xem dữ liệu có hợp lệ không ?
         // if(Manufacturer.KhongHopLe())
@@ -89,10 +85,10 @@ public class ApiManufacturerController
         // }
 
         // Cập nhật ngày tạo, ngày sửa bản ghi
-        entity.setDateCreated(new java.sql.Date(System.currentTimeMillis()));
-        entity.setDateUpdated(new java.sql.Date(System.currentTimeMillis()));
+        manufacturer.setDateCreated(new java.sql.Date(System.currentTimeMillis()));
+        manufacturer.setDateUpdated(new java.sql.Date(System.currentTimeMillis()));
         // Lưu dữ liệu mới vào csdl MySQL
-        jpaManufacturer.save(entity);
+        jpaManufacturer.save(manufacturer);
         
 
         // Trả về dữ liệu json cho phía máy khách
@@ -100,30 +96,23 @@ public class ApiManufacturerController
         // headers.setLocation(uricBuilder.path("/api/manufacturer/{id}").buildAndExpand(Manufacturer.getId()).toUri());
         // return new ResponseEntity<String>(headers, HttpStatus.CREATED); // 201 // gây chết ReactJS
         // return new ResponseEntity<String>(HttpStatus.CREATED); // 201
-        // return new ResponseEntity<Manufacturer>(HttpStatus.CREATED); // 201 // ReactJS fetch API không đọc được JSON
-
-
-        return new ResponseEntity<Manufacturer>(entity, HttpStatus.CREATED); // 201, phải trả về entity dưới dạng json để ReactJS còn parse
+        return new ResponseEntity<Manufacturer>(HttpStatus.CREATED); // 201
     }
 
     /**
-     * GET http://localhost:6868/api/manufacturer
+     * GET http://localhost:6868/bpi/manufacturer
      * {
             "path": "/api/manufacturer",
             "error": "Unauthorized",
             "message": "Full authentication is required to access this resource",
             "status": 401
         }
-     * @return
-     * 
-     * Phải đăng nhập thì mới gọi được hàm này !
      */
-    // @CrossOrigin(origins = {"http://localhost:3000", "http://localhost:6868"}, allowCredentials="true") // vẫn chết api 6868
-    //  @CrossOrigin(origins = "http://localhost:3000", allowCredentials="true")
     @GetMapping
     public ResponseEntity<List<Manufacturer>> Read() 
     {
-        System.out.println("Đang duyệt danh sách, để trả về json...");
+        System.out.
+        println("Đang duyệt danh sách, để trả về json...");
         // Đọc dữ liệu bảng, rồi chứa vào biến tạm
         List<Manufacturer> list = jpaManufacturer.findAll();
 
@@ -138,28 +127,26 @@ public class ApiManufacturerController
     }
 
     @PutMapping
-    public ResponseEntity<Manufacturer> Update(
-        @RequestBody Manufacturer Manufacturer
-    ) 
+    public ResponseEntity<Manufacturer> Update(@RequestBody Manufacturer entity) 
     {
         // System.out.println("Đang sửa cầu thủ có mã số: " + id);
 
         // Manufacturer.setId(id); // đảm bảo là không thêm mới !
-        if(Manufacturer==null){
+        if(entity==null)
             return new ResponseEntity<Manufacturer>(HttpStatus.NOT_FOUND); // 404
-        }   
+        
 
-        var dl = jpaManufacturer.findById(Manufacturer.getId()).orElse(null);
-        if(dl==null){
-            return new ResponseEntity<Manufacturer>(HttpStatus.NOT_FOUND); // 404ro
-        }
+        var oldEntity = jpaManufacturer.findById(entity.getId()).orElse(null);
+        if(oldEntity==null)
+            return new ResponseEntity<Manufacturer>(HttpStatus.NOT_FOUND); // 404
+        
 
         // @todo Kiểm tra xem có bị trùng tên cầu thủ cũ trên hệ thống ?
 
         // @todo Kiểm tra xem dữ liệu có hợp lệ không ?
 
         // Lưu dữ liệu mới vào csdl MySQL
-        jpaManufacturer.save(Manufacturer);
+        jpaManufacturer.save(entity);
 
         return new ResponseEntity<Manufacturer>(HttpStatus.OK); // 200
     }
@@ -169,25 +156,24 @@ public class ApiManufacturerController
      * Chứng tỏ là phương thức Http DELTE có chấp nhận RequestBody
      */
     @DeleteMapping
-    public ResponseEntity<Manufacturer> Delete(@RequestBody Manufacturer Manufacturer) 
+    public ResponseEntity<Manufacturer> Delete(@RequestBody Manufacturer entity) 
     {
         // System.out.println("Đang xóa cầu thủ có mã số: " + id);
 
          // Manufacturer.setId(id); // đảm bảo là không thêm mới !
-         if(Manufacturer==null){
+         if(entity==null)
             return new ResponseEntity<Manufacturer>(HttpStatus.NOT_FOUND); // 404
-        }   
 
-        var dl = jpaManufacturer.findById(Manufacturer.getId()).orElse(null);
-        if(dl==null){
+        var oldEntity = jpaManufacturer.findById(entity.getId()).get();
+        if(oldEntity==null)
             return new ResponseEntity<Manufacturer>(HttpStatus.NOT_FOUND); // 404
-        }
+        
 
         // Xóa dữ liệu trong csdl MySQL
-        jpaManufacturer.deleteById(Manufacturer.getId());
+        jpaManufacturer.deleteById(entity.getId());
 
         return new ResponseEntity<Manufacturer>(HttpStatus.OK); // 200
 
     }// hàm đã hoạt động tốt !!!
     
-}// end ApiController
+}// end BpiController

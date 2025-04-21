@@ -1,0 +1,214 @@
+<div class="ui container">
+    <div class="ui segments">
+        <div class="ui segment">
+            <div class="ui header" style="float: left">
+                <i class="icon edit"></i>
+                Form Input
+            </div>
+            <a class="ui" href="/admin/cauthu" style="float: right" title="Quay Lại Danh Sách">
+                <i class="icon list"></i>
+            </a>
+            <br style="clear: both" />
+        </div>
+        <form class="ui form large segment cauthu" method="post" action="/admin/cauthu/save" th:object="${cauThu}">
+            <input type="hidden" th:field="*{id}" />
+
+            <div class="ui grid">
+                <!-- Left Column: Image -->
+                <div class="four wide column">
+                    <div class="field">
+                        <label>Ảnh Đại Diện:</label>
+                        <img src="http://via.placeholder.com/150" 
+                            alt="Ảnh Đại Diện" 
+                            style="width: 100%; height: auto;" 
+                            th:src="${cauThu.anh}" id="inputImage"/>
+                        <input type="text" placeholder="http://anh.com/vidu.jpg" th:field="*{anh}" />
+                        <p id="uploading_text"></p>
+                    </div>
+                    <script>
+                        // $(document).ready(function() {
+                        //     $('img').on('error', function() {
+                        //         $(this).attr('src', 'https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg');
+                        //     });
+                        // });
+
+                        $(document).ready(function() {
+                            // Ngay sau 
+                            $('input[name="anh"]').prev('img').on('error', function() { // chạy tốt
+                            // $('img').on('error', function() { // chạy tốt !
+                                $(this).attr('src', 'https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg');
+                            });
+
+                            // viết mã jQuery để thay đổi ảnh khi người dùng nhập URL mới
+                            $('input[name="anh"]').on('input', function() {
+                                var newSrc = $(this).val();
+                                $(this).prev('img').attr('src', newSrc);
+                            });
+
+
+                            // viết mã jQuery tạo bóng râm cho ảnh (vừa viết xong comment thì AI Copilot đã tự động thêm vào)
+                            $('img').css({
+                                'box-shadow': '0 4px 8px rgba(0, 0, 0, 0.2)',
+                                'border-radius': '8px'
+                            });
+                        });
+                    </script>
+                </div>
+
+                <!-- Right Column: Form Inputs -->
+                <div class="twelve wide column">
+                    <div class="field">
+                        <label>Tên Đầy Đủ</label>
+                        <input type="text" placeholder="tên cầu thủ" th:field="*{tenDayDu}" />
+                    </div>
+
+                    <div class="field">
+                        <label>Chiều Cao (m)</label>
+                        <input type="number" step="0.01" placeholder="chiều cao" th:field="*{chieuCao}" />
+                    </div>
+
+                    <div class="field">
+                        <label>Cân nặng (kg)</label>
+                        <input type="number" placeholder="cân nặng" th:field="*{canNang}" />
+                    </div>
+
+                    <div class="field">
+                        <label>Nhóm Máu</label>
+                        <select th:field="*{nhomMau}">
+                            <option value="A">A</option>
+                            <option value="B">B</option>
+                            <option value="O">O</option>
+                        </select>
+                    </div>
+
+                    <div class="field">
+                        <label>Ngày sinh (bấm vào biểu tượng tờ lịch để chọn):</label>
+                        <input type="date" th:field="*{ngaySinh}" />
+                    </div>
+
+                    <div class="field inline">
+                        <label>Hợp Đồng</label>
+                        <input type="checkbox" value="1" th:field="*{conHopDong}" />
+                    </div>
+
+                    <div class="field">
+                        <label>Tỉnh Thành:</label>
+                        <select th:field="*{maTinhThanh}">
+                            <option th:each="tinhThanh : ${listTinhThanh}" th:value="${tinhThanh.id}" th:text="${tinhThanh.ten}">
+                                Tên Tỉnh Thành
+                            </option>
+                        </select>
+                    </div>
+
+                    <!-- <div class="field">
+                        <label>Mô Tả:</label>
+                        <textarea th:field="*{moTa}"></textarea>
+                        <script>
+                            $('textarea').richText();
+                        </script>
+                    </div> -->
+                </div>
+            </div>
+
+            <div class="field">
+                <label>Mô Tả:</label>
+                <textarea th:field="*{moTa}"></textarea>
+                <script>
+                    $('textarea').richText();
+                </script>
+            </div>
+
+            <br />
+            <div  class="ui buttons right floated">
+                <a class="ui button green" href="/admin/cauthu/list" title="Quay Lại Danh Sách">
+                    <i class="icon list"></i>
+                    List
+                </a>
+                <button type="reset" class="ui button secondary">
+                    <i class="icon cancel"></i>
+                    Huỷ
+                </button>
+                <button type="submit" class="ui button primary">
+                    <i class="icon save"></i>
+                    Lưu
+                </button>
+            </div>
+
+            <div class="ui error message"></div>
+            <br style="clear:both" />
+        </form>
+    </div>
+</div>
+
+<script>
+       // Đã test kỹ, chạy rất OK
+    // Truy cập vào các phần tử trên giao diện HTML
+    const uploadButton = document.getElementById("inputImage");
+    // const fileInput = document.getElementById("fileInput"); // trả về DOM element
+    // const fileInput = $('<input type="file" accept="image/*">'); // trả về jQuery object
+    const fileInput = document.createElement("input");
+    fileInput.type = "file";
+    fileInput.accept = "image/*";
+
+    const uploading_text = document.getElementById("uploading_text");
+
+    // Replace with your Cloudinary data
+    const cloud_name = "demo";
+    const upload_preset = "doc_codepen_example";
+
+    // Đăng ký kịch bản xử lý sự kiện cho nút uploadButton
+    uploadButton.addEventListener("click", () => {
+        fileInput.click(); 
+        // fileInput.dispatchEvent(new MouseEvent("click")); // xử lý cả click lẫn double click
+    });
+
+    // Đăng ký kịch bản xử lý sự kiện cho fileInput
+    // fileInput.on("change", (e) => { // chạy OK
+    fileInput.addEventListener("change", (e) => { // chạy OK
+        uploading_text.innerText = "Uploading...";
+        const file = e.target.files[0];
+        const formData = new FormData();
+        formData.append("file", file);
+        formData.append("upload_preset", upload_preset);
+
+        const options = {
+            method: "POST",
+            body: formData,
+        };
+
+        window.
+        fetch(`https://api.cloudinary.com/v1_1/${cloud_name}/image/upload`, options)
+            .then((res) => res.json())
+            .then((data) => {
+                console.log(data.secure_url);
+
+                // uploading_text.innerHTML = `
+                //     <span>Upload complete.</span>
+                //     <br />
+                //     <img style="max-width:300px" src="${data.secure_url}" alt="">
+                //     <a href="${data.secure_url}">${data.secure_url}</a>
+                // `;
+
+                // Cập nhật giá trị của trường input ẩn với URL của ảnh đã tải lên
+                document.querySelector('input[name="anh"]').value = data.secure_url;
+
+                $('input[name="anh"]').prev('img').attr('src', data.secure_url);
+            })
+            .catch((err) => {
+                console.error(err);
+                uploading_text.innerText = "Upload failed.";
+                /*
+                Access to fetch at 'https://api.cloudinary.com/v1_1/demo/image/uploadXXX' from origin 
+                'http://127.0.0.1:5500' has been blocked by CORS policy: 
+                No 'Access-Control-Allow-Origin' header is present on the requested resource. If an opaque response serves your needs, set the request's mode to 'no-cors' to fetch the resource with CORS disabled.Understand this errorAI
+                test5.htm:41 
+                            
+                            
+                        POST https://api.cloudinary.com/v1_1/demo/image/uploadXXX net::ERR_FAILED 404 (Not Found)
+                (anonymous) @ test5.htm:41Understand this errorAI
+                test5.htm:54 TypeError: Failed to fetch
+                    at HTMLInputElement.<anonymous> (test5.htm:41:9)
+                */
+            });
+    });
+</script>

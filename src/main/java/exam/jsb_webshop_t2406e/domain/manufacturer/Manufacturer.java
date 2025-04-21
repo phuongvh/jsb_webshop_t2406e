@@ -12,10 +12,20 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Transient;
-
 import lombok.Data;
 // Tạo tự động các phương thức getter, setter, toString, equals, hashCode
 
+/** tại sao lại không phải cài thư viện com.fasterxml.jackson trong maven
+ vì nó đã có sẵn trong SpringBoot
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-web</artifactId>
+</dependency>
+ */
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
+
+@JsonInclude(Include.NON_NULL) // Loại bỏ các thuộc tính có giá trị null ra khỏi JSON
 @Data @Entity
 public class Manufacturer 
 {
@@ -39,7 +49,7 @@ public class Manufacturer
     @Column(columnDefinition="LONGTEXT")
     private String   description; //moTa; // html form textarea, jquery plugin, rich text editor (summernote)
 
-    @Transient
+    @Transient // Loại bỏ trường này trong json trả về cho phía máy khách ?
     private MultipartFile mtFile; // Phục vụ việc upload file, ảnh đại diện của thực thể
 
     // todo: getActiveVi() nếu cần

@@ -1,0 +1,186 @@
+<!-- Đang hiển thị danh sách cầu thủ... -->
+
+<div class="ui" style="padding: 2%">
+    
+
+    <table class="ui table celled selectable">
+        <caption>
+            <h1>
+                Quản Lý Danh Sách Cầu Thủ
+                <a th:href="@{/admin/cauthu/create}" title="Tạo Mới">
+                    [<i class="icon plus ui tiny"></i>]
+                </a>
+                
+            </h1>
+            
+        </caption>
+        <thead>
+            <tr>
+                <th>Mã</th>
+                <th>Ảnh</th>
+                <th>Tên Đầy Đủ</th>
+                <th>Ngày Sinh</th>
+                <th>Chiều Cao</th>
+                <th>Cân Nặng</th>
+                <th>Nhóm Máu</th>
+                <th>Còn Hợp Đồng</th>
+                <th>Tỉnh Thành</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="cauThu : ${listCauThu}" th:data-id="${cauThu.id}" th:data-text-content="${cauThu.tenDayDu}">
+                <td th:text=${cauThu.id}>mã định danh</td>
+                <td><img th:src="${cauThu.anh}" style="height:70px;"/></td>
+                <td th:text=${cauThu.tenDayDu}>tên đầy đủ</td>
+                <td th:text=${cauThu.ngaySinhVi}>ngày sinh</td>
+                <td th:text=${cauThu.chieuCao}>chiều cao</td>
+                <td th:text=${cauThu.canNang}>cân nặng</td>
+                <td th:text=${cauThu.nhomMau}>nhóm máu</td>
+                <td th:text=${cauThu.conHopDongVi}>hợp đồng</td>
+                <td th:text=${cauThu.tinhThanh.ten}>tên tỉnh thành</td>
+                <td>
+                    <a th:href="@{/admin/cauthu/read/{id}(id=${cauThu.id})}" title="link Xem">
+                        <i class="icon eye"></i>
+                    </a>
+                    <a th:href="@{/admin/cauthu/create}" title="link Thêm">
+                        <i class="icon plus"></i>
+                    </a>
+                    <a th:href="@{/admin/cauthu/update(id=${cauThu.id})}" title="link Sửa">
+                        <i class="icon pencil"></i>
+                    </a>
+                   
+                    <!-- confirm() = OK = true: có nghĩa là submit form thực sự, đi tiếp đến action
+                         conform() = Cancel = false: có nghĩa là dừng, không submit form nữa.
+                    -->
+                    <form action="/admin/cauthu/destroy" method="post" style="display:inline;"
+                        th:onsubmit="return confirm('Bạn có chắc muốn xóa [[${cauThu.tenDayDu}]] không ?');">
+                        <input type="hidden" name="id" th:value="${cauThu.id}" />
+                        <button type="submit" title="Xóa Nhanh" style="padding: 5px;"><i class="icon trash red"></i></button>
+                    </form>
+                </td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <th colspan="10">
+                    Số  dòng: [[${listSize}]]
+                </th>
+            </tr>
+        </tfoot>
+    </table>
+
+</div>
+
+<!--Bắt buộc phải có modalForm thêm vào bên trong list.html, nếu không nó sẽ chạy kém ổn định 2025.04.04 10h03-->
+<div class="ui modal modalForm">
+    <i class="close icon"></i>
+
+    <div class="body">
+
+        <!-- <i class="icon spinner loading" style="font-size: 48px;"></i> -->
+        <br>
+        Tải form vào đây, Đảm bảo luôn chỉ có 1 modal duy nhất trong trang mà thôi
+    </div>
+
+</div>
+<div class="ui modal modalLoad" style="display:none;text-align: center;width: 50px;">
+    <i class="icon spinner loading" style="font-size: 48px;"></i>
+</div>
+
+<!--viết mã semantic ui để có được Menu Ngữ Cảnh-->
+<script>
+    $(function () {
+
+        // failed khoong chayj
+        // $('modalForm').modal(
+        //     {
+        //         autofocus: true,
+        //         onShow: function () {
+        //             $('.modalForm .body textarea').summernote({
+        //                 height: 300, // set editor height
+        //                 minHeight: null, // set minimum height of editor
+        //                 maxHeight: null, // set maximum height of editor
+        //                 focus: true // set focus to editable area after initializing summernote
+        //             });
+        //         }
+        //     }
+        // );
+
+        $.contextMenu({
+            selector: 'tr',
+            callback: function (key, options) {
+                // 2 thông tin cần cung cấp cho callback function: id của bản ghi
+                // và tên (key) của action mà người dùng muốn (hay request name)
+                //    var m = "clicked: " + key + " on "+$(this).data('id') + " " +$(this).data('text-content');
+                //    window.console && console.log(m) || alert(m); 
+
+                let url=null;
+                var rowId = $(this).data('id');
+
+                // Xác định trang Ajax phục vụ Context Menu
+                switch (key) 
+                {
+                    case 'add':
+                        url = "/admin/cauthu/add/ajax";
+                        break;
+                    case 'edit':
+                        url = "/admin/cauthu/edit/ajax?id="+rowId;
+                        break;
+                    case 'delete':
+                        url = "/admin/cauthu/delete/ajax?id="+rowId;
+                        break;
+                    default:
+                        alert("Đang xây dựng menu "+key);
+                        return;
+                        break;
+                }
+
+                console.log(url);
+
+                // Tải form từ backend
+                $.get(
+                    url,
+                    form => {
+                        $('.modalForm .body').html(form); // hiển thị nút tắt (X) bên phải trên cùng, phía trên .body
+                        $('.modalForm').modal('show');    // bấm vào X thì nút Loading vẫn hiện
+                        // $('.modalLoad').modal('hide'); // gây chết, nên comment nó lại
+
+                        // Đừng viết thế này:
+                        //$(form).modal('show'); // bởi vì hiện modal form kiểu này rất hay trục trặc, không tắt được
+                                                // khi có thêm nhiều thành phần JavaSCript khác như Mesage Box và Message Toast
+                    }
+                );
+
+                // Tắt thực sự modalLoad , đã test, chạy ngon !!!
+                $('.modalForm .close').on('click', function(e){
+                    $('.modalLoad').modal('hide');
+                })
+
+
+            },
+            items: {
+                "add": { name: "Add (Thêm)", icon: "add" },
+                "edit": { name: "Edit (Sửa)", icon: "edit" },
+                "delete": { name: "Delete (Xóa)", icon: "delete" },
+                "sep1": "---",
+
+                "cut": { name: "Cut (Cắt)", icon: "cut" },
+                "copy": { name: "Copy (Sao Chép)", icon: "copy" },
+                "paste": { name: "Paste (Dán)", icon: "paste" },
+                "sep2": "---------",
+
+                quit: {
+                    name: "Quit", icon: function () {
+                        return 'context-menu-icon context-menu-icon-quit';
+                    }
+                }
+            }
+        });
+
+        $('.context-menu-one').on('click', function (e) {
+            console.log('clicked', this);
+        })
+
+    });
+</script>

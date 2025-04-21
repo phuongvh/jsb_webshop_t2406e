@@ -1,0 +1,26 @@
+https://stackoverflow.com/questions/38778083/postman-resolving-invalid-cors-request-for-a-post-request
+
+Lỗi này gặp phải khi dùng RestMan Extension của Google Chrome.
+Nhưng Thunder Client thì không bị !!!
+
+Value of "Origin" header set in Postman request should be allowed in API backend. For example, using Spring Boot for API should have next:
+
+@Configuration
+public class WebConfig implements WebMvcConfigurer {
+
+    @Value("${cors.allowedOrigins}")
+    private String allowedOrigins;
+
+    @Override
+    public void addCorsMappings(CorsRegistry registry) {
+        registry.addMapping("/**")
+            .allowedOrigins(allowedOrigins)
+            .allowedMethods("*")
+            .allowedHeaders("*");
+    }
+
+}
+where allowedOrigins is set using application.properties property cors.allowedOrigins having comma separated list of allowed origins, eg:
+
+cors.allowedOrings=http://localhost:8080,http://example.com
+and set 'Origin' value in Postman to any url from cors.allowedOrigins

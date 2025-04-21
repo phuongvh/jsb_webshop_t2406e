@@ -1,5 +1,6 @@
 package exam.jsb_webshop_t2406e.domain.manufacturer;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,26 +8,32 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
-import lombok.experimental.var;
+// import lombok.experimental.var;
 
 import org.springframework.web.bind.annotation.RequestParam;
 
 
 // http://localhost:8080/admin/manufacturer
 @Controller
+@RequestMapping("/admin/manufacturer")
 public class AdminManufacturerController 
 {
-
+    // có nên @Autowired vào đây không ?
     private final SecurityFilterChain adminFilterChain;
+
     @Autowired
     private JpaManufacturer jpaManufacturer; // cung cấp các dịch vụ thao tác dữ liệu
     // todo: có thể phải quan tâm đến jpa bảng phụ
@@ -41,16 +48,67 @@ public class AdminManufacturerController
         this.adminFilterChain = adminFilterChain;
     }
 
+            /**
+     * Trả danh sách về cho client front end uix: Semantic UI
+     * Thử cho ngay_sinh = NULL để kiểm tra json trả về
+     * UPDATE `cau_thu` SET ngay_sinh=NULL WHERE id=8;
+     * 
+     * đã test thử: ok, null field đã bị loại khỏi chuỗi json trả về.
+     * 
+     * sau đó cho ngay_sinh quay lại giá trị cũ
+     * UPDATE `cau_thu` SET ngay_sinh='1995-10-02' WHERE id=8;
+     * 
+     * Cấu trúc json trả về cho Semantic UI không nhất thiết phải theo chuẩn của Semantic UI
+     * vì bạn có thể chuyển đổi JSOn đó sang định dạng mà Semantic UI yêu cầu
+     * 
+     * $('.ui.search').search({
+            source: data.results.map(item => ({ 
+                    title: item.tenDayDu,
+                    image: item.anh,
+                    description: item.tinhThanh ? item.tinhThanh.ten : '', // Safely access tinhThanh.ten
+                    price: item.chieuCao+'(m)',
+                    url: '/admin/cauthu/view/' + item.id
+                })
+            )
+      });
+     */
+    @GetMapping(path = "/list/json/smui", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<Object> getListJsonForSemanticUI() 
+    {
+        // Get data from service layer into entityList.
+
+        var filter_ten  = request.getParameter("q");
+
+        // var list = jpaCauThu.findAll();
+        // var list = jpaCauThu.findByTenDayDuContaining(filter_ten); // ok, chạy tốt
+        var list = jpaManufacturer.findByNameContainingIgnoreCase(filter_ten); // ok, chạy tốt
+
+        // list.forEach(entity->entity.setMessages(null));
+
+        // Loại bỏ các trường thông tin không cần thiết khỏi quá trình 
+        // chuyển đổi, sinh ra chuỗi: JSON Serialization
+        // list.forEach(entity->{
+        //     entity.setMessages(null);
+        //     entity.setTinhThanh(null);
+        // });
+
+        java.util.
+        Map<String, Object> data = new HashMap<>();
+        data.put("success", true);
+        data.put("results", list);
+        data.put("TotalRecordCount", list.size());
+
+        return new ResponseEntity<>(data, HttpStatus.OK);
+        // return new ResponseEntity<Object>(data, HttpStatus.OK);
+    }
+
     // @Autowired cho phép coder không cần phải viết tường minh hàm khởi tạo
     // và khởi tạo 3 biến đặc biệt ở trên: jpa, request, session
     // Spring Boot sẽ làm tự động giúp chúng ta.
 
     // Viết ra lộ trình (route) đến trang danh sách (list page)
     // Khai báo chương trình con chịu trách nhiệm hiển thị trang html có chứa danh sách
-    @GetMapping({
-        "/admin/manufacturer/list",
-        "/admin/manufacturer/index"
-    })
+    @GetMapping({"/list", "/index"})
     public String 
     getList(Model model) 
     {
@@ -71,7 +129,7 @@ public class AdminManufacturerController
     
     // Chú ý đánh dấu @Controller cho lớp này
     // để Java Spring Boot biết đây là một Controller
-    @GetMapping("/admin/manufacturer/add")
+    @GetMapping("/add")
     public String getAdd(Model model) 
     {
         var entity = new Manufacturer();
@@ -95,7 +153,7 @@ public class AdminManufacturerController
     }
 
     
-    @PostMapping("/admin/manufacturer/add")
+    @PostMapping("/add")
     public String postAdd(@ModelAttribute Manufacturer entity) 
     {
         // todo: Làm sao phòng chống việc form không submit giá trị null, undefined lên
@@ -126,7 +184,7 @@ public class AdminManufacturerController
     }
 
     // http://localhost:8080/admin/manufacturer/delete?id=123
-    @GetMapping("/admin/manufacturer/delete")
+    @GetMapping("/delete")
     public String getDelete(Model model, @RequestParam(value = "id") int id) 
     {
         // Lấy ra bản ghi cần xóa
@@ -146,7 +204,7 @@ public class AdminManufacturerController
 
         // request param phải khớp với name="Id" của thẻ html input
     // Khi xóa thì Java chỉ cần biết mã định danh của bản ghi cần xóa
-    @PostMapping("/admin/manufacturer/delete")
+    @PostMapping("/delete")
     public String postXoa(Model model, @RequestParam("id") int id) 
     {
 
@@ -160,7 +218,7 @@ public class AdminManufacturerController
         return "redirect:/admin/manufacturer/list";
     }
     
-    @GetMapping("/admin/manufacturer/edit")
+    @GetMapping("/edit")
     public String getEdit(Model model, @RequestParam("id") int id) 
     {
 
@@ -180,7 +238,7 @@ public class AdminManufacturerController
         return "layout/layout-admin.html"; // layout.html
     }
 
-    @PostMapping("/admin/manufacturer/edit")
+    @PostMapping("/edit")
     public String postEdit(@ModelAttribute Manufacturer dl) 
     {
         // Một số thông tin cập nhật do hệ thống làm
@@ -214,7 +272,7 @@ public class AdminManufacturerController
     // và không tổng quát (Nó ép cho URL của mình phải có tham số đấy)
     // http://localhost:6868/admin/manufacturer/phantrang?pageSize=4
     // @GetMapping("/admin/manufacturer/phantrang")
-    @GetMapping("/admin/manufacturer/pagedlist")
+    @GetMapping("/pagedlist")
     public String getPagedList(Model model) 
     {
         String sortField; // tên cột sắp xếp
@@ -355,7 +413,7 @@ public class AdminManufacturerController
      * @param model
      * @return
      */
-    @GetMapping("/admin/manufacturer")
+    @GetMapping
     public String getFilteredPagedList(Model model) 
     {
         

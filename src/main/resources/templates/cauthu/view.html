@@ -1,0 +1,102 @@
+<!--Đã yêu cầu AI Copilot chỉnh sửa lại, để có bố cục tốt hơn-->
+<div class="ui container">
+    <div class="ui segments">
+        <div class="ui segment">
+            <div class="ui header" style="float: left">
+                <i class="icon edit"></i>
+                Form View Details
+            </div>
+            <a class="ui" href="/admin/cauthu" style="float: right" title="Quay Lại Danh Sách">
+                <i class="icon list"></i>
+            </a>
+            <br style="clear: both" />
+        </div>
+        <form class="ui form large segment" th:object="${cauThu}">
+            <input type="hidden" th:field="*{id}" />
+
+            <div class="ui grid">
+                <!-- Cột bên trái: Ảnh -->
+                <div class="four wide column">
+                    <div class="field">
+                        <label>Ảnh Đại Diện:</label>
+                        <img th:src="${cauThu.anh}" alt="Ảnh Đại Diện" style="width: 100%; height: auto; border: 1px solid #ccc;" />
+                        <input type="text" th:field="*{anh}" placeholder="URL ảnh đại diện" />
+                    </div>
+                </div>
+
+                <!-- Cột bên phải: Các thẻ input -->
+                <div class="twelve wide column">
+                    <div class="field">
+                        <label>Tên Đầy Đủ</label>
+                        <input type="text" th:field="*{tenDayDu}" />
+                    </div>
+
+                    <div class="field">
+                        <label>Chiều Cao (m)</label>
+                        <input type="number" th:field="*{chieuCao}" />
+                    </div>
+
+                    <div class="field">
+                        <label>Cân nặng (kg)</label>
+                        <input type="number" th:field="*{canNang}" />
+                    </div>
+
+                    <div class="field">
+                        <label>Nhóm Máu</label>
+                        <select th:field="*{nhomMau}">
+                            <option value="A">A</option>
+                            <option value="B">B</option>
+                            <option value="O">O</option>
+                        </select>
+                    </div>
+
+                    <div class="field">
+                        <label>Ngày sinh (bấm vào biểu tượng tờ lịch để chọn):</label>
+                        <input type="date" th:field="*{ngaySinh}" />
+                    </div>
+
+                    <div class="field inline">
+                        <label>Hợp Đồng</label>
+                        <input type="checkbox" value="1" th:field="*{conHopDong}" />
+                    </div>
+
+                    <div class="field">
+                        <label>Tỉnh Thành:</label>
+                        <select th:field="*{maTinhThanh}">
+                            <option th:each="tinhThanh : ${listTinhThanh}" th:value="${tinhThanh.id}" th:text="${tinhThanh.ten}">
+                                Tên Tỉnh Thành
+                            </option>
+                        </select>
+                    </div>
+
+                    <!-- <div class="field">
+                        <label>Mô Tả:</label>
+                        <textarea th:field="*{moTa}"></textarea>
+                        <script>
+                            $('textarea').richText();
+                        </script>
+                    </div> -->
+                </div>
+            </div>
+
+            <div class="field">
+                <label>Mô Tả:</label>
+                <textarea th:field="*{moTa}"></textarea>
+                <script>
+                    $('textarea').richText();
+                </script>
+            </div>
+
+            <br />
+            <div style="overflow: auto;" class="ui buttons right floated">
+                <a class="ui button green" href="/admin/cauthu/list" title="Quay Lại Danh Sách"><i class="icon list"></i></a>
+                <button type="reset" class="ui button secondary">
+                    <i class="icon cancel"></i>
+                    Huỷ
+                </button>
+            </div>
+
+            <br style="clear:both" />
+        </form>
+    </div>
+</div>

@@ -1,0 +1,34 @@
+<!-- Đang hiển thị danh sách cầu thủ... -->
+
+<table class="ui table celled">
+    <caption>Danh Sách Cầu Thủ</caption>
+    <thead>
+        <tr>
+            <th>Mã Định Danh</th>
+            <th>Tên Đầy Đủ</th>
+            <th>Ngày Sinh</th>
+            <th>Chiều Cao</th>
+            <th>Cân Nặng</th>
+            <th>Nhóm Máu</th>
+            <th>Còn Hợp Đồng</th>
+            <th>Tỉnh Thành</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr th:each="cauThu : ${listCauThu}">
+            <td th:text=${dl.id}>mã định danh</td>
+            <td th:text=${dl.tenDayDu}>tên đầy đủ</td>
+            <td th:text=${dl.ngaySinhVi}>ngày sinh</td>
+            <td th:text=${dl.chieuCao}>chiều cao</td>
+            <td th:text=${dl.canNang}>cân nặng</td>
+            <td th:text=${dl.nhomMau}>nhóm máu</td>
+            <td th:text=${dl.conHopDongVi}>hợp đồng</td>
+            <td th:text=${dl.tinhThanh.ten}>tên tỉnh thành</td>
+            <td>Sửa | Xóa</td>
+        </tr>
+    </tbody>
+    <tfoot>
+
+    </tfoot>
+</table>

@@ -1,0 +1,11 @@
+Spring Boot mặc định sẽ chuyển đổi camelCase và pascalCase thành snake_case khi chuyển đổi
+Entity Class thành SQL Table.
+
+Cho nên, chúng ta nên sử dụng Coding Convention đến từ C#: tên lớp, tên hàm, tên thuộc tính viết hoa hết.
+
+Viết tên hàm ngắn gọn, không trùng lặp.
+
+Không nên có nhiều hàm làm chung 1 việc, ví dụ:
+
+deleteProduct()
+deleteById() ---> hàm này cần thiết hơn

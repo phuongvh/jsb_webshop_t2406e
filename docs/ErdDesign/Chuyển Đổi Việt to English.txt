@@ -1,0 +1,18 @@
+AnhHeThong -> Image
+DvlAnhHeThong.java -> ImageService.java
+KdlAnhHeThong.java -> ImageRepo.java
+QdlAnhHeThong.java -> ImageController.java
+
+qdl/anhhethong -> admin/image
+
+
+Qdl --> Admin
+
+dl --> entity
+ds --> list
+
+nhanvien -> User
+anhsanpham -> ProductImage
+sanpham -> Product
+nhasanxuat -> Manufacturer
+loai -> Category

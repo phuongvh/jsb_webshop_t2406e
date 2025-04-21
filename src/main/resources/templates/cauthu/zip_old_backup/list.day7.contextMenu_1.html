@@ -1,0 +1,125 @@
+<!-- Đang hiển thị danh sách cầu thủ... -->
+
+<div class="ui" style="padding: 2%">
+    <div class="ui message positive" th:if="${session.SuccessMessage}">
+        <i class="close icon"></i>
+        <div class="header" th:text="${session.SuccessMessage}">
+            Thông báo thành công
+        </div>
+        <p>Bạn có thể tiếp tục các tác vụ khác được rồi.</p>
+        <th:block th:text="${@sessionHelper.removeSuccessMessageFromSession()}"></th:block>
+    </div>
+
+    
+    <script>
+        $(function() {
+            setTimeout(function() {
+                $('.ui.message.positive').fadeOut('slow');
+                // $('.ui.message.positive').transition('fade out');
+            }, 3000); // 3000 milliseconds = 3 seconds
+        });
+    </script>
+    
+    
+    <table class="ui table celled selectable">
+        <!-- <caption>
+            <h1>Quản Lý Cầu Thủ</h1>
+        </caption> -->
+        <thead>
+            <tr><!--Table Toolbar-->
+                <th colspan="9">
+                    <h2 style="float: left; margin: 0"><i class="icon list"></i>
+                        Danh Sách Cầu Thủ
+                    </h2>
+                    <div style="float: right; margin: 0;">
+                        <a class="ui button" href="/admin/cauthu/add">
+                            <i class="icon plus circle"></i>
+                            Thêm Mới
+                        </a>
+                        <button class="ui button">
+                            <i class="icon filter circle"></i>
+                            Lọc Tìm
+                        </button>
+                    </div>
+                </th>
+            </tr>
+            <tr><!-- Table Column Names -->
+                <th>Mã Định Danh</th>
+                <th>Tên Đầy Đủ</th>
+                <th>Ngày Sinh</th>
+                <th>Chiều Cao</th>
+                <th>Cân Nặng</th>
+                <th>Nhóm Máu</th>
+                <th>Còn Hợp Đồng</th>
+                <th>Tỉnh Thành</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="cauThu : ${listCauThu}" th:data-id="${dl.id}" th:data-text-content="${dl.tenDayDu}">
+                <td th:text=${dl.id}>mã định danh</td>
+                <td th:text=${dl.tenDayDu}>tên đầy đủ</td>
+                <td th:text=${dl.ngaySinhVi}>ngày sinh</td>
+                <td th:text=${dl.chieuCao}>chiều cao</td>
+                <td th:text=${dl.canNang}>cân nặng</td>
+                <td th:text=${dl.nhomMau}>nhóm máu</td>
+                <td th:text=${dl.conHopDongVi}>hợp đồng</td>
+                <td th:text=${dl.tinhThanh.ten}>tên tỉnh thành</td>
+                <td>
+                    <a th:href="@{/admin/cauthu/edit(id=${dl.id})}" class="ui button yellow">
+                        <i class="icon pencil circle"></i>Sửa</a>
+                    <a th:href="@{/admin/cauthu/delete(id=${dl.id})}" class="ui button red">
+                        <i class="icon trash alternate"></i>Xóa A (link)
+                    </a>
+
+                    <!-- confirm() = OK = true: có nghĩa là submit form thực sự, đi tiếp đến action
+                         conform() = Cancel = false: có nghĩa là dừng, không submit form nữa.
+                    -->
+                    <form th:action="@{/admin/cauthu/delete}" method="post" 
+                        style="display:inline;" 
+                        th:onsubmit="return confirm('Bạn có chắc muốn xóa [[${dl.tenDayDu}]] không ?');">
+                        <input type="hidden" name="id" th:value="${dl.id}" />
+                        <button type="submit" class="ui button red">
+                            <i class="icon trash alternate"></i>Xóa B(button)
+                        </button>
+                    </form>
+                </td>
+            </tr>
+        </tbody>
+        <tfoot>
+    
+        </tfoot>
+    </table>
+
+    <!--viết mã semantic ui để có được Menu Ngữ Cảnh-->
+    <script>
+        $(function() {
+           $.contextMenu({
+               selector: 'tr', 
+               callback: function(key, options) {
+                    // 2 thông tin cần cung cấp cho callback function: id của bản ghi
+                    // và tên (key) của action mà người dùng muốn (hay request name)
+                   var m = "clicked: " + key + " on "+$(this).data('id') + " " +$(this).data('text-content');
+                   window.console && console.log(m) || alert(m); 
+               },
+               items: {
+                   "edit": {name: "Edit", icon: "edit"},
+                   "cut": {name: "Cut", icon: "cut"},
+                  copy: {name: "Copy", icon: "copy"},
+                   "paste": {name: "Paste", icon: "paste"},
+                   "delete": {name: "Delete", icon: "delete"},
+                   "sep1": "---------",
+                   "quit": {name: "Quit", icon: function(){
+                       return 'context-menu-icon context-menu-icon-quit';
+                   }}
+               }
+           });
+   
+           $('.context-menu-one').on('click', function(e){
+               console.log('clicked', this);
+           })    
+       });
+   </script>
+
+    htm ui context
+</div>

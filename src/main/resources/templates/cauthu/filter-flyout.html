@@ -1,0 +1,291 @@
+<div class="ui flyout right">
+    <i class="close icon"></i>
+    <div class="ui header">
+        <i class="icon filter"></i>
+        <div class="content">
+            Filter Box | Bộ Lọc | Tìm Kiếm
+        </div>
+    </div>
+    <div class="content">
+        <!-- <p>Bộ lọc này dùng để tìm kiếm theo nhiều tiêu chí.</p> -->
+        <form id="formFilter" action="?" class="ui form">
+
+            <div class="ui field">
+                <label for="">Tên:</label>
+                <div class="ui search">
+                    <div class="ui icon input ">
+                        <i class="search icon"></i>
+                        <input type="text" class="prompt" placeholder="Tìm theo tên" id="filter_ten" name="filter_ten"
+                            th:value="${filter_ten}" />
+                    </div>
+                </div>
+                <script>
+                    // $(function(){
+                    //     $('.ui.search').search({
+                    //         source: [
+                    //             { title: 'Andorra' },
+                    //             { title: 'United Arab Emirates' },
+                    //             { title: 'Afghanistan' },
+                    //             { title: 'Antigua' }
+                    //         ]
+                    //     });
+                    //     // alert('test ok');
+                    //     // todo: làm sao lấy được danh sách json từ server
+                    // });
+
+                    //    $(document).ready(function () {
+                    //         $('.ui.search').search({
+                    //             apiSettings: {
+                    //                 url: '/admin/cauthu/list/json/smui?q={query}' // Ensure this endpoint is correct and returns the expected JSON format
+                    //             },
+                    //             fields: {
+                    //                 results: 'results', // Ensure 'results' matches the JSON structure returned by the API
+                    //                 title: 'tenDayDu' // Ensure 'tenDayDu' exists in the JSON response
+                    //             },
+                    //             minCharacters: 2
+                    //         });
+                    //     }); // ok, đã sổ ra danh sách, nhưng mà khi gõ thì nó không lọc theo.
+
+                    // on('input') là sự kiện khi người dùng nhập vào ô tìm kiếm
+                    // thao tác là nó phải cách ra một phát
+                //    $('#filter_ten').on('input', function () {
+                   $('#filter_ten').on('keydown', function () { // OK, chạy tốt, gõ phát sổ ra luôn.
+                //    $('#filter_ten').on('change', function () { // failed
+                        var query = $(this).val();
+                        console.log(query);
+
+                        // ngay sau khi người dùng gõ vào, thì sổ ra danh sách gợi ý khớp với từ khóa 
+                        // Cách làm này là theo chuẩn Remote Response from Server của Semantic UI
+                        // $('.ui.search').search({
+                        //         apiSettings: {
+                        //             url: `/admin/cauthu/list/json/smui?q=${query}` // Ensure this endpoint is correct and returns the expected JSON format
+                        //         },
+                        //         fields: {
+                        //             results: 'results', // Ensure 'results' matches the JSON structure returned by the API
+                        //             title: 'tenDayDu', // Ensure 'tenDayDu' exists in the JSON response
+                        //             image: 'anh', // Ensure 'anh' exists in the JSON response
+                        //             description: 'tinhThanh.ten' // Ensure 'tinhThanh.ten' exists in the JSON response, failed: không ra
+                        //             // description: function(item) {
+                        //             //     return item.tinhThanh ? item.tinhThanh.ten : ''; 
+                        //             // } // Safely access tinhThanh.ten, failed, not working
+                        //         },
+                        //         minCharacters: 2
+                        // });
+
+                        // Cách này là gợi ý bởi CoPilot, Hoạt động tốt hơn, ổn hơn nhiều !!!
+                        // Gõ phát ra luôn, không cần phải gõ kí tự trắng (phím Space)
+                        // Kịch bản vẫn vậy: ngay sau khi người dùng gõ vào, thì sổ ra danh sách gợi ý khớp với từ khóa 
+                        // Gọi API để lấy danh sách tên cầu thủ
+                        $.ajax({
+                            url: '/admin/cauthu/list/json/smui',
+                            method: 'GET',
+                            data: { q: query },
+                            success: function (data) {
+                                // Xử lý dữ liệu trả về từ API
+                                // Cập nhật danh sách gợi ý trong UI
+                                console.log(data);// testing only
+
+                                // Ok, như vậy là nếu làm theo kiểu local data thì phải có trường thông tin title
+                                $('.ui.search').search({
+                                    source: data.results.map(item => ({ 
+                                        title: item.tenDayDu,
+                                        image: item.anh,
+                                        description: item.tinhThanh ? item.tinhThanh.ten : '', // Safely access tinhThanh.ten
+                                        price: item.chieuCao+'(m)',
+                                        url: '/admin/cauthu/view/' + item.id   // Khi bấm vào kết quả gợi ý, thì sẽ mở ra đường link url
+                                        })
+                                    )
+                                });// đã chạy OK, đã sổ ra danh sách cho chọn, thậm chí hiện cả Ảnh và mô tả ngắn bên dưới !
+                            },
+                            error: function (error) {
+                                console.error('Error fetching data:', error);
+                            }
+                        }); // end $.ajax()
+
+                    });
+                </script>
+                <script>
+                    // https://semantic-ui.com/modules/search.html#/usage
+
+                    // $(document).ready(function () {
+                    //     $('.ui.search').search({
+                    //         apiSettings: {
+                    //             url: '/api/search?query={query}'
+                    //         },
+                    //         fields: {
+                    //             results: 'items',
+                    //             title: 'title'
+                    //         },
+                    //         minCharacters: 2
+                    //     });
+                    // });
+
+                    // https://semantic-ui.com/modules/search.html#/usage
+                    // $('.ui.search')
+                    // .search({
+                    //     // change search endpoint to a custom endpoint by manipulating apiSettings
+                    //     apiSettings: {
+                    //     url: 'custom-search/?q={query}'
+                    //     },
+                    //     type: 'category'
+                    // })
+                    // ;
+                </script>
+            </div>
+
+            <div class="ui field ">
+                <label>Hợp Đồng:</label>
+                <select name="filter_conHopdong" id="filter_conHopDong" class="form-control">
+                    <option value="">---Không chọn---</option>
+                    <option value="1">Còn</option>
+                    <option value="0">Hết</option>
+                </select>
+                <script th:inline="javascript">
+                    $('select#filter_gioi option[value=[[${filter_conHopDong}]]]').prop('selected', true);
+                </script>
+            </div>
+
+            <div class="ui field">
+                <label>Nhóm Máu:</label>
+                <select name="filter_nhomMau" id="filter_nhomMau" class="form-control">
+                    <option value="">---Không Phân Biệt---</option>
+                    <option value="A">A</option>
+                    <option value="B">B</option>
+                    <option value="O">O</option>
+                </select>
+                <script th:inline="javascript">
+                    $('select#filter_nhomMau option[value=[[${filter_nhomMau}]]]').prop('selected', true);
+                </script>
+            </div>
+
+            <div class="ui field">
+                <label>Tỉnh Thành:</label>
+                <select name="filter_maTinhThanh" id="filter_maTinhThanh" class="form-control">
+                    <option value="">---Không Phân Biệt---</option>
+                    <option th:each="tinhThanh : ${listTinhThanh}" th:value="${tinhThanh.id}"
+                        th:text="${tinhThanh.ten}">
+                    </option>
+                </select>
+                <script th:inline="javascript">
+                    $('select#filter_maTinhThanh option[value=[[${filter_maTinhThanh}]]]').prop('selected', true);
+                </script>
+            </div>
+
+            <!--java web slider range-->
+            <div class="ui field slider range">
+                <label for="amount">Khoảng Cân Nặng:</label>
+                <input type="text" id="amount" readonly="" style="border:0; color:#f6931f; font-weight:bold;">
+
+                <div id="slider-range-flyout"></div>
+                <!--Các giá trị mà người dùng chọn trên slider-->
+                <input type="hidden" name="filter_canNang_from" th:value="${filter_canNang_from}">
+                <input type="hidden" name="filter_canNang_to" th:value="${filter_canNang_to}">
+            </div>
+            <script>
+
+                $(function () {
+                    $("#slider-range-flyout").slider({
+                        range: true,
+                        //min: 30,
+                        //max: 100,
+                        // values: [40,70],
+                        min: [[${ filter_canNang_min }]],
+                        max: [[${ filter_canNang_max }]],
+                        values: [
+                            [[${ filter_canNang_from } != null ? ${ filter_canNang_from } : ${ filter_canNang_min }]],
+                            [[${ filter_canNang_to } != null ? ${ filter_canNang_to }   : ${ filter_canNang_max }]]
+                        ],
+                        slide: function (event, ui) {
+                            // $("#amount").val("$" + ui.values[0] + " - $" + ui.values[1]);
+                            $("#amount").val(ui.values[0] + " - " + ui.values[1]);
+                            $('input[name="filter_canNang_from"]').val(ui.values[0]);
+                            $('input[name="filter_canNang_to"]').val(ui.values[1]);
+                        }
+                    });
+
+                    // $("#amount").val("$" + $("#slider-range").slider("values", 0) +
+                    //     " - $" + $("#slider-range").slider("values", 1));
+
+                    // Đọc dữ liệu mặc định ban đầu trong mảng values: [1990, 2000]
+                    // ra và nhét nó vào html
+                    $("#amount").val(
+                        $("#slider-range-flyout").slider("values", 0) + " - " + $("#slider-range-flyout").slider("values", 1)
+                    );
+                });
+
+
+            </script>
+
+            <div class="ui field">
+                <label>Kích thước Phân Trang:</label>
+                <select name="pageSize" id="pageSize">
+                    <option value="3">3 (dòng)</option>
+                    <option value="5">5 (dòng)</option>
+                    <option value="7">7 (dòng)</option>
+                    <option value="9">9 (dòng)</option>
+                </select>
+                <script th:inline="javascript">
+                    $('select#pageSize option[value="[[${pageSize}]]"]').prop('selected', true);
+                </script>
+            </div>
+
+            <input type="hidden" name="sortField" th:value="${sortField}" />
+            <input type="hidden" name="sortDir" th:value="${sortDir}" />
+            <br>
+
+            <!-- <div class="ui field">
+                <label for="">Tên:</label>
+                <div class="ui icon input ">
+                    <i class="search icon"></i>
+                    <input type="text" />
+                </div>
+            </div>
+            <div class="ui field">
+                <label for="">Tên:</label>
+                <div class="ui icon input ">
+                    <i class="search icon"></i>
+                    <input type="text">
+                </div>
+            </div>
+            <div class="ui field">
+                <label for="">Tên:</label>
+                <div class="ui icon input ">
+                    <i class="search icon"></i>
+                    <input type="text">
+                </div>
+            </div> -->
+
+            <div style="overflow: auto;">
+                <button type="submit" class="ui button primary right floated">
+                    <i class="icon search"></i> Lọc Tìm
+                </button>
+                <button type="reset" class="ui button secondary right floated">
+                    <i class="icon undo"></i>Hủy
+                </button>
+
+            </div>
+
+            <br style="clear: both;" />
+        </form>
+    </div>
+    <!-- <div class="actions">
+        <div class="ui red cancel button">
+            <i class="remove icon"></i>
+            No
+        </div>
+        <div class="ui green ok button">
+            <i class="checkmark icon"></i>
+            Yes
+        </div>
+    </div> -->
+</div>
+<style>
+    .ui.flyout {
+        max-height: 100vh;
+        /* Giới hạn chiều cao tối đa là 80% chiều cao viewport */
+        overflow-y: auto;
+        /* Thêm thanh cuộn dọc nếu nội dung vượt quá chiều cao */
+        padding: 1rem;
+        /* Tùy chọn: Thêm khoảng cách bên trong */
+    }
+</style>

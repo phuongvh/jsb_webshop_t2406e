@@ -16,6 +16,14 @@ JpaRepository<Manufacturer, Integer>
     // Tìm các thực thể theo cột 'tên'
     // phục vụ cho hàm kiểm tra xem bản ghi mới có bị trùng tên không ?
     List<Manufacturer> findByName(String name);
+    List<Manufacturer> findByNameContainingIgnoreCase(String query);
 
     // SELECT FROM cau_thu WHERE ten_day_du LIKE '%tu khoa%'
+
+    /**
+     * Viết JPQL, JPA Query Method để lọc tìm những nhà sản xuất theo
+     * bộ tiêu chí sau:
+     * - tên (name)
+     * - 
+     */
 }

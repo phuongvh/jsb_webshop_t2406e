@@ -1,0 +1,7 @@
+2025-04-09T19:19:48.437+07:00 DEBUG 12580 --- [jsb_webshop_t2406e] [nio-6868-exec-5] o.s.web.servlet.DispatcherServlet        : POST "/api/manufacturer", parameters={}
+2025-04-09T19:19:48.441+07:00  WARN 12580 --- [jsb_webshop_t2406e] [nio-6868-exec-5] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content-Type 'text/plain;charset=UTF-8' is not supported]
+2025-04-09T19:19:48.442+07:00 DEBUG 12580 --- [jsb_webshop_t2406e] [nio-6868-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 415 UNSUPPORTED_MEDIA_TYPE
+2025-04-09T19:19:48.450+07:00 DEBUG 12580 --- [jsb_webshop_t2406e] [nio-6868-exec-5] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for POST "/error", parameters={}
+2025-04-09T19:19:48.450+07:00 DEBUG 12580 --- [jsb_webshop_t2406e] [nio-6868-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to exam.jsb_webshop_t2406e.error.MvcErrorController#handleError(HttpServletRequest)
+2025-04-09T19:19:48.466+07:00 DEBUG 12580 --- [jsb_webshop_t2406e] [nio-6868-exec-5] o.s.w.s.v.ContentNegotiatingViewResolver : View remains unresolved given [application/json]
+2025-04-09T19:19:48.701+07:00 DEBUG 12580 --- [jsb_webshop_t2406e] [nio-6868-exec-5] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 415

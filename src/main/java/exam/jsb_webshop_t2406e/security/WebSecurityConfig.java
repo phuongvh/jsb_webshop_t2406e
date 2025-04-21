@@ -69,19 +69,60 @@ public class WebSecurityConfig
     return new BCryptPasswordEncoder();
   }
 
+  /**
+   * Về cơ bản thì, client phải đăng nhập thì mới vào được dịch vụ web BPI.
+   * Ngoại lệ là: /bpi/test/public
+   * @param http
+   * @return
+   * @throws Exception
+   */
+  public SecurityFilterChain bpiFilterChain(HttpSecurity http) throws Exception 
+  {
+    http.securityMatcher("/bpi/**")
+        .csrf(csrf -> csrf.disable())
+        .exceptionHandling(exception -> exception.authenticationEntryPoint(unauthorizedHandler))
+        .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+        .authorizeHttpRequests(auth -> auth
+            // .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll() // cho phép mọi người gọi OPTIONS, fix: Invalid CORS request
+              // .requestMatchers("/bpi/test/**").permitAll()
+            .requestMatchers("/bpi/auth/**").permitAll()
+            // .requestMatchers(HttpMethod.GET, "/bpi/test/**").permitAll()
+            // .requestMatchers("/bpi/test/**").permitAll()
+            // .requestMatchers("/bpi/test/user").authenticated()
+            // .requestMatchers(HttpMethod.GET, "/bpi/manufacturer").permitAll() // thử không khóa !
+            .requestMatchers("/bpi/manufacturer/**").authenticated()
+            .anyRequest().authenticated()
+
+            // .antMatchers("/bpi/test/user").authenticated() // Ensure authentication for this endpoint
+        )
+        ;
+    
+    http.authenticationProvider(authenticationProvider());
+    http.addFilterBefore(authenticationJwtTokenFilter(), UsernamePasswordAuthenticationFilter.class);
+    return http.build();
+  }
   
   @Bean
   @Order(0)
   // https://github.com/spring-projects/spring-security/issues/12950
   // đọc để hiểu cú pháp của SecurityFilterChain, cách SpringBoot phân quyền cho url như nào
+  // Cơ chế Security của Web MVC và Web API phải tách biệt ra, không chung trạ
+  // Security cho 2 domain khác nhau: cũng phải khác so với Web MVC
+  // 1. Viết 1 ApiController riêng cho cái việc Submit Form
+  // 2. Viết web security config cũng riêng, cho cái việc submit form từ ReactJS
   public SecurityFilterChain apiFilterChain(HttpSecurity http) throws Exception 
   {
     http.securityMatcher("/api/**")
+        .cors(Customizer.withDefaults()) // AI gợi ý, để chạy được ReactJS Form Submit, tuy nhiên nó sẽ gây chết /admin/manufacturer
         .csrf(csrf -> csrf.disable())
         .exceptionHandling(exception -> exception.authenticationEntryPoint(unauthorizedHandler))
         .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
         .authorizeHttpRequests(auth -> 
-          auth.requestMatchers("/api/auth/**").permitAll()
+          auth
+            // .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll() // cho phép mọi người gọi OPTIONS, fix: Invalid CORS request
+              // .requestMatchers("/api/test/**").permitAll()
+              // .requestMatchers("/api/auth
+            .requestMatchers("/api/auth/**").permitAll()
               .requestMatchers(HttpMethod.GET, "/api/test/**").permitAll()
               // .requestMatchers(HttpMethod.GET, "/api/manufacturer").permitAll()
               .anyRequest().authenticated()
@@ -93,38 +134,14 @@ public class WebSecurityConfig
     return http.build();
   }
 
-  //   @Bean
-  // @Order(XXX)
-  // SecurityFilterChain resourcesFilterChain(HttpSecurity http) throws Exception 
-  // {
-  //     http.securityMatcher("/resources/**")
-  //         .authorizeHttpRequests( auth -> {
-  //           auth
-  //               .requestMatchers("/resources/**").permitAll()
-  //           ;
-  //         })
-          
-          
-  //     ;
-  //     return http.build();
-  // }
 
-  // @Bean
-  // @Order(YYY)
-  // SecurityFilterChain staticFilterChain(HttpSecurity http) throws Exception 
-  // {
-  //     http.securityMatcher("/favicon.ico")
-  //         .authorizeHttpRequests( auth -> {
-  //           auth
-  //               .requestMatchers("/favicon.ico").permitAll()
-  //           ;
-  //         })
-          
-          
-  //     ;
-  //     return http.build();
-  // }
-
+  /**
+   * @abstract An ninh, bảo mật áp dụng cho Web MVC Admin: phần quản trị viên.
+   * 
+   * @param http
+   * @return
+   * @throws Exception
+   */
   @Bean
   @Order(1)
   SecurityFilterChain adminFilterChain(HttpSecurity http) throws Exception 
@@ -142,7 +159,8 @@ public class WebSecurityConfig
           // điều hướng đến /admin/test sau khi đăng nhập thành công.
           // .formLogin(form->form.loginPage("/admin/login") // OK, khi mà nó chỉ trả về ResponseBody Text
           .formLogin(form->form.loginPage("/admin/loginform") // dễ failed do lỗi forward .html
-                               .defaultSuccessUrl("/admin/test") 
+                              //  .defaultSuccessUrl("/admin/test") 
+                               .defaultSuccessUrl("/api/manufacturer") // OK, đã điều hướng được /admin/test vào /admin/login form
                                .permitAll()
           )
           
@@ -189,6 +207,38 @@ public class WebSecurityConfig
       return http.build();
   } 
 
+    // TODO: bổ sung mvcapiFilterChain() phục vụ riêng MvcApiController
+  //   @Bean
+  // @Order(XXX)
+  // SecurityFilterChain resourcesFilterChain(HttpSecurity http) throws Exception 
+  // {
+  //     http.securityMatcher("/resources/**")
+  //         .authorizeHttpRequests( auth -> {
+  //           auth
+  //               .requestMatchers("/resources/**").permitAll()
+  //           ;
+  //         })
+          
+          
+  //     ;
+  //     return http.build();
+  // }
+
+  // @Bean
+  // @Order(YYY)
+  // SecurityFilterChain staticFilterChain(HttpSecurity http) throws Exception 
+  // {
+  //     http.securityMatcher("/favicon.ico")
+  //         .authorizeHttpRequests( auth -> {
+  //           auth
+  //               .requestMatchers("/favicon.ico").permitAll()
+  //           ;
+  //         })
+          
+          
+  //     ;
+  //     return http.build();
+  // }
   
 }// end class
 

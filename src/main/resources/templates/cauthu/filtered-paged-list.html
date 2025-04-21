@@ -1,0 +1,103 @@
+<!-- Đang hiển thị danh sách cầu thủ... -->
+
+<div class="ui" style="padding: 2%">
+    
+    <div th:replace="/cauthu/filter-flyout.html">Bộ Lọc, Filter UI</div>
+
+    <table class="ui table celled selectable">
+        <!-- <caption>
+            <h1>Quản Lý Cầu Thủ</h1>
+        </caption> -->
+        <thead>
+            <tr><!--Table Toolbar-->
+                <th colspan="10">
+                    <h2 style="float: left; margin: 0"><i class="icon list"></i>
+                        Danh Sách Cầu Thủ
+                    </h2>
+                    <div style="float: right; margin: 0;">
+                        <a class="ui button" href="/admin/cauthu/add">
+                            <i class="icon plus circle"></i>
+                            Thêm Mới
+                        </a>
+                        <button class="ui button" onClick="$('#filterBox').slideToggle();">
+                            
+                            <i class="icon filter circle"></i>
+                            Lọc Tìm
+                        </button>
+
+                        <button class="ui button" onClick="$('.ui.flyout').flyout('toggle', {handler: _=>alert('hayhayay')});">
+                            
+                            <i class="icon star circle"></i>
+                            Flyout
+                        </button>
+                    </div>
+                </th>
+            </tr>
+            <tr><!-- Table Column Names -->
+                <th>Mã</th>
+                <th>Ảnh</th>
+                <th>Tên Đầy Đủ</th>
+                <th>Ngày Sinh</th>
+                <th>Chiều Cao</th>
+                <th>Cân Nặng</th>
+                <th>Nhóm Máu</th>
+                <th>Còn Hợp Đồng</th>
+                <th>Tỉnh Thành</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="cauThu : ${listCauThu}" th:data-id="${cauThu.id}" th:data-text-content="${cauThu.tenDayDu}">
+                <td th:text=${cauThu.id}>mã định danh</td>
+                <td><img th:src="${cauThu.anh}" style="height:70px;"/></td>
+                <td th:text=${cauThu.tenDayDu}>tên đầy đủ</td>
+                <td th:text=${cauThu.ngaySinhVi}>ngày sinh</td>
+                <td th:text=${cauThu.chieuCao}>chiều cao</td>
+                <td th:text=${cauThu.canNang}>cân nặng</td>
+                <td th:text=${cauThu.nhomMau}>nhóm máu</td>
+                <td th:text=${cauThu.conHopDongVi}>hợp đồng</td>
+                <td th:text=${cauThu.tinhThanh.ten}>tên tỉnh thành</td>
+                <td>
+                    <a th:href="@{/admin/cauthu/copy(id=${cauThu.id})}" title="link Copy" class="ui button">
+                        <i class="icon copy circle"></i>
+                        Copy
+                    </a>
+                    <a th:href="@{/admin/cauthu/edit(id=${cauThu.id})}" class="ui button yellow">
+                        <i class="icon pencil circle"></i>
+                        Sửa
+                    </a>
+                    <!-- <a th:href="@{/admin/cauthu/delete(id=${cauThu.id})}" class="button red">
+                        <i class="icon trash alternate"></i>
+                        Xóa A (link)
+                    </a> -->
+
+                    <!-- confirm() = OK = true: có nghĩa là submit form thực sự, đi tiếp đến action
+                         conform() = Cancel = false: có nghĩa là dừng, không submit form nữa.
+                    -->
+                    <form th:action="@{/admin/cauthu/delete}" method="post" style="display:inline;"
+                        th:onsubmit="return confirm('Bạn có chắc muốn xóa [[${cauThu.tenDayDu}]] không ?');">
+                        <input type="hidden" name="id" th:value="${cauThu.id}" />
+                        <button type="submit" class="ui button red" title="Xóa Nhanh">
+                            <i class="icon trash alternate"></i>Xóa
+                        </button>
+                    </form>
+                </td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <th colspan="10">
+                    Số  dòng: <span th:text="${pageCount}"></span>
+                </th>
+            </tr>
+            <tr>
+                <th colspan="10">
+                    <p th:replace="/cauthu/pager.html">Phân trang...</p>
+                </th>
+            </tr>
+        </tfoot>
+    </table>
+
+</div>
+
+<div th:replace="/cauthu/context-menu.html">Menu ngữ cảnh, Context Menu</div>

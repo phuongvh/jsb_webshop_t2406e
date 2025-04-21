@@ -1,0 +1,233 @@
+<!-- Đang hiển thị danh sách cầu thủ... -->
+
+<div class="ui" style="padding: 2%">
+    <div class="ui message positive" th:if="${session.SuccessMessage}">
+        <i class="close icon"></i>
+        <div class="header" th:text="${session.SuccessMessage}">
+            Thông báo thành công
+        </div>
+        <p>Bạn có thể tiếp tục các tác vụ khác được rồi.</p>
+        <th:block th:text="${@sessionHelper.removeSuccessMessageFromSession()}"></th:block>
+    </div>
+
+
+    <script>
+        $(function () {
+            setTimeout(function () {
+                $('.ui.message.positive').fadeOut('slow');
+                // $('.ui.message.positive').transition('fade out');
+            }, 3000); // 3000 milliseconds = 3 seconds
+        });
+    </script>
+
+
+    <table class="ui table celled selectable">
+        <!-- <caption>
+            <h1>Quản Lý Cầu Thủ</h1>
+        </caption> -->
+        <thead>
+            <tr><!--Table Toolbar-->
+                <th colspan="9">
+                    <h2 style="float: left; margin: 0"><i class="icon list"></i>
+                        Danh Sách Cầu Thủ
+                    </h2>
+                    <div style="float: right; margin: 0;">
+                        <a class="ui button" href="/admin/cauthu/add">
+                            <i class="icon plus circle"></i>
+                            Thêm Mới
+                        </a>
+                        <button class="ui button">
+                            <i class="icon filter circle"></i>
+                            Lọc Tìm
+                        </button>
+                    </div>
+                </th>
+            </tr>
+            <tr><!-- Table Column Names -->
+                <th>Mã Định Danh</th>
+                <th>Tên Đầy Đủ</th>
+                <th>Ngày Sinh</th>
+                <th>Chiều Cao</th>
+                <th>Cân Nặng</th>
+                <th>Nhóm Máu</th>
+                <th>Còn Hợp Đồng</th>
+                <th>Tỉnh Thành</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="cauThu : ${listCauThu}" th:data-id="${dl.id}" th:data-text-content="${dl.tenDayDu}">
+                <td th:text=${dl.id}>mã định danh</td>
+                <td th:text=${dl.tenDayDu}>tên đầy đủ</td>
+                <td th:text=${dl.ngaySinhVi}>ngày sinh</td>
+                <td th:text=${dl.chieuCao}>chiều cao</td>
+                <td th:text=${dl.canNang}>cân nặng</td>
+                <td th:text=${dl.nhomMau}>nhóm máu</td>
+                <td th:text=${dl.conHopDongVi}>hợp đồng</td>
+                <td th:text=${dl.tinhThanh.ten}>tên tỉnh thành</td>
+                <td>
+                    <a th:href="@{/admin/cauthu/edit(id=${dl.id})}" class="ui button yellow">
+                        <i class="icon pencil circle"></i>
+                        Sửa
+                    </a>
+                    <a th:href="@{/admin/cauthu/delete(id=${dl.id})}" class="button red">
+                        <i class="icon trash alternate"></i>
+                        Xóa A (link)
+                    </a>
+
+                    <!-- confirm() = OK = true: có nghĩa là submit form thực sự, đi tiếp đến action
+                         conform() = Cancel = false: có nghĩa là dừng, không submit form nữa.
+                    -->
+                    <form th:action="@{/admin/cauthu/delete}" method="post" style="display:inline;"
+                        th:onsubmit="return confirm('Bạn có chắc muốn xóa [[${dl.tenDayDu}]] không ?');">
+                        <input type="hidden" name="id" th:value="${dl.id}" />
+                        <button type="submit" class="ui button red">
+                            <i class="icon trash alternate"></i>Xóa B(button)
+                        </button>
+                    </form>
+                </td>
+            </tr>
+        </tbody>
+        <tfoot>
+            pagination...
+        </tfoot>
+    </table>
+
+</div>
+
+
+<div class="ui modal small modalForm">
+    <i class="close icon"></i>
+
+    <div class="body">
+
+        <!-- <i class="icon spinner loading" style="font-size: 48px;"></i> -->
+        <br>
+        Tải form vào đây, Đảm bảo luôn chỉ có 1 modal duy nhất trong trang mà thôi
+    </div>
+
+</div>
+<div id="loading" class="ui modal modalLoad modalLoading modalActivity tiny" style="display:none;text-align: center;width: 50px;">
+    <i class="icon spinner loading" style="font-size: 48px;"></i>
+</div>
+
+<!--viết mã semantic ui để có được Menu Ngữ Cảnh-->
+<script>
+    $(function () {
+        $.contextMenu({
+            selector: 'tr',
+            callback: function (key, options) {
+                // 2 thông tin cần cung cấp cho callback function: id của bản ghi
+                // và tên (key) của action mà người dùng muốn (hay request name)
+                //    var m = "clicked: " + key + " on "+$(this).data('id') + " " +$(this).data('text-content');
+                //    window.console && console.log(m) || alert(m); 
+
+                let url="";
+                var rowId = $(this).data('id');
+
+                // Xác định trang Ajax phục vụ Context Menu
+                switch (key) {
+                    case 'edit':
+                        url = "/admin/cauthu/edit/ajax?id="+rowId;
+                        console.log(url);
+                        break;
+                
+                    default:
+                        break;
+                }
+
+                // Hiển thị con quay (Loading Icon, Activity Indicator)
+                $('#loading').modal('show');
+
+                // Tải form từ backend
+
+                // Cách 1: bỏ đi nút Close(X)
+                // Chạy tốt, mặc dù nó bỏ đi nút đóng (X), và tắt tự động modalLoad
+                // $('.modalForm').load(url,
+                //     ok => {
+                //         // tải thành công thì hiện nó lên
+                //         $('.modalForm').modal('show');
+                //         // Giấu con quay đi
+                //         // $('.modalLoad').modal('hide'); // nó gây chết, ẩn luôn cả .modalForm
+                //     }
+                // );
+
+                // Cách 2: Giữ lại nút Close(X)
+                $.get(
+                    url,
+                    form => {
+                        $('.modalForm .body').html(form); // hiển thị nút tắt (X) bên phải trên cùng, phía trên .body
+                        $('.modalForm').modal('show');    // bấm vào X thì nút Loading vẫn hiện
+                        // $('.modalLoad').modal('hide'); // gây chết, nên comment nó lại
+                    }
+                );
+                // Tắt thực sự modalLoad , đã test, chạy ngon !!!
+                $('.modalForm .close').on('click', function(e){
+                    $('.modalLoad').modal('hide');
+                })
+                // Hiểu bản chất vấn đề, khi sử dụng Semantic 3
+                // Modal Loading hiện lên trước.
+                // Modal Form hiện lên sau và đè lên Modal Loading
+                // Nếu bấm chuột vào vùng tối thì cả 2 modal Form và Load đều bị tắt đi.
+                // Nếu bấm chuột vào nút (X) ở góc trên bên phải thì chỉ có modal Form bị tắt.
+                // vì vậy nên phải viết thêm kịch bản để tắt modal Load
+
+                // $.ajax({
+                //     url: url,
+                //     method: 'GET',
+                //     success: function (response) {
+                //         // Đổ nội dung HTML nhận được vào div .modalForm .body
+                //         $('.modalForm .body').html(response);
+                //         // Hiển thị modal
+                //         $('.modalForm').modal('show');
+                //     },
+                //     error: function () {
+                //         alert('Có lỗi xảy ra khi tải dữ liệu.');
+                //     },
+                //     complete: function () {
+                //         // Giấu con quay đi
+                //         // $('#loading').modal('hide');
+                //     }
+                // });
+                // Tắt thực sự modalLoad , đã test, chạy ngon !!!
+                // $('.modalForm .close').on('click', function(e){
+                //     $('.modalLoad').modal('hide');
+                // })
+
+
+            },
+            items: {
+                "add": { name: "Add (Thêm)", icon: "add" },
+                "edit": { name: "Edit (Sửa)", icon: "edit" },
+                "cut": { name: "Cut (Cắt)", icon: "cut" },
+                "copy": { name: "Copy (Sao Chép)", icon: "copy" },
+                "paste": { name: "Paste (Dán)", icon: "paste" },
+                "delete": { name: "Delete (Xóa)", icon: "delete" },
+                "sep1": "---------",
+                quit: {
+                    name: "Quit", icon: function () {
+                        return 'context-menu-icon context-menu-icon-quit';
+                    }
+                }
+            }
+        });
+
+        $('.context-menu-one').on('click', function (e) {
+            console.log('clicked', this);
+        })
+
+        // Mã này khiến cho modalLoad đè lên trên modalForm
+        // $('.modalForm').modal({
+        //     onHide: function () {
+        //         $('.modalLoad').modal('hide');
+        //         // Clear the modal content when it is closed
+        //         $('.modalForm .body').html('');
+        //     }
+        // })
+
+        // // Tắt thực sự modalLoad , đã test, chạy ngon !!!
+        // $('.modalForm .close').on('click', function(e){
+        //     $('.modalLoad').modal('hide');
+        // })
+    });
+</script>

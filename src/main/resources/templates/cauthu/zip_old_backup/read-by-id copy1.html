@@ -1,0 +1,105 @@
+<div class="ui container"><!--Đừng viết là class = ui container modal, vì như thế  form này sẽ bị ẩn đi ngay từ đầu-->
+    
+    <div class="ui segments">
+        <div class="ui segment">
+            <div class="ui header" style="float: left">
+                <i class="icon edit"></i>
+                Form View Details
+                <!--Dùng chung cho add và edit, không cần chỉ rõ action="địa chỉ cụ thể",
+                mà chỉ cần dấu ? để form submit to self-page 
+                Như vậy là đỡ tốn mã nguồn cho Add và -->
+            </div>
+            <a class="ui" href="/admin/cauthu/read" style="float: right" title="Quay Lại Danh Sách">
+                <i class="icon list"></i>
+            </a>
+            <br style="clear: both"/>
+        </div>
+        <form class="ui form large segment" th:object="${cauThu}">
+
+            <input type="hidden" th:field="*{id}" disabled/>
+
+            <div class="field">
+                <label>Tên Đầy Đủ</label>
+                <input type="text" th:field="*{tenDayDu}" disabled/>
+            </div>
+
+            <div class="field">
+                <label>Chiều Cao (m)</label>
+                <input type="number" th:field="*{chieuCao}" disabled/>
+            </div>
+
+            <div class="field">
+                <label>Cân nặng (kg)</label>
+                <input type="number" th:field="*{canNang}" disabled/>
+            </div>
+
+            <div class="field">
+                <label>Nhóm Máu</label>
+                <select th:field="*{nhomMau}" disabled>
+                    <option value="A">A</option>
+                    <option value="B">B</option>
+                    <option value="O">O</option>
+                </select>
+            </div>
+
+            <!--todo: ép thẻ input sử dụng format: dd/mm/yyyy-->
+            <div class="field">
+                <label>Ngày sinh (bấm vào biểu tượng tờ lịch để chọn):</label>
+                <input type="date" th:field="*{ngaySinh}" disabled/>
+            </div>
+
+            <div class="field inline">
+                <label>Hợp Đồng</label>
+                <input type="checkbox" value="1" th:field="*{conHopDong}" disabled/>
+            </div>
+
+            <div class="field">
+                <label>Tỉnh Thành:</label>
+                 <select th:field="*{maTinhThanh}" disabled>
+                    <option th:each="tinhThanh : ${listTinhThanh}" 
+                            th:value="${tinhThanh.id}" 
+                            th:text="${tinhThanh.ten}">
+                            Tên Tỉnh Thành
+                    </option>
+                 </select>
+            </div>
+
+            <div class="field">
+                <label>Ảnh Đại Diện:</label>
+                <input type="text" th:field="*{anh}" disabled/>
+            </div>
+
+            <div class="field">
+                <label>Mô Tả:</label>
+                <textarea th:field="*{moTa}" />
+                <script>
+                    // $('textarea').summernote({
+                    //     height: 300, // Set the height of the editor
+                    //     placeholder: 'Mô tả chi tiết về  cầu thủ...',
+                    // }); // jQuery Rich Text Editor (Advanced)
+                    $('textarea').richText(); // jQuery Rich Text Editor (minimal/simple)
+               
+                </script>
+            </div>
+
+            <br />
+            <!-- <div style="overflow: auto;" class="ui buttons right floated">
+                <a class="ui button green" href="/admin/cauthu/list" title="Quay Lại Danh Sách">
+                    <i class="icon list"></i>
+                </a>
+                <button type="reset" class="ui button secondary" >
+                    <i class="icon cancel"></i>
+                    Huỷ
+                </button>
+                <button type="submit" class="ui button primary">
+                    <i class="icon save"></i>
+                    Lưu 
+                </button>
+
+            </div> -->
+
+
+            <br style="clear:both"/>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,250 @@
+<div class="ui container"><!--Đừng viết là class = ui container modal, vì như thế  form này sẽ bị ẩn đi ngay từ đầu-->
+    
+    <div class="ui segments">
+        <div class="ui segment">
+            <div class="ui header" style="float: left">
+                <i class="icon edit"></i>
+                Form Input
+                <!--Dùng chung cho add và edit, không cần chỉ rõ action="địa chỉ cụ thể",
+                mà chỉ cần dấu ? để form submit to self-page 
+                Như vậy là đỡ tốn mã nguồn cho Add và -->
+            </div>
+            <a class="ui" href="/admin/cauthu/list" style="float: right" title="Quay Lại Danh Sách">
+                <i class="icon list"></i>
+            </a>
+            <br style="clear: both"/>
+        </div>
+        <form class="ui form large segment cauthu" 
+                method="post" action="/admin/cauthu/save" th:object="${cauThu}">
+
+            <input type="hidden" th:field="*{id}"/>
+
+            <div class="field">
+                <label>Tên Đầy Đủ</label>
+                <input type="text" placeholder="tên cầu thủ" th:field="*{tenDayDu}"/>
+            </div>
+
+            <div class="field">
+                <label>Chiều Cao (m)</label>
+                <input type="number" step="0.01" placeholder="chiều cao" th:field="*{chieuCao}"/>
+            </div>
+
+            <div class="field">
+                <label>Cân nặng (kg)</label>
+                <input type="number" placeholder="cân nặng" th:field="*{canNang}"/>
+            </div>
+
+            <div class="field">
+                <label>Nhóm Máu</label>
+                <select th:field="*{nhomMau}">
+                    <option value="A">A</option>
+                    <option value="B">B</option>
+                    <option value="O">O</option>
+                </select>
+            </div>
+
+            <!--todo: ép thẻ input sử dụng format: dd/mm/yyyy-->
+            <div class="field">
+                <label>Ngày sinh (bấm vào biểu tượng tờ lịch để chọn):</label>
+                <input type="date" th:field="*{ngaySinh}" />
+            </div>
+
+            <div class="field inline">
+                <label>Hợp Đồng</label>
+                <input type="checkbox" value="1" th:field="*{conHopDong}"/>
+            </div>
+
+            <div class="field">
+                <label>Tỉnh Thành:</label>
+                 <select th:field="*{maTinhThanh}">
+                    <option th:each="tinhThanh : ${listTinhThanh}" 
+                            th:value="${tinhThanh.id}" 
+                            th:text="${tinhThanh.ten}">
+                            Tên Tỉnh Thành
+                    </option>
+                 </select>
+            </div>
+
+            <div class="field">
+                <label>Ảnh Đại Diện:</label>
+                <input type="text" placeholder="http://anh.com/vidu.jpg" th:field="*{anh}"/>
+            </div>
+
+            <div class="field">
+                <label>Mô Tả:</label>
+                <textarea th:field="*{moTa}" />
+                <script>
+                    // $('textarea').summernote({
+                    //     height: 300, // Set the height of the editor
+                    //     placeholder: 'Mô tả chi tiết về  cầu thủ...',
+                    // }); // jQuery Rich Text Editor (Advanced)
+                    $('textarea').richText(); // jQuery Rich Text Editor (minimal/simple)
+               
+                </script>
+            </div>
+
+            <br />
+            <div style="overflow: auto;" class="ui buttons right floated">
+                <a class="ui button green" href="/admin/cauthu/list" title="Quay Lại Danh Sách"><i class="icon list"></i></a>
+                <button type="reset" class="ui button secondary" >
+                    <i class="icon cancel"></i>
+                    Huỷ
+                </button>
+                <button type="submit" class="ui button primary">
+                    <i class="icon save"></i>
+                    Lưu 
+                </button>
+
+            </div>
+
+            <div class="ui error message"></div>
+
+            <!-- </fieldset> -->
+            <br style="clear:both"/>
+        </form>
+    </div>
+</div>
+
+<script>
+    // https://semantic-ui.com/behaviors/form.html
+    // https://stackoverflow.com/questions/51999545/how-to-validate-decimal-fields-in-semantic-ui
+
+    // Lập trình viên tự bổ sung một số quy tắc ràng buộc
+    // dữ liệu vào cho thư viện lõi: JavaScript jQuery Semantic-UI
+    $.fn.form.settings.rules.greaterThan = function (inputValue, validationValue) {
+        return (inputValue >= validationValue);
+    };
+    $.fn.form.settings.rules.lessThan = function (inputValue, validationValue) {
+        return (inputValue <= validationValue);
+    }
+
+    $.fn.form.settings.rules.validDate = function (inputValue) {
+
+        return !isNaN(Date.parse(inputValue));
+    };
+
+    // Nguồn tham khảo: https://stackoverflow.com/questions/13780881/javascript-date-range-validation
+    // Chú ý rằng, dữ liệu mà người dùng nhập vào thẻ <input type="date"> là một chuỗi kiểu sql: 1985-12-29
+    // trong JavaScript, bạn phải chuyển đổi chuỗi kí tự đó sang kiểu của javascript là Date
+    // cách 1: new Date("1985-12-29")
+    // cách 2: Date.parse("1985-12-29")
+    // cách 3: new Date(1985, 12-1, 29);
+    // Tóm lại là: convert String to Date in JavaScript, how to ???
+    $.fn.form.settings.rules.betweenDate = function (inputValue) {
+
+        // var v2 = document.getElementsByTagName('ngaySinh')[0],
+
+        // inputDate = new Date.parse(inputValue);
+        inputDate = new Date(inputValue);
+
+        // var startDate = new Date(1985, 12-1, 29); // Date("1985-12-29")
+        // var endDate   = new Date(2010, 1-1, 1);    
+
+        var startDate = new Date("1985-12-29"); // chạy OK, Mr.Thanh gợi ý giải pháp
+        var endDate   = new Date("2010-12-28");  
+             
+        // if (startDate < inputDate && inputDate < endDate) 
+        // {
+        //     return true; 
+        // }
+
+        // return false; // bôi đỏ thẻ input vì ngày sinh không hợp lệ
+
+        // if(inputDate < startDate)
+        //     return false;
+        // else
+        // if(inputDate > endDate)
+        //     return false;
+        // else
+        //     return true
+        
+        if(inputDate < startDate) // không hợp lệ vì nhỏ hơn cực tiểu min (chặn dưới)
+            return false;
+        if(inputDate > endDate)   // không hợp lệ vì lớn hơn cực đại max (chặn trên)
+            return false;
+        return true               // hợp lệ vì nằm trong khoảng [min,max]
+
+    };
+
+    $(function () {
+
+        $('.ui.form.cauthu')
+            .form({
+                fields: {
+                    // tựa_đề: {
+                    //     identifier: 'tuaDe',
+                    //     rules: [{
+                    //         type: 'empty',
+                    //         prompt: 'Bạn vui lòng nhập tựa đề'
+                    //     }]
+                    // },
+                    cân_nặng: {
+                        identifier: 'canNang',
+                        rules: [
+                            {
+                                type: 'empty',
+                                prompt: 'Bạn vui lòng nhập cân nặng.'
+                            }
+                            , 
+                            {
+                                type: 'greaterThan[60]',
+                                prompt: 'Cân nặng phải lớn hơn 60kg'
+                            }
+                            , 
+                            {
+                                type: 'lessThan[90]', // chưa chạy được đúng, vẫn báo sai prompt
+                                prompt: 'Cân nặng phải nhỏ hơn 90kg'
+                            }
+                        ]
+                    },
+                    chiều_cao: {
+                        identifier: 'chieuCao',
+                        rules: [{
+                            type: 'empty',
+                            prompt: 'Bạn vui lòng nhập chiều cao.'
+                        }
+                            , {
+                            type: 'greaterThan[1.6]',
+                            prompt: 'Chiều cao phải lớn hơn 1.6m'
+                        }
+                            , {
+                            type: 'lessThan[2.0]', // chưa chạy được đúng, vẫn báo sai prompt
+                            prompt: 'Chiều cao phải nhỏ hơn 2.0m'
+                        }
+                        ]
+                    },
+                    ngay_sinh: {
+                        identifier: 'ngaySinh',
+                        rules: [
+                            {
+                                type: 'empty',
+                                prompt: 'Bạn vui lòng nhập ngày sinh.'
+                            }
+                            ,
+                            {
+                                type: 'validDate',
+                                prompt: 'Ngày sinh không hợp lệ.'
+                            }
+                            ,
+                            {
+                                type: 'betweenDate',
+                                prompt: 'Ngày sinh phải nằm trong khoảng 1985-2010.'
+                            }
+                        ]
+                    }
+
+                    //phone: {
+                    //     identifier: 'phone',
+                    //     rules: [{
+                    //         type: 'regExp',
+                    //         value: /^[0-9]{10}$/,
+                    //         prompt: 'Số điện thoại phải có 10 chữ số'
+                    //     }]
+                    // }
+
+
+                }
+            });
+
+    });
+</script>

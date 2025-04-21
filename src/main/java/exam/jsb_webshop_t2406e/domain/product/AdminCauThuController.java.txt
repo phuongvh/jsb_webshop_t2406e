@@ -1,0 +1,815 @@
+package exam.jsb_web_qlct_t2309m.cauthu;
+
+import java.util.HashMap;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+// import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
+
+import exam.jsb_web_qlct_t2309m.tinhthanh.JpaTinhThanh;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpSession;
+
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+// 2025.04.02 Chuẩn Hóa 
+// Vấn Đề 1: nội dung của add.html và edit.html rất giống nhau
+// Liệu có nên ? và Làm thế nào để gộp chung 2 tệp *.html này lại
+// làm 1 tệp duy nhất là form.html
+// Bởi vì luồng quy trình của 2 action: add và edit khá giống nhau:
+// Gửi thực thể  cần nhập và chỉnh sửa dữ liệu sang HTML Form.
+// Sau đó, bấm nút Save gửi về Server để JPA lưu vào SQL.
+// Nếu gộp được chung vào 1 Form thì sẽ tiện nâng cấp về sau,
+// ví dụ: Nếu thực thể có thêm trường thông tin thì mình chỉ việc sửa đúng 1 form mà thôi.
+
+// MVC Web App
+@Controller // MVC Controller, View HTML Controller
+@RequestMapping("/admin/cauthu") // Phần đường dẫn chung của các hàm Action trong Controller
+public class AdminCauThuController 
+{
+
+    @Autowired
+    private HttpSession session; // duy trì trạng thái ứng dụng
+
+    @Autowired
+    private HttpServletRequest request; // chứa yêu cầu phía máy khách
+
+    @Autowired // bảng phụ
+    private JpaTinhThanh jpaTinhThanh;
+
+    @Autowired // bảng chính
+    private JpaCauThu jpaCauThu;
+
+    /**
+     * Trả danh sách về cho client front end uix: Semantic UI
+     * Thử cho ngay_sinh = NULL để kiểm tra json trả về
+     * UPDATE `cau_thu` SET ngay_sinh=NULL WHERE id=8;
+     * 
+     * đã test thử: ok, null field đã bị loại khỏi chuỗi json trả về.
+     * 
+     * sau đó cho ngay_sinh quay lại giá trị cũ
+     * UPDATE `cau_thu` SET ngay_sinh='1995-10-02' WHERE id=8;
+     * 
+     * Cấu trúc json trả về cho Semantic UI không nhất thiết phải theo chuẩn của Semantic UI
+     * vì bạn có thể chuyển đổi JSOn đó sang định dạng mà Semantic UI yêu cầu
+     * 
+     * $('.ui.search').search({
+            source: data.results.map(item => ({ 
+                    title: item.tenDayDu,
+                    image: item.anh,
+                    description: item.tinhThanh ? item.tinhThanh.ten : '', // Safely access tinhThanh.ten
+                    price: item.chieuCao+'(m)',
+                    url: '/admin/cauthu/view/' + item.id
+                })
+            )
+      });
+     */
+    @GetMapping(path = "/list/json/smui", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<Object> getListJsonForSemanticUI() 
+    {
+        // Get data from service layer into entityList.
+
+        var filter_ten  = request.getParameter("q");
+
+        // var list = jpaCauThu.findAll();
+        // var list = jpaCauThu.findByTenDayDuContaining(filter_ten); // ok, chạy tốt
+        var list = jpaCauThu.findByTenDayDuContainingIgnoreCase(filter_ten); // ok, chạy tốt
+
+        list.forEach(entity->entity.setMessages(null));
+
+        // Loại bỏ các trường thông tin không cần thiết khỏi quá trình 
+        // chuyển đổi, sinh ra chuỗi: JSON Serialization
+        // list.forEach(entity->{
+        //     entity.setMessages(null);
+        //     entity.setTinhThanh(null);
+        // });
+
+        java.util.
+        Map<String, Object> data = new HashMap<>();
+        data.put("success", true);
+        data.put("results", list);
+        data.put("TotalRecordCount", list.size());
+
+        return new ResponseEntity<>(data, HttpStatus.OK);
+        // return new ResponseEntity<Object>(data, HttpStatus.OK);
+    }
+
+    // http: HyperText Transfer Protocol
+    // Tuyến bus 26 là bí danh cho luồng tuyến (route) cụ thể
+    // xe-buyt://yen-nghia/nguyentrai/pham-hung/my-dinh/svd-mydinh
+    // SQL -> Java -> View HTML
+    // SQL Server -> Java Web Server -> FE/UiX Server (HTM, CSS, JS6, JSX, React,
+    // Angular, Vue, Next, ...)
+    @GetMapping("/list") // định tuyến (route) luồng chương trình
+    public String getList(Model model) // chương trình con, dịch vụ con, phục vụ
+    {
+        // Lấy ra danh sách các cầu thủ
+        var listCauThu = jpaCauThu.findAll();
+
+        model
+                // Gửi danh sách đó sang view HTML
+                .addAttribute("listCauThu", listCauThu)
+                .addAttribute("listSize", listCauThu.size())
+                // Chỉ định trang html
+                .addAttribute("title", "Danh Sách Cầu Thủ")
+                .addAttribute("content", "/cauthu/list.html");
+
+        // Chỉ định layout
+        // return new String();
+        return new String("/layout/layout-admin.html");
+
+    }
+
+    @PostMapping("/list")
+    public String postList(@ModelAttribute CauThu cauthu) {
+        if (cauthu.getConHopDong() == null)
+            cauthu.setConHopDong(false);
+
+        // Lưu entity vào csdl (không cần biế t là đang thêm mới hay sửa cũ)
+        jpaCauThu.save(cauthu);
+
+        // Gửi thông báo thành công sang bên View HTML
+        session.setAttribute("SuccessMessage", "Đã xong việc cập nhật danh sách !");
+
+        // Điều hướng sang trang danh sách
+        return "redirect:/admin/cauthu";
+    }
+
+    /**
+     * @abstract Hàm này sử dụng chung cho các tình huống: Thêm, Sửa, Context Menu
+     * @param cauThu
+     * @return
+     */
+    @PostMapping("/save")
+    public String postSave(@ModelAttribute CauThu cauThu) {
+        if (cauThu.getConHopDong() == null)
+            cauThu.setConHopDong(false);
+
+        // ngày tạo ???
+        // ngày sửa ???
+
+        var successMessage = (cauThu.getId() >= 1)
+                ? "Đã xong việc chỉnh sửa"
+                : "Đã xong việc thêm mới";
+
+        // var successMessage = jpaCauThu.existsById(cauThu.getId())
+        // ?
+        // "Đã xong việc chỉnh sửa"
+        // :
+        // "Đã xong việc thêm mới"
+        // ;
+
+        // Lưu entity vào csdl (không cần biế t là đang thêm mới hay sửa cũ)
+        jpaCauThu.save(cauThu);
+
+        // Gửi thông báo thành công sang bên View HTML
+        session.setAttribute("SuccessMessage", successMessage);
+
+        // Điều hướng sang trang danh sách
+        return "redirect:/admin/cauthu";
+    }
+
+    @GetMapping("/add/ajax")
+    public String getAddAjax(Model model) {
+        // Tạo mới thực thể
+        var entity = new CauThu();
+        // với một vài giá trị mặc định (do lập trình tự quyết)
+        entity.setConHopDong(true);
+        entity.setChieuCao(1.8f);
+        entity.setNhomMau('B');
+
+        // Gửi thực thể mới đó sang HTM Form để end user có thể chỉnh sửa dễ dàng và
+        // kiểm duyệt
+        model
+                .addAttribute("cauThu", entity)
+                // Gửi thêm dữ liệu của bảng phụ
+                .addAttribute("listTinhThanh", jpaTinhThanh.findAll());
+        // 2 câu lệnh hiển thị giao diện của Form Edit
+
+        return "/cauthu/form-save.html";
+    }
+
+    @GetMapping("/add")
+    public String getAdd(Model model) {
+        // Lấy ra danh sách các tỉnh thành
+        // Lấy ra các bản ghi trong bảng phụ (cung cấp thêm thông tin cho bảng chính)
+
+        // Tạo mới thực thể
+        var entity = new CauThu();
+        // với một vài giá trị mặc định (do lập trình tự quyết)
+        // entity.setConHopDong(true);
+        // entity.setChieuCao(1.8f);
+        // entity.setNhomMau('B');
+
+        // Gửi thực thể mới đó sang HTM Form để end user có thể chỉnh sửa dễ dàng và
+        // kiểm duyệt
+        model
+                .addAttribute("cauThu", entity)
+
+                // Gửi danh sách bản ghi phụ đó từ Controller sang View HTML
+                // Gửi dữ liệu của biến Java sang biến HTML ThymeLeaf
+                // PHP: HTML Blade/Smarty/Phtml: NodeJS: *.ejs, *.hdb; Python: HTML Jinja
+                // Đó là các Template Engine chịu trách nhiệm thông dịch html template sang
+                // *.htm
+
+                // Gửi danh sách các thực thể phụ sang view HTML
+                .addAttribute("listTinhThanh", jpaTinhThanh.findAll())
+
+                // Chỉ định HTML Form Add, nội dung riêng của trang này
+                // (tương đối so với thư mục: templates)
+                // model.addAttribute("formAction", "/admin/cauthu/add");
+                .addAttribute("title", "Thêm Mới Cầu Thủ")
+                // model.addAttribute("content", "/cauthu/add.html");
+                .addAttribute("content", "/cauthu/form-save.html");
+
+        // Chỉ định layout chung của các trang
+        // ~/src/main/resources/templates
+        return "/layout/layout-admin.html";
+        // return new String();
+    }
+
+    @PostMapping("/add")
+    public String postAdd(@ModelAttribute CauThu cauthu) {
+        // TODO: process POST request
+        // Tinh chỉnh lại giá trị của checkbox (vì nếu không tích thì nó bị null)
+        if (cauthu.getConHopDong() == null)
+            cauthu.setConHopDong(false);
+
+        // ngày tạo ???
+        // ngày sửa ???
+
+        // Lưu entity vào csdl
+        jpaCauThu.save(cauthu);
+
+        // Gửi thông báo thành công sang bên View HTML
+        session.setAttribute("SuccessMessage", "Đã xong việc thêm mới cầu thủ !");
+        // Điều hướng sang trang danh sách
+        return "redirect:/admin/cauthu";
+        // return "redirect:/add-ok.htm"; // tạm thời !
+        // return entity;
+    }
+
+    @GetMapping("/edit/ajax")
+    public String getEditAjax(
+            Model model, // mô hình dữ liệu của view html
+            @RequestParam("id") int id // mã định của bản ghi cần sửa
+    ) {
+        // Tìm thực thể dữ liệu đang có trong csdl, theo mã định danh
+        var entity = jpaCauThu.findById(id).get();
+
+        // Gửi thực thể cũ đó sang view html form để sửa
+        model.addAttribute("cauThu", entity)
+                // Gửi thêm dữ liệu của bảng phụ
+                .addAttribute("listTinhThanh", jpaTinhThanh.findAll());
+        // 2 câu lệnh hiển thị giao diện của Form Edit
+
+        return "/cauthu/form-save.html";
+    }
+
+    // Định tuyến luồng đi từ main() -> edit()
+    // Khai báo hàm chức năng hiển thị form Sửa Dữ Liệu Cầu Thủ (Edit/Update/Modify)
+    @GetMapping("/edit")
+    public String getEdit(
+            Model model, // mô hình dữ liệu của view html
+            @RequestParam("id") int id // mã định của bản ghi cần sửa
+    ) {
+        // Tìm thực thể dữ liệu đang có trong csdl, theo mã định danh
+        var entity = jpaCauThu.findById(id).get();
+
+        // Gửi thực thể cũ đó sang view html form để sửa
+        model
+                .addAttribute("cauThu", entity)
+                // Gửi thêm dữ liệu của bảng phụ
+                .addAttribute("listTinhThanh", jpaTinhThanh.findAll())
+                // 2 câu lệnh hiển thị giao diện của Form Edit
+                .addAttribute("title", "Sửa Cầu Thủ")
+                .addAttribute("content", "/cauthu/form-save.html")
+        // model.addAttribute("content", "/cauthu/edit.html");
+        ;
+
+        return "/layout/layout-admin.html";
+    }
+
+    @PostMapping("/edit")
+    public String postEdit(
+            @ModelAttribute CauThu cauthu) {
+        // tinh chỉnh dữ liệu thô
+        if (cauthu.getConHopDong() == null)
+            cauthu.setConHopDong(false);
+
+        // Lưu entity vào csdl
+        jpaCauThu.save(cauthu);
+
+        // Gửi thông báo thành công sang bên View HTML
+        session.setAttribute("SuccessMessage", "Đã xong việc sửa !");
+
+        // Điều hướng sang trang danh sách
+        return "redirect:/admin/cauthu";
+    }
+
+    @GetMapping("/delete/ajax")
+    public String getDeleteAjax(
+            Model model, // mô hình dữ liệu của view html
+            @RequestParam("id") int id // mã định của bản ghi cần sửa
+    ) {
+        // Tìm thực thể dữ liệu đang có trong csdl, theo mã định danh
+        var entity = jpaCauThu.findById(id).get();
+
+        model
+                .addAttribute("cauThu", entity) // phải có cái này thì mới có hidden id bên view html
+                // Gửi thêm dữ liệu của bảng phụ
+                .addAttribute("listTinhThanh", jpaTinhThanh.findAll())
+        // 2 câu lệnh hiển thị giao diện của Form Edit
+        ;
+        return "/cauthu/delete.html";
+    }
+
+    /**
+     * Hàm này không cần thiết nếu sử dụng JavaScript
+     * <form method="post" action="/admin/cauthu/delete"
+     * onsubmit="return confirm('Bạn có chắc muốn xóa không ?')"
+     * 
+     * @param model
+     * @param id
+     * @return
+     */
+    @GetMapping("/delete")
+    public String getDelete(
+            Model model, // mô hình dữ liệu của view html
+            @RequestParam("id") int id // mã định của bản ghi cần sửa
+    ) {
+        // Tìm bản ghi theo mã định danh trong csdl
+        var entity = jpaCauThu.findById(id).get();
+
+        // Mô hình dữ liệu của view HTML
+        model
+                .addAttribute("cauThu", entity)
+                .addAttribute("listTinhThanh", jpaTinhThanh.findAll())
+                .addAttribute("content", "/cauthu/delete.html");
+
+        // Bố cục chung
+        return "/layout/layout-admin.html";
+    }
+
+    @PostMapping("/delete")
+    public String postDelete(
+            @ModelAttribute CauThu cauthu) {
+        // Xóa thực thể khỏi cơ sở dữ liệu
+        jpaCauThu.delete(cauthu);
+
+        // Gửi thông báo thành công sang bên View HTML
+        session.setAttribute("SuccessMessage", "Đã xong việc xóa !");
+
+        // Điều hướng sang trang danh sách
+        return "redirect:/admin/cauthu";
+    }
+
+    // Hàm này sẽ làm hơi khác chút so với edit/delete
+    @GetMapping("/view/{id}")
+    public String view( // details
+            Model model, // mô hình dữ liệu của view html
+            @PathVariable("id") int id // mã định của bản ghi cần sửa
+    ) {
+        // Tìm thực thể dữ liệu đang có trong csdl, theo mã định danh
+        var entity = jpaCauThu.findById(id).get();
+
+        // Gửi thực thể cũ đó sang view html form để sửa
+        model
+                .addAttribute("cauThu", entity)
+                // Gửi thêm dữ liệu của bảng phụ
+                .addAttribute("listTinhThanh", jpaTinhThanh.findAll())
+                // 2 câu lệnh hiển thị giao diện của Form Edit
+                .addAttribute("title", "Sửa Cầu Thủ")
+                .addAttribute("content", "/cauthu/view.html");
+
+        return "/layout/layout-admin.html";
+    }
+
+    @GetMapping("/copy")
+    public String getCopy(
+            Model model, // mô hình dữ liệu của view html
+            @RequestParam("id") int id // mã định của bản ghi cần sửa
+    ) {
+        // Tìm thực thể dữ liệu đang có trong csdl, theo mã định danh
+        var entity = jpaCauThu.findById(id).get();
+
+        // // Clone entity to a new object
+        // var clonedEntity = new CauThu();
+        // clonedEntity.setTenDayDu(entity.getTenDayDu());
+        // clonedEntity.setNgaySinh(entity.getNgaySinh());
+        // clonedEntity.setChieuCao(entity.getChieuCao());
+        // clonedEntity.setCanNang(entity.getCanNang());
+        // clonedEntity.setNhomMau(entity.getNhomMau());
+        // clonedEntity.setConHopDong(entity.getConHopDong());
+        // clonedEntity.setTinhThanh(entity.getTinhThanh());
+
+        // // Reset ID to ensure it's treated as a new entity
+        // clonedEntity.setId(0);
+
+        // // Assign the cloned entity back to the variable
+        // entity = clonedEntity;
+
+        entity.setId(0);
+
+        // Gửi thực thể cũ đó sang view html form để sửa
+        model
+        .addAttribute("cauThu", entity)
+                // Gửi thêm dữ liệu của bảng phụ
+        .addAttribute("listTinhThanh", jpaTinhThanh.findAll())
+                // 2 câu lệnh hiển thị giao diện của Form Edit
+        .addAttribute("title", "Copy Cầu Thủ")
+        .addAttribute("content", "/cauthu/form-save.html")
+        ;
+
+        return "/layout/layout-admin.html";
+    }
+
+    @GetMapping("/copy/ajax")
+    public String getCopyAjax(
+            Model model, // mô hình dữ liệu của view html
+            @RequestParam("id") int id // mã định của bản ghi cần sửa
+    ) {
+        // Tìm thực thể dữ liệu đang có trong csdl, theo mã định danh
+        var entity = jpaCauThu.findById(id).get();
+
+        // Gửi thực thể cũ đó sang view html form để sửa
+        model.addAttribute("cauThu", entity)
+                // Gửi thêm dữ liệu của bảng phụ
+                .addAttribute("listTinhThanh", jpaTinhThanh.findAll());
+        // 2 câu lệnh hiển thị giao diện của Form Edit
+
+        return "/cauthu/form-save.html";
+    }
+    /**
+     * @abstract Hàm chịu trách nhiệm lọc, xếp (tăng/giảm), phân trang.
+     * @author T2309M, Fpt Aptech
+     * @update 2025.04.09 09h11
+     * @param model
+     * @return
+     */
+    @GetMapping // http://localhost:6868/admin/cauthu
+    public String getFilteredPagedList(Model model) {
+        // #region THAM SỐ PHÂN TRANG
+        int pageNumber; // current page Number, #No, số thứ tự của trang hiện tại
+        int pageSize; // kích thước trang, số phần tử tối đa hiển thị trên một trang
+
+        // Tiếp nhận các tham số này từ URL mà client yêu cầu (request)
+        try {
+            pageNumber = request.getParameter("pageNumber") == null
+                    ? 1
+                    : Integer.parseInt(request.getParameter("pageNumber"));
+
+            pageSize = Integer.parseInt(request.getParameter("pageSize"));
+        } catch (Exception e) {
+            // TODO: handle exception
+            pageNumber = 1;
+            pageSize = 5;
+        }
+
+        // Chuẩn hóa triệt để, không bao giờ để tham số phân trang bị NULL hoặc Zero
+        if (pageNumber < 1)
+            pageNumber = 1;
+        if (pageSize < 1)
+            pageSize = 5;
+        // #endregion
+
+        // #region THAM SỐ SẮP XẾP TĂNG GIẢM THEO TÊN CỘT, TÊN THUỘC TÍNH THỰC THỂ
+        String sortField; // Tên cột sắp xếp
+        String sortDir; // sort direction: Chiều sắp xếp
+        String sortRev; // sort reversion: ĐẢo chiều sắp xếp
+
+        // bắt các tham số sắp xếp có trên URL
+        sortField = request.getParameter("sortField");
+        sortDir = request.getParameter("sortDir");
+
+        if (sortField == null || sortField.trim().isEmpty())
+            sortField = "id";
+
+        if (sortDir == null || sortDir.trim().isEmpty()) {
+            sortDir = "asc";
+            sortRev = "desc";
+        } else if (sortDir.equals("asc")) {
+            sortRev = "desc";
+        } else // url có chứa sortDir, nhưng giá trị không đúng, không phù hợp.
+        {
+            sortDir = "asc";
+            sortRev = "desc";
+        }
+        // #endregion
+
+        // #region THAM SỐ LỌC
+        String filter_ten;
+        Integer filter_maTinhThanh;
+        Character filter_nhomMau;
+        Integer filter_canNang_from;
+        Integer filter_canNang_to;
+
+        Integer filter_canNang_min = 30;
+        Integer filter_canNang_max = 100;
+
+        // Đọc gía trị của các tham số lọc trên request URL gửi từ phía máy khách.
+        filter_ten = request.getParameter("filter_ten");
+
+        try {
+            filter_nhomMau = request
+                    .getParameter("filter_nhomMau")
+                    .charAt(0);
+        } catch (Exception e) {
+            // TODO: handle exception
+            filter_nhomMau = null;
+        }
+
+        try {
+            filter_maTinhThanh = Integer.parseInt(
+                    request.getParameter("filter_maTinhThanh"));
+            ;
+        } catch (Exception e) {
+            // TODO: handle exception
+            filter_maTinhThanh = null;
+        }
+
+        try {
+            filter_canNang_from = Integer.parseInt(
+                    request.getParameter("filter_canNang_from"));
+            ;
+        } catch (Exception e) {
+            // TODO: handle exception
+            filter_canNang_from = null;
+        }
+
+        try {
+            filter_canNang_to = Integer.parseInt(
+                    request.getParameter("filter_canNang_to"));
+            ;
+        } catch (Exception e) {
+            // TODO: handle exception
+            filter_canNang_to = null;
+        }
+
+        // #endregion
+
+        // #region CÁC ĐƯỜNG LINK GỬI SANG VIEW HTML
+        String linkSortId = String.format("/admin/cauthu?pageNumber=%d&pageSize=%d&sortField=id&sortDir=%s",
+                pageNumber, pageSize, sortRev);
+
+        String linkSortTen = String.format("/admin/cauthu?pageNumber=%d&pageSize=%d&sortField=tenDayDu&sortDir=%s",
+                pageNumber, pageSize, sortRev);
+
+        String linkSortCanNang = String.format("/admin/cauthu?pageNumber=%d&pageSize=%d&sortField=canNang&sortDir=%s",
+                pageNumber, pageSize, sortRev);
+
+        String linkPage;
+        // linkPage =
+        // String.format("/admin/cauthu?sortField=%s&sortDir=%s&pageSize=%d&pageNumber=",
+        // sortField, sortDir, pageSize);
+
+        // Bổ sung các tham số lọc vào các link, để duy trì trạng thái của request:
+        // (application state, request state)
+        String filterParams = "";
+        if (filter_ten != null && !filter_ten.trim().isEmpty())
+            filterParams += "&filter_ten=" + filter_ten;
+
+        if (filter_nhomMau != null)
+            filterParams += "&filter_nhomMau=" + filter_nhomMau;
+
+        if (filter_maTinhThanh != null && filter_maTinhThanh > 0)
+            filterParams += "&filter_maTinhThanh=" + filter_maTinhThanh;
+
+        if (filter_canNang_from != null && filter_canNang_from >= filter_canNang_min)
+            filterParams += "&filter_canNang_from=" + filter_canNang_from;
+
+        if (filter_canNang_to != null && filter_canNang_to <= filter_canNang_max)
+            filterParams += "&filter_canNang_to=" + filter_canNang_to;
+
+        linkSortTen += filterParams;
+        linkSortId += filterParams;
+        linkSortCanNang += filterParams;
+
+        linkPage = String.format("/admin/cauthu?sortField=%s&sortDir=%s",
+                sortField, sortDir, pageSize);
+        linkPage += filterParams;
+        linkPage += String.format("&pageSize=%d&pageNumber=", pageSize);
+
+        // #endregion
+
+        Page<CauThu> page;
+        List<CauThu> list;
+        // Khối lệnh thực hiện việc Phân Trang
+        {
+            // Sắp xếp theo chiều nào ? cột nào ?
+            Sort sort = sortDir.equalsIgnoreCase(Sort.Direction.ASC.name())
+                    ? Sort.by(sortField).ascending()
+                    : Sort.by(sortField).descending();
+            // Phân trang ra sao này ?
+            Pageable pageable = PageRequest.of(pageNumber - 1, pageSize, sort);
+
+            // Lọc thực sự
+            page = jpaCauThu.filterCauThu(
+                    filter_ten,
+                    filter_maTinhThanh,
+                    filter_nhomMau,
+                    filter_canNang_from,
+                    filter_canNang_to,
+                    pageable);
+
+            list = page.getContent();
+        }
+
+        // Gửi các thông tin cần thiết từ controller sang view
+        model
+                .addAttribute("currentPage", pageNumber)
+                .addAttribute("pageNumber", pageNumber)
+                .addAttribute("pageSize", pageSize)
+                .addAttribute("pageItems", list)
+                .addAttribute("pageCount", list.size())
+
+                .addAttribute("totalPages", page.getTotalPages()) // tổng số trang
+                .addAttribute("totalItems", page.getTotalElements()) // tổng số phần tử tìm thấy
+                .addAttribute("totalElements", page.getTotalElements()) // tổng số phần tử tìm thấy
+
+                .addAttribute("sortField", sortField)
+                .addAttribute("sortDir", sortDir)
+                .addAttribute("sortRev", sortRev)
+
+                .addAttribute("filter_ten", filter_ten)
+                .addAttribute("filter_nhomMau", filter_nhomMau)
+                .addAttribute("filter_maTinhThanh", filter_maTinhThanh)
+                .addAttribute("filter_canNang_min", filter_canNang_min)
+                .addAttribute("filter_canNang_max", filter_canNang_max)
+                .addAttribute("filter_canNang_from", filter_canNang_from)
+                .addAttribute("filter_canNang_to", filter_canNang_to)
+
+                .addAttribute("linkSortId", linkSortId)
+                .addAttribute("linkSortTen", linkSortTen)
+                .addAttribute("linkSortCanNang", linkSortCanNang)
+                .addAttribute("linkPage", linkPage)
+
+                .addAttribute("listCauThu", list)
+                .addAttribute("listTinhThanh", jpaTinhThanh.findAll())
+
+                .addAttribute("title", "Lọc Tìm Cầu Thủ")
+                .addAttribute("content", "/cauthu/filtered-paged-list.html")
+
+        ;
+
+        return new String("/layout/layout-admin.html");
+    }
+
+    // #region CRUD Application
+    // http://localhost:8080/admin/cauthu/create
+    @GetMapping("/create")
+    public String getCreate(Model model) {
+
+        // Tạo mới thực thể
+        var entity = new CauThu();
+        // với một vài giá trị mặc định (do lập trình tự quyết)
+        entity.setConHopDong(true);
+        entity.setChieuCao(1.8f);
+        entity.setNhomMau('B');
+
+        // Gửi thực thể mới đó sang HTM Form để end user có thể chỉnh sửa dễ dàng và
+        // kiểm duyệt
+        model
+                .addAttribute("cauThu", entity)
+
+                // Gửi danh sách bản ghi phụ đó từ Controller sang View HTML
+                // Gửi dữ liệu của biến Java sang biến HTML ThymeLeaf
+                // PHP: HTML Blade/Smarty/Phtml: NodeJS: *.ejs, *.hdb; Python: HTML Jinja
+                // Đó là các Template Engine chịu trách nhiệm thông dịch html template sang
+                // *.htm
+
+                // Gửi danh sách các thực thể phụ sang view HTML
+                .addAttribute("listTinhThanh", jpaTinhThanh.findAll())
+
+                // Chỉ định HTML Form Add, nội dung riêng của trang này
+                // (tương đối so với thư mục: templates)
+                // model.addAttribute("formAction", "/admin/cauthu/add");
+                .addAttribute("title", "Tạo Mới Cầu Thủ")
+                // model.addAttribute("content", "/cauthu/add.html");
+                .addAttribute("content", "/cauthu/form-save.html");
+
+        return "/layout/layout-admin.html";
+    }// end create()
+
+    // http://localhost:8080/admin/cauthu/read
+    @GetMapping("/read") // định tuyến (route) luồng chương trình
+    public String getRead(Model model) // chương trình con, dịch vụ con, phục vụ
+    {
+        // Lấy ra danh sách các cầu thủ
+        var listCauThu = jpaCauThu.findAll();
+
+        model
+                // Gửi danh sách đó sang view HTML
+                .addAttribute("listCauThu", listCauThu)
+                .addAttribute("listSize", listCauThu.size())
+                // Chỉ định trang html
+                .addAttribute("title", "Danh Sách Cầu Thủ")
+                .addAttribute("content", "/cauthu/read.html");
+
+        // Chỉ định layout
+        // return new String();
+        return new String("/layout/layout-admin.html");
+
+    }
+
+    // Hàm này sẽ làm hơi khác chút so với edit/delete
+    // http://localhost:8080/admin/cauthu/read/3
+    @GetMapping("/read/{id}")
+    public String readById(
+            Model model, // mô hình dữ liệu của view html
+            @PathVariable("id") int id // mã định của bản ghi cần sửa
+    ) {
+        // Tìm thực thể dữ liệu đang có trong csdl, theo mã định danh
+        var entity = jpaCauThu.findById(id).get();
+
+        // Gửi thực thể cũ đó sang view html form để sửa
+        model
+                .addAttribute("cauThu", entity)
+                // Gửi thêm dữ liệu của bảng phụ
+                .addAttribute("listTinhThanh", jpaTinhThanh.findAll())
+                // 2 câu lệnh hiển thị giao diện của Form Edit
+                .addAttribute("title", "Xem Chi Tiết Cầu Thủ")
+                .addAttribute("content", "/cauthu/read-by-id.html");
+
+        return "/layout/layout-admin.html";
+    }
+
+    // http://localhost:8080/admin/cauthu/update?id=3
+    @GetMapping("/update")
+    public String getUpdate(
+            Model model, // mô hình dữ liệu của view html
+            @RequestParam("id") int id // mã định của bản ghi cần sửa
+    ) {
+        // Tìm thực thể dữ liệu đang có trong csdl, theo mã định danh
+        var entity = jpaCauThu.findById(id).get();
+
+        // Gửi thực thể cũ đó sang view html form để sửa
+        model
+                .addAttribute("cauThu", entity)
+                // Gửi thêm dữ liệu của bảng phụ
+                .addAttribute("listTinhThanh", jpaTinhThanh.findAll())
+                // 2 câu lệnh hiển thị giao diện của Form Edit
+                .addAttribute("title", "Sửa Cầu Thủ")
+                .addAttribute("content", "/cauthu/form-save.html");
+
+        return "/layout/layout-admin.html";
+    }
+
+    /**
+     * Hàm này không cần thiết nếu sử dụng JavaScript
+     * <form method="post" action="/admin/cauthu/destroy"
+     * onsubmit="return confirm('Bạn có chắc muốn xóa không ?')"
+     * 
+     * @param model
+     * @param id
+     * @return
+     */
+    // // http://localhost:8080/admin/cauthu/destroy?id=3
+    @GetMapping("/destroy")
+    public String getDestroy(
+            Model model, // mô hình dữ liệu của view html
+            @RequestParam("id") int id // mã định của bản ghi cần sửa
+    ) {
+        // Tìm bản ghi theo mã định danh trong csdl
+        var entity = jpaCauThu.findById(id).get();
+
+        // Mô hình dữ liệu của view HTML
+        model
+                .addAttribute("cauThu", entity)
+                .addAttribute("listTinhThanh", jpaTinhThanh.findAll())
+                .addAttribute("content", "/cauthu/destroy.html");
+
+        // Bố cục chung
+        return "/layout/layout-admin.html";
+    }
+
+    @PostMapping("/destroy")
+    public String postDestroy(@ModelAttribute CauThu cauthu) {
+        // Xóa thực thể khỏi cơ sở dữ liệu
+        jpaCauThu.delete(cauthu);
+
+        // Gửi thông báo thành công sang bên View HTML
+        session.setAttribute("SuccessMessage", "Đã xong việc xóa !");
+
+        // Điều hướng sang trang danh sách
+        return "redirect:/admin/cauthu";
+    }
+
+    // #endregion
+
+}
