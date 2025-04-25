@@ -1,0 +1,147 @@
+<div class="ui container">
+    <div class="ui segments">
+
+        <div class="ui segment">
+            <div class="ui header" style="float: left">
+                <i class="icon edit"></i>
+                Form Input Category (2025.04.23 20h26)
+            </div>
+            <a class="ui" href="/admin/category" style="float: right" title="Quay Lại Danh Sách">
+                <i class="icon list"></i>
+            </a>
+            <br style="clear: both" />
+        </div>
+
+        <!--Bắt buộc phải dùng th:action nếu không sẽ bị Java SpringBoot Security bắt lỗi Exception 403 -->
+        <form class="ui form large segment" method="post" th:action="@{/admin/category/save}" th:object="${entity}">
+
+            <input type="hidden" th:field="*{id}" />
+            <!-- <input type="date" hidden th:field="${entity.dateCreated}" readonly/> bỏ đi vì nó gây  chết hàm save() -->
+
+            <div class="ui grid">
+                <!-- Left Column: Image -->
+                <div class="four wide column">
+
+                    <div class="field">
+                        <label>Ảnh Đại Diện:</label>
+                        <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png" 
+                          th:src="${entity.image}"
+                            alt="Ảnh Đại Diện" style="width: 100%; height: auto;box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);border-radius: 8px" id="imgThumbnail"
+                            onClick="uploadImage()" name="thumbnail" />
+                        <input type="text" placeholder="http://anh.com/vidu.jpg" th:field="*{image}"
+                            id="inputImageSource" />
+                        <p id="uploading_text"></p>
+
+
+                    </div>
+                </div>
+
+                <!--Right Column: Form Inputs-->
+                <div class="twelve wide column">
+                    <div class="field">
+                        <label>Tên Loại </label>
+                        <input type="text" th:field="*{name}" />
+                    </div>
+
+
+
+                    <div class="field">
+                        <label>Đường link</label>
+                        <input type="text" th:field="*{link}" />
+                    </div>
+
+
+
+                    <div class="field">
+                        <label>Thứ tự</label>
+                        <input type="number" th:field="*{orderNumber}" />
+                    </div>
+
+                    <div class="field">
+                        <label>Loại Cha</label>
+                        <input type="text" th:field="*{parentId}" value="0" />
+                        
+                    </div>
+
+                    <!--Các trường thông tin Boolean với checkbox -->
+
+                    <div class="ui fields">
+                        <div class="field inline checkbox">
+                            <label>Cho Phép: </label>
+                            <input type="checkbox" th:field="*{active}" />
+                        </div>
+
+                        <div class="field inline checkbox">
+                            <label>Nổi Bật: </label>
+                            <input type="checkbox" th:field="*{featured}" />
+                        </div>
+
+                        <div class="field inline checkbox">
+                            <label>Top (Menu): </label>
+                            <input type="checkbox" th:field="*{top}" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="field">
+                <label>Mô tả</label>
+                <textarea th:field="*{description}" class="summernote"></textarea>
+            </div>
+
+            <br />
+            <div style="overflow: auto;">
+
+                <button type="submit" class="ui button primary" style="float: right">
+                    <i class="icon save"></i>Lưu</button>
+                <button type="reset" class="ui button" style="float: right;margin-right: 10px;">
+                    <i class="icon undo"></i>Huỷ</button>
+                <a class="ui button positive" href="/admin/category" style="float: right;">
+                    <i class="icon arrow left"></i>Danh Sách
+                </a>
+            </div>
+
+            <div class="ui error message"></div>
+
+            <!-- </fieldset> -->
+
+        </form>
+    </div>
+</div>
+
+
+<!--validation nếu cần -->
+
+<script>
+    // Không nên dùng Semantic UI Search ở đây vì nó không phù hợp.
+    // tham khảo:
+    // https://jqueryui.com/autocomplete/#custom-data
+    $('input[name="parentId"]').autocomplete({
+        minLength: 0,
+        source: "/admin/category/list/json",
+        focus: function( event, ui ) {
+            // Khi người dùng di chuột vào 1 phần tử trên danh sách gợi ý thì
+            // copy id của nó vào:
+            $('input[name="parentId"]').val(ui.item.id);
+            return false;
+        },
+        select: function( event, ui ) {
+            // $( "#project" ).val( ui.item.label );
+            // $( "#project-id" ).val( ui.item.value );
+            // $( "#project-description" ).html( ui.item.desc );
+            // $( "#project-icon" ).attr( "src", "images/" + ui.item.icon );
+
+            // Khi người dùng chọn một loại cha từ danh sách sổ xuống, thì copy mã loại cha
+            // vào value của thẻ <input name="parentId" />
+            $('input[name="parentId"]').val(ui.item.id);
+            return false;
+        }
+        })
+        .autocomplete( "instance" )
+        ._renderItem = function( ul, item ) {
+            return $( "<li>" )
+                // .append( "<div>" + item.name + "<br>" + item.id + "</div>" )
+                .append( `<div><img src="${item.image}" style="width: 20px;"/>(${item.id}) ${item.name}</div>` )
+                .appendTo( ul );
+        };
+</script>

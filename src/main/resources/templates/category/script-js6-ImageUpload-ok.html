@@ -1,0 +1,95 @@
+<!--Image Upload: chỉ dùng JavaScript thuần (Plain EmacScript6)-->
+<!--Image Upload: Không phụ thuộc ngữ cảnh, để có thể tái sử dụng được ở nhiều nơi-->
+
+<script>
+                        
+    // Không nên dùng cú pháp: dom.onerror = function() vì nhỡ dom bị null
+    // tương tụ: dom.oninput
+    // Sử dụng cú pháp ?. của Null Conditional Operator để đỡ phải kiểm tra 
+    // if(dom)
+    // if(dom==undefined || dom==null)
+    document.addEventListener("DOMContentLoaded", function() {
+        // alert('test....');
+        // console.log('hello');
+        // Trường hợp đường dẫn ảnh bị lỗi thì thay thế bằng ảnh khác !
+        var thumbnailImage = document.querySelector('img[name="thumbnail"]');
+        thumbnailImage?.addEventListener("error", function() {
+            this.src = 'https://cdn-icons-png.flaticon.com/512/149/149071.png'; // emtpty personal profile
+            this.src = 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/450px-No_image_available.svg.png'; // Placeholder image for "No Image"
+        });
+
+        // Tạo bóng râm cho ảnh (nên làm bằng css)
+        // thumbnailImage?.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.2)';
+        // thumbnailImage?.style.borderRadius = '8px';
+
+        // Thay đổi ảnh khi người dùng nhập URL mới
+        var inputImageSource = document.getElementById('inputImageSource');
+        inputImageSource?.addEventListener("input", function() {
+            var newSrc = this.value;
+            thumbnailImage.src = newSrc;
+        });
+    });
+</script>
+
+<script>
+
+    /**
+     * Thư viện phụ thuộc: Semantic.css
+     */
+    function uploadImage() {
+        // Đã test kỹ, chạy rất OK
+        // Truy cập vào các phần tử trên giao diện HTML
+        // const uploadButton = document.getElementById("inputImage");
+        const fileInput = document.createElement("input");
+        fileInput.type = "file";
+        fileInput.accept = "image/*";
+
+        // Đăng ký kịch bản xử lý sự kiện cho fileInput
+        // fileInput.on("change", (e) => { // chạy OK
+        fileInput.onchange = function (event) { // chạy OK
+            const uploading_text = document.getElementById("uploading_text");
+            uploading_text.innerHTML = `Uploading...<i class="icon spinner loading"></i>`;
+
+            const file = event.target.files[0];
+            const formData = new FormData();
+            formData.append("file", file);
+            formData.append("upload_preset", "doc_codepen_example");
+
+            const url = `https://api.cloudinary.com/v1_1/demo/image/upload`;
+            const options = // settings, config 
+            {
+                method: "POST",
+                body: formData,
+            };
+
+            window.
+                fetch(url, options)
+                .then((res) => res.json())
+                .then((data) => {
+                    console.log(data.secure_url);
+
+                    uploading_text.innerHTML = `<span class="ui green">Image upload completed ! <i class="icon check circle outline green"></i></span>`;
+
+
+                    // Cập nhật giá trị của trường input ẩn với URL của ảnh đã tải lên
+                    // document.querySelector('input[name="anh"]').value = data.secure_url;
+                    document
+                        .querySelector('#inputImageSource').value = data.secure_url;
+
+                    // $('#imgView').prev('img') // cũ
+                    // $('#imgThumbnail').attr('src', data.secure_url);
+
+                    document
+                        .querySelector('#imgThumbnail').src = data.secure_url;
+                })
+                .catch((err) => {
+                    console.error(err);
+                    uploading_text.innerText = "Upload failed.";
+                })
+        };
+
+        fileInput.click();
+
+    }// end uploadImage()
+
+</script>

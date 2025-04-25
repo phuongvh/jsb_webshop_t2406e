@@ -1,0 +1,14 @@
+2025-04-23T19:15:30.372+07:00 DEBUG 12840 --- [jsb_webshop_t2406e] [io-6868-exec-10] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for POST "/error", parameters={masked}
+2025-04-23T19:15:30.377+07:00 DEBUG 12840 --- [jsb_webshop_t2406e] [io-6868-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to exam.jsb_webshop_t2406e.error.MvcErrorController#handleError(HttpServletRequest)
+2025-04-23T19:15:30.377+07:00 DEBUG 12840 --- [jsb_webshop_t2406e] [io-6868-exec-10] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2025-04-23T19:15:30.377+07:00 DEBUG 12840 --- [jsb_webshop_t2406e] [io-6868-exec-10] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 403  
+
+Logic của chương trình là đúng !
+Nhưng Request phía Client không đúng chuẩn theo JavaSpring Boot thì chết.
+Bị Java Security xem là Exception
+
+Ví dụ: Form post phải có th:action, chứ không được viết là action="" thuần túy
+
+
+     * Lỗi 403 do không sử dụng thư viện ThymeLeaf th:action="@{/admin/loginform}"
+     * https://stackoverflow.com/questions/62264324/403-error-for-custom-login-page-spring-security

@@ -1,0 +1,26 @@
+<script>
+                        
+    // OK, chạy tốt
+    $(document).ready(function() {
+        // Trường hợp đường dẫn ảnh bị lỗi thì thay thế bằng ảnh khác !
+        $('img[name="thumbnail"]') 
+        .on('error', function() { // chạy tốt
+            $(this).attr('src', 'https://cdn-icons-png.flaticon.com/512/149/149071.png');
+        })
+        // viết mã jQuery tạo bóng râm cho ảnh (vừa viết xong comment thì AI Copilot đã tự động thêm vào)
+        .css({
+            'box-shadow': '0 4px 8px rgba(0, 0, 0, 0.2)',
+            'border-radius': '8px'
+        });
+        ;
+
+        // viết mã jQuery để thay đổi ảnh khi người dùng nhập URL mới
+        // $('input[name="anh"]')
+        $('#inputImageSource')
+        .on('input', function() {
+            var newSrc = $(this).val();
+            $(this).prev('img').attr('src', newSrc);
+        });
+
+    });
+</script>

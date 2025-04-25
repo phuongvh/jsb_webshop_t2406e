@@ -1,0 +1,11 @@
+java.lang.IllegalArgumentException: Invalid character found in method name [0x160x030x010x060xb20x010x000x060xae0x030x03^o0xf9W0x060xa9_0xa10xd50xb60xc40xdd[fL0xa60x93\0x860x04Ac{0xd5~0xcc.0x9d00xf1f0xaf ]. HTTP method names must be tokens
+        at org.apache.coyote.http11.Http11InputBuffer.parseRequestLine(Http11InputBuffer.java:409) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+        at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:270) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+        at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+        at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+        at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+        at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+        at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+        at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+        at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+        at java.base/java.lang.Thread.run(Thread.java:1575) ~[na:na]

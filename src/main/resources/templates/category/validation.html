@@ -1,0 +1,57 @@
+<script>
+    // https://semantic-ui.com/behaviors/form.html
+    // https://stackoverflow.com/questions/51999545/how-to-validate-decimal-fields-in-semantic-ui
+
+    // Lập trình viên tự bổ sung một số quy tắc ràng buộc
+    // dữ liệu vào cho thư viện lõi: JavaScript jQuery Semantic-UI
+    $.fn.form.settings.rules.greaterThan = function (inputValue, validationValue) {
+        return inputValue >= validationValue;
+    };
+    $.fn.form.settings.rules.lessThan = function (inputValue, validationValue) {
+        return inputValue <= validationValue;
+    }
+
+    $(function () {
+
+        $('.ui.form.loai')
+            .form({
+                fields: {
+                    tựa_đề: {
+                        identifier: 'tuaDe',
+                        rules: [{
+                            type: 'empty',
+                            prompt: 'Bạn vui lòng nhập tựa đề'
+                        }]
+                    },
+                    giá_tiền: {
+                        identifier: 'giaTien',
+                        rules: [{
+                            type: 'empty',
+                            prompt: 'Bạn vui lòng nhập giá tiền.'
+                        }
+                            , {
+                            type: 'greaterThan[500000]',
+                            prompt: 'Giá tiền phải trên năm trăm ngàn'
+                        }
+                            , {
+                            type: 'lessThan[30000000]', // chưa chạy được đúng, vẫn báo sai prompt
+                            prompt: 'Giá tiền phải dưới 30 triệu'
+                        }
+                        ]
+                    }
+
+                    // ,phone: {
+                    //     identifier: 'phone',
+                    //     rules: [{
+                    //         type: 'regExp',
+                    //         value: /^[0-9]{10}$/,
+                    //         prompt: 'Số điện thoại phải có 10 chữ số'
+                    //     }]
+                    // }
+
+
+                }
+            });
+
+    });
+</script>

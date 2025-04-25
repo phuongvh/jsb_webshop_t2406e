@@ -28,7 +28,7 @@ import org.springframework.web.util.UriComponentsBuilder;
 // @CrossOrigin(origins = "http://localhost:3000")
 // @CrossOrigin(origins = "*", maxAge = 3600)
 // @CrossOrigin(origins = "http://localhost:3000", maxAge = 3600, allowCredentials="true")
-@CrossOrigin(origins = "http://localhost:3000", allowCredentials="true")
+// @CrossOrigin(origins = "http://localhost:3000", allowCredentials="true") // thử comment lại để sử dụng Global
 // chấp nhận tên miền khác của máy khách gửi yêu cầu
 // serverCuaTui.com -> serverCuaBan.com
 @RequestMapping("/api/manufacturer") // http://leminhhoa.com/api5/Manufacturer

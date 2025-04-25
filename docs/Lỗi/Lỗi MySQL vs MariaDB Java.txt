@@ -1,0 +1,6 @@
+Fix:
+
+Tải riêng MySQL về, cài
+Cấu hình cho Xampp nhận MySQL mới
+
+Có nên chăng thay XAMPP bằng MAMPP

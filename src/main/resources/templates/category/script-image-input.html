@@ -1,0 +1,56 @@
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Handle image error fallback
+        // Nếu đường dẫn ảnh bị lỗi thì thẻ <img /> sẽ bị vỡ, 
+        // mã này sẽ khắc phục vấn đề đó.
+        const thumbnailImage = document.querySelector('img[name="thumbnail"]');
+
+        
+        if (thumbnailImage) {
+            thumbnailImage.onerror = function () {
+                this.src = 'https://cdn-icons-png.flaticon.com/512/149/149071.png';
+            };
+
+             // code by CoPilot
+                     // Add shadow and border radius to the image
+            // thumbnailImage.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.2)';
+            // thumbnailImage.style.borderRadius = '8px';
+
+            // code by Coder:
+            thumbnailImage.style.cssText += `
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+                border-radius: 8px
+            `;
+        }
+
+        // Update image source when input value changes
+        // const inputImageSource = document.getElementById('inputImageSource');
+        const inputImageSource = document.querySelector('input[id="inputImageSource"]');
+        // const inputImageSource = document.querySelector('input[name="image"]');
+
+        // code by AI CoPilot:
+        // if (inputImageSource) {
+            
+        //     inputImageSource.addEventListener('input', function () {
+        //         const newSrc = this.value;
+        //         const imgElement = this.previousElementSibling;
+        //         if (imgElement && imgElement.tagName === 'IMG') {
+        //             imgElement.src = newSrc;
+        //         }
+        //     });
+
+        // }
+
+        // code by Coder: Sử dụng null condition operator để mã ngắn hơn
+        inputImageSource?.oninput = function (e) 
+        {
+            console.log("Đã thay đổi img url")
+            const newSrc = this.value;
+            thumbnailImage.src = newSrc
+        }
+
+
+
+     
+    });
+</script>

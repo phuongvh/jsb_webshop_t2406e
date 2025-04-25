@@ -1,0 +1,79 @@
+<!-- Đang hiển thị danh sách cầu thủ... -->
+
+<div class="ui" style="padding: 2%">
+    
+
+    <table class="ui table celled selectable">
+        <caption>
+            <h1>
+                Quản Lý Danh Mục (Category)
+                <a th:href="@{/admin/category/create}" title="Tạo Mới">
+                    [<i class="icon plus ui tiny"></i>]
+                </a>
+                
+            </h1>
+            
+        </caption>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Ảnh</th>
+                <th>Tên Loại</th>                
+                <th>Thứ Tự</th>
+                <th>Cho Phép</th>
+                <th>Nổi Bật</th>
+                <th>Top</th>
+                <th>Ngày Tạo</th>
+                <th>Ngày Sửa</th>
+                <!-- <th>Mô Tả (dài quá nên không hiện lên)</th> -->
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="entity : ${listCategory}" th:data-id="${entity.id}">
+                <td th:text=${entity.id}>mã định danh</td>
+                <td><img th:src="${entity.image}" style="height:70px;"/></td>
+                <td th:text=${entity.name}>tên loại</td>
+                <td th:text=${entity.orderNumber}>thứ tự</td>
+                <td th:text=${entity.active}>cho phép</td>
+                <td title="Nổi bật"><i th:class="${entity.featuredIcon}"></i></td>
+                <td title="Top Menu">
+                    <i th:class="${entity.topIcon}"></i>
+                </td>
+                <td th:text=${entity.dateCreatedVi}>ngày tạo</td>
+                <td th:text=${entity.dateUpdatedVi}>ngày sửa</td>
+                <td>
+                    <a th:href="@{/admin/category/{id}(id=${entity.id})}" title="link Xem">
+                        <i class="icon eye"></i>
+                    </a>
+                    <a th:href="@{/admin/category/add}" title="link Thêm">
+                        <i class="icon plus"></i>
+                    </a>
+                    <a th:href="@{/admin/category/edit(id=${entity.id})}" title="link Sửa">
+                        <i class="icon pencil"></i>
+                    </a>
+                   
+                    <!-- confirm() = OK = true: có nghĩa là submit form thực sự, đi tiếp đến action
+                         conform() = Cancel = false: có nghĩa là dừng, không submit form nữa.
+                         phải có th:action nếu không sẽ bị lỗi 403 Forbidden do Spring Security gây ra.
+                    -->
+                    <form th:action="@{/admin/category/delete}" method="post" style="display:inline;"
+                        th:onsubmit="return confirm('Bạn có chắc muốn xóa [[${entity.name}]] không ?');">
+                        <input type="hidden" name="id" th:value="${entity.id}" />
+                        <button type="submit" title="Xóa Nhanh" style="padding: 5px;"><i class="icon trash red"></i></button>
+                    </form>
+                </td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <th colspan="10">
+                    Số  dòng: [[${listSize}]]
+                </th>
+            </tr>
+        </tfoot>
+    </table>
+
+</div>
+
+

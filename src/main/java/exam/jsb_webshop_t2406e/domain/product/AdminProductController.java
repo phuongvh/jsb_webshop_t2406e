@@ -2,7 +2,6 @@ package exam.jsb_webshop_t2406e.domain.product;
 
 // Thư viện chuẩn: Java Standard Edition(JavaSE)
 import java.util.List;
-import java.time.LocalDate;
 
 // Thư viện doanh nghiệp: Java Entprise Edition(JavaEE)
 import jakarta.servlet.http.HttpServletRequest;
@@ -152,7 +151,7 @@ public class AdminProductController
         session.setAttribute("SuccessMessage", successMessage);
 
         // Điều hướng sang trang danh sách
-        return "redirect:/admin/cauthu";
+        return "redirect:/admin/product";
     }
 
     // @PostMapping("/add")

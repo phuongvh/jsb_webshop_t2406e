@@ -1,0 +1,257 @@
+<div class="bs4">
+
+    <!-- THÔNG BÁO THÀNH CÔNG: THÊM, SỬA, XÓA -->
+    <div class="ui positive message" th:if="${session.message}">
+        <i class="close icon"></i>
+        <div class="header" th:text="${session.message}">
+            You are eligible for a reward
+        </div>
+        <p>Bạn có thể tiếp tục các tác vụ khác được rồi.</p>
+        <th:block th:text="${@sessionHelper.removeMessageFromSession()}"></th:block>
+    </div>
+
+
+
+    <table class="bs4 table table-bordered">
+       <!--Loại bỏ caption đi, vì bootstrap ko cho-->
+        <thead>
+          
+            <tr>
+                <th colspan="11">
+
+                    <h3 style="float: left;margin-bottom: 0px;">
+                        <i class="fa fa-list"></i>Danh Mục Loại
+                    </h3>
+                    <div class="bs4" style="float: right">
+
+                        <a href="#" class="bs4 btn btn-info" th:href="@{/qdl/loai/them}">
+                            <i class="bi-plus"></i>Thêm Mới
+                        </a>
+                        <button class="btn btn-danger"><i class="bi-trash"></i>Xóa</button>
+
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalThem">
+                            <i class="bi-plus-circle"></i>Thêm Modal BS4
+                        </button>
+                        <script>
+                            // https://stackoverflow.com/questions/10626885/passing-data-to-a-bootstrap-modal
+                            //triggered when modal is about to be shown
+                            $('#modalThem').on('show.bs.modal', function (e) {
+
+                                //get data-id attribute of the clicked element
+                                // var id = $(e.relatedTarget).data('id');
+
+                                // Cập nhật lại thuộc tính action="..." của thẻ <form>
+                                $(e.currentTarget).find('form').attr('action', '/qdl/loai/them');
+                            });
+                        </script>
+
+                        <button class="btn btn-success" type="button" data-toggle="collapse"
+                            data-target="#filterBoxCollapsible">
+                            <i class="bi-filter"></i>Lọc
+                        </button>
+                    </div>
+
+                </th>
+            </tr>
+            <tr>
+                <th class="ui compact">
+                    <input type="checkbox" />
+                    Chọn Tất
+                </th>
+                
+                <th>Id</th>
+                <th>Tên Loại</th>                
+                <th>Ảnh</th>
+                <th>Thứ Tự</th>
+                <th>Cho Phép</th>
+                <th>Nổi Bật</th>
+                <th>Top</th>
+                <th>Ngày Tạo</th>
+                <th>Ngày Sửa</th>
+                <!-- <th>Mô Tả (dài quá nên không hiện lên)</th> -->
+                <th>Action</th>
+            </tr>
+
+        </thead>
+
+        <tbody>
+            
+            <tr th:each="entity : ${listCategory}">
+                <td>
+                    <input type="checkbox" />
+                </td>
+                <td th:text="${entity.id}"></td>
+                
+                <td th:text="${entity.name}"></td>
+                <td>
+                    <img th:src="${entity.image}" style="height: 60px;"/>
+                </td>
+                <td th:text="${entity.orderNumber}"></td>
+                <!-- <td th:text="${entity.link}"></td> -->
+                <td>
+                    <div th:if="${entity.choPhep}">
+                        <span class="ui label green" th:text="${entity.choPhepVi}"></span>
+                    </div>
+                    <div th:unless="${entity.choPhep}">
+                        <span class="ui label red" th:text="${entity.choPhepVi}"></span>
+                    </div>
+                </td>
+
+                <td>
+                    <div th:if="${entity.noiBat}">
+                        <span class="ui label green" th:text="${entity.noiBatVi}"></span>
+                    </div>
+                    <div th:unless="${entity.noiBat}">
+                        <span class="ui label red" th:text="${entity.noiBatVi}"></span>
+                    </div>
+                </td>
+
+                <td>
+                    <div th:if="${entity.top}">
+                        <span class="ui label green" th:text="${entity.topVi}"></span>
+                    </div>
+                    <div th:unless="${entity.top}">
+                        <span class="ui label red" th:text="${entity.topVi}"></span><!--đừng gõ kí tự trắng, mà phải là No top-->
+                    </div>
+                </td>
+                
+                
+                <td th:text="${entity.ngayTaoVi}"></td>
+                <td th:text="${entity.ngaySuaVi}"></td>
+                <td>
+                    <!-- /loai/xem/3 -->
+                    <!-- <a th:href="@{/qdl/loai/xem/{id}(id=${entity.Id})}" class="bs4 btn positive">
+                        <i class="bi-eye"></i>Xem</a> 
+                    &nbsp; -->
+                    <a th:href="@{/qdl/loai/sua(id=${entity.Id})}" class="bs4 btn yellow">
+                        <i class="bi-pencil"></i>Sửa</a> <!-- /loai/sua?id=3 -->
+                    &nbsp;
+                    <a th:href="@{/qdl/loai/xoa(id=${entity.Id})}" class="bs4 btn negative">
+                        <i class="bi-trash"></i>Xoá</a><!-- /loai/xoa?id=3 -->
+                    &nbsp;
+                    <a th:href="@{/qdl/loai/copy(id=${entity.Id})}" class="bs4 btn purple basic">
+                        <i class="bi-copy"></i>Copy</a><!-- /loai/xoa?id=3 -->
+
+                    <a type="button" data-toggle="modal" data-target="#modalXoa" href="#modalXoa" th:data-id="${entity.id}">
+                        <i class="bi-plus-circle"></i>Xóa Modal
+                    </a>
+                    <script>
+                        $(function(){
+                            // https://stackoverflow.com/questions/10626885/passing-data-to-a-bootstrap-modal
+                            //triggered when modal is about to be shown
+                            $('#modalXoa').on('show.bs.modal', function (e) {
+
+                                //get data-id attribute of the clicked element
+                                var id = $(e.relatedTarget).data('id');
+
+                                //populate the textbox
+                                $(e.currentTarget).find('input[name="id"]').val(id);
+                            });
+                        });
+                    </script>
+
+                    <a type="button" data-toggle="modal" data-target="#modalSua" th:data-id="${entity.id}">
+                        <i class="bi-plus-circle"></i>Sửa Modal
+                    </a>
+                    <script>
+                        $(function(){
+                            // https://stackoverflow.com/questions/10626885/passing-data-to-a-bootstrap-modal
+                            // triggered when modal is about to be shown
+                            $('#modalSua').on('show.bs.modal', function (e) {
+
+                            //get data-id attribute of the clicked element
+                            var id = $(e.relatedTarget).data('id');
+
+                            $('#modalSua .modal-body').load("/qdl/loai/suaajax?id=" + id);
+
+                            //populate the textbox
+                            // $(e.currentTarget).find('input[name="id"]').val(id);
+                            });
+                        });
+                    </script>
+
+                    <!-- <a type="button" data-toggle="modal" data-target="#modalSuaAjax" th:data-id="${entity.id}">
+                        <i class="bi-plus-circle"></i>Sửa Modal Ajax
+                    </a> -->
+                    <script>
+                        // Kịch bản xử lý tình huống: User bấm vào link để hiện Modal Form sửa bản ghi 
+
+                        // Client thực thi Ajax Request lên máy chủ
+                        // để xin mã nguồn hntml của Form
+
+                        // Sau đó, đắp vào Modal Form hiện tại
+                    </script>
+                </td>
+            </tr>
+        </tbody>
+
+        <tfoot>
+            <tr>
+                <th colspan="11">
+                   Tìm thấy XXX bản ghi
+                </th>
+            </tr>
+        </tfoot>
+    </table>
+
+    <!-- MODAL XOA -->
+    <div class="modal" id="modalXoa">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title"><i class="bi-trash"></i>Xác Nhận Xóa</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <!-- Modal body: chú ý ràng buộc Controller Object vào Form -->
+                <div class="modal-body">
+                    <form action="/qdl/loai/xoa" method="post">
+                        <input type="hidden" name="id" value="id của bản ghi mình cần xóa" />
+                       
+                        <p>
+                            Bạn có chắc muốn xóa ?
+                        </p>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal"><i
+                                class="bi-x"></i>Hủy</button>
+                        <button type="submit" class="btn btn-danger"><i class="bi-trash"></i>Xóa</button>
+
+                    </form>
+                </div>
+
+                <!-- Modal footer -->
+                <!-- <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="bi-x"></i>Close</button>
+                </div> -->
+
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL SUA -->
+         <!-- BS4 MODAL EDIT -->
+    <div class="modal" id="modalSua">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <!-- <div class="modal-header">
+                    <h4 class="modal-title">Modal Heading</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div> -->
+
+                <!-- Modal body: chú ý ràng buộc Controller Object vào Form -->
+                <div class="modal-body">
+                    Sử dụng Ajax để tải mã nguồn của Form Edit và đặt nó vào đây
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="bi-x"></i>Close</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

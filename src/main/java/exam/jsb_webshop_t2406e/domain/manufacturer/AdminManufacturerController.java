@@ -152,7 +152,7 @@ public class AdminManufacturerController
         return "layout/layout-admin.html"; 
     }
 
-    
+    // Đã test ok, vượt qua được Security
     @PostMapping("/add")
     public String postAdd(@ModelAttribute Manufacturer entity) 
     {
@@ -238,6 +238,7 @@ public class AdminManufacturerController
         return "layout/layout-admin.html"; // layout.html
     }
 
+    // Đã test, vượt qua được Security 
     @PostMapping("/edit")
     public String postEdit(@ModelAttribute Manufacturer dl) 
     {

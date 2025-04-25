@@ -1,0 +1,5 @@
+2025-04-25T18:43:07.533+07:00 DEBUG 38712 --- [jsb_webshop_t2406e] [nio-6868-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Found 'Content-Type:application/json' in response
+2025-04-25T18:43:07.533+07:00 DEBUG 38712 --- [jsb_webshop_t2406e] [nio-6868-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Writing [exam.jsb_webshop_t2406e.exception.ErrorMessage@3b2421cd]
+2025-04-25T18:43:07.534+07:00 DEBUG 38712 --- [jsb_webshop_t2406e] [nio-6868-exec-4] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: date must not be null]
+2025-04-25T18:43:07.535+07:00 DEBUG 38712 --- [jsb_webshop_t2406e] [nio-6868-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 500 INTERNAL_SERVER_ERROR 
+
